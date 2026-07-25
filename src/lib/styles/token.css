@@ -1,0 +1,35 @@
+@theme {
+     /* ===== SPACING ===== */
+        --space-1: 4px;
+        --space-2: 8px;
+        --space-3: 12px;
+        --space-4: 16px;
+        --space-5: 20px;
+        --space-6: 24px;
+        --space-8: 32px;
+        --space-12: 48px;
+        --space-16: 64px;
+
+    /* ===== TYPOGRAPHY ===== */
+        --font-base: "Nunito", sans-serif;
+
+        --text-sm: 0.875rem;
+        --text-base: 1rem;
+        --text-lg: 1.25rem;
+        --text-xl: 1.5rem;
+        --text-2xl: 2rem;
+        --text-3xl: 2.5rem;
+
+        --lh-tight: 1.2;
+        --lh-normal: 1.5;
+        --lh-loose: 1.7;
+
+    /* ===== Radius ===== */
+        --radius-sm: 0.75rem;
+        --radius-md: 1.5rem;
+        --radius-lg: 2rem;
+        --radius-xl: 3rem;
+
+    /* ===== Colors ===== */
+
+}
