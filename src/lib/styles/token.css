@@ -31,5 +31,17 @@
         --radius-xl: 3rem;
 
     /* ===== Colors ===== */
+        --color-primary: #99f367;
+        --color-secondary: #48b073;
+        --color-tertiary: #c2df92;
 
+        --color-surface: #E5EADB;
+        --color-background: #ffffff;
+
+        --color-primary-hover: #8ae35c;
+        --color-secondary-hover: #3f9c63;
+        --color-tertiary-hover: #b8d47f;
+
+        --color-title-text: #181D14;
+        --color-primary-text: #404A39;
 }

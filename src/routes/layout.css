@@ -1,4 +1,8 @@
+@import '$lib/styles/reset.css';
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/forms';
 @plugin '@tailwindcss/typography';
 
+@import '$lib/styles/font.css';
+@import '$lib/styles/token.css';
