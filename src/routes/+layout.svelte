@@ -1,7 +1,20 @@
 <script lang="ts">
 	import './layout.css';
+	import Navbar from '$lib/components/Navbar.svelte';
+	import Footer from '$lib/components/Footer.svelte';
 
 	const { children } = $props();
 </script>
 
-{@render children()}
+<Navbar />
+<main class="flex flex-col items-center justify-center min-h-screen container bg-background">
+	{@render children()}
+</main>
+<Footer />
+
+
+<style>
+	* {
+    color: var(--color-primary-text);
+}
+</style>
