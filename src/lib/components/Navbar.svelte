@@ -10,22 +10,22 @@
     }
 
     let navItems: NavLink[] = [
-    {
-        name: "home",
-        path: "/"
-    },
-    {
-        name: "member",
-        path: "/member"
-    },
-    {
-        name: "proker",
-        path: "/proker"
-    },
-    {
-        name: "devisi",
-        path: "/devisi"
-    }
+        {
+            name: "home",
+            path: "/"
+        },
+        {
+            name: "member",
+            path: "/member"
+        },
+        {
+            name: "proker",
+            path: "/proker"
+        },
+        {
+            name: "devisi",
+            path: "/devisi"
+        }
     ]
 
     const toggle = (): void => {
@@ -45,7 +45,7 @@
     }
 </style>
 
-<nav class="bg-surface rounded-full max-w-6xl mx-auto inset-x-0 fixed top-4 py-2">
+<nav class="bg-surface/90 rounded-full max-w-6xl mx-auto inset-x-0 fixed top-4 py-2 border border-tertiary shadow-md">
     <div class="container">
         <div class="flex items-center justify-between align-middle">
             <div class="logo flex items-center">
@@ -58,7 +58,7 @@
                 <li><a href="{item.path}" class="hover:text-secondary-hover hover:border-b-2 border-b-secondary-hover capitalize" class:active={page.url.pathname == item.path}>{item.name}</a></li>
             {/each}
             </ul>
-            <button class="bg-secondary hover:bg-secondary-hover text-white rounded-full py-2 px-3 hidden md:block pointer-events-auto cursor-pointer">
+            <button class="bg-secondary hover:bg-secondary-hover text-white rounded-full py-2 px-3 hidden md:block pointer-events-auto cursor-pointer shadow-md">
                 <a href="mailto:himatif@stmik-yadika.ac.id">
                     Hubungi kami
                 </a>
@@ -102,7 +102,7 @@
         <li><a href="/products" class="hover:text-primary text-lg">Product</a></li>
         <li><a href="/contact" class="hover:text-primary text-lg">Contact</a></li>
     </ul>
-    <button class="bg-secondary hover:bg-secondary-hover px-6 py-3 rounded-full text-white mt-auto">
+    <button class="bg-secondary hover:bg-secondary-hover px-6 py-3 rounded-full text-white mt-auto shadow-md">
         Hubungi kami
     </button>
 </div>
