@@ -45,7 +45,7 @@
     }
 </style>
 
-<nav class="bg-surface/90 rounded-full max-w-6xl mx-auto inset-x-0 fixed top-4 py-2 border border-tertiary shadow-md">
+<nav class="bg-surface rounded-full max-w-6xl mx-auto inset-x-0 fixed top-4 py-2 border border-tertiary shadow-md">
     <div class="container">
         <div class="flex items-center justify-between align-middle">
             <div class="logo flex items-center">

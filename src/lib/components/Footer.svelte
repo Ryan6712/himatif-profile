@@ -26,7 +26,7 @@
 </script>
 
 
-<footer class="bg-surface text-primary-text pt-15 pb-10 border-t-2 border-primary">
+<footer class="bg-[#DFE5D5] text-primary-text pt-15 pb-10 border-t-2 border-primary">
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
 

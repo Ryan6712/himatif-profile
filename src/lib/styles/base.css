@@ -20,6 +20,10 @@
         margin-top: var(--space-2);
     }
 
+    .stack-clear > * + * {
+        margin-top: 0;
+    }
+
     .grid-auto {
         display: grid;
         gap: var(--space-6);
