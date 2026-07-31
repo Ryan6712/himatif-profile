@@ -1,4 +1,4 @@
-<section class="min-w-full bg-background stack section px-3 mt-3">
+<section class="min-w-full bg-background stack section px-3 mt-3 ">
     <div class="flex flex-col md:flex-row flex-wrap stack-lg lg:mt-0 justify-around">
         <div class="flex flex-col stack-lg md:gap-4 max-w-3xl p-3 ">
             <h1 class="capitalize text-2xl font-bold">Himpunan Mahasiswa Tekonologi informasi 

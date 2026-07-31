@@ -45,7 +45,7 @@
     }
 </style>
 
-<nav class="bg-surface rounded-full max-w-6xl mx-auto inset-x-0 fixed top-4 py-2 border border-tertiary shadow-md">
+<nav class="bg-surface rounded-full max-w-7xl mx-auto inset-x-0 fixed top-4 py-1 border border-tertiary shadow-md">
     <div class="container">
         <div class="flex items-center justify-between align-middle">
             <div class="logo flex items-center">
@@ -97,10 +97,9 @@
 
     </div>
     <ul class="flex flex-col stack container mt-4 text-primary-text">
-        <li><a href="/" class="hover:text-primary text-lg">Home</a></li>
-        <li><a href="/about" class="hover:text-primary text-lg">About</a></li>
-        <li><a href="/products" class="hover:text-primary text-lg">Product</a></li>
-        <li><a href="/contact" class="hover:text-primary text-lg">Contact</a></li>
+    {#each navItems as item}
+         <li><a href={item.path} class="hover:text-primary text-lg capitalize">{item.name}</a></li>
+    {/each}
     </ul>
     <button class="bg-secondary hover:bg-secondary-hover px-6 py-3 rounded-full text-white mt-auto shadow-md">
         Hubungi kami

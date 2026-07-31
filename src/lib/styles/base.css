@@ -30,6 +30,10 @@
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     }
 
+    .smooth-transition {
+        transition: all ease-in-out 300ms;
+    }
+
     .bg-dot-pattern {
         background-image: radial-gradient(circle at 2px 2px, var(--color-bg-secondary) 1px, transparent 0);
         background-size: 32px 32px;
