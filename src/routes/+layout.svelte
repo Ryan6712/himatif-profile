@@ -7,7 +7,7 @@
 </script>
 
 <Navbar />
-<main class="flex flex-col min-h-screen bg-background justify-center">
+<main class="flex flex-col min-h-screen bg-background justify-center items-center mt-20">
 	{@render children()}
 </main>
 <Footer />

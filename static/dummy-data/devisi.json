@@ -1,0 +1,25 @@
+{
+    "devisi" : [
+        {
+            "nama" : "Divisi 1",
+            "namaLengkap" : "Divisi 1 - Nama Lengkap",
+            "logoUrl" : "https://placehold.co/32x32/png?text=himatif",
+            "thumbnailUrl" : "https://placehold.co/320x120/png?text=himatif",
+            "deskripsi" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas officiis illo voluptates minima earum tempora officia libero, fugiat cupiditate ullam ex, quidem quos sequi reiciendis! Repudiandae consequatur dolorum voluptatibus optio?"
+        },
+        {
+            "nama" : "Divisi 1",
+            "namaLengkap" : "Divisi 1 - Nama Lengkap",
+            "logoUrl" : "https://placehold.co/32x32/png?text=himatif",
+            "thumbnailUrl" : "https://placehold.co/320x120/png?text=himatif",
+            "deskripsi" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas officiis illo voluptates minima earum tempora officia libero, fugiat cupiditate ullam ex, quidem quos sequi reiciendis! Repudiandae consequatur dolorum voluptatibus optio?"
+        },
+        {
+            "nama" : "Divisi 1",
+            "namaLengkap" : "Divisi 1 - Nama Lengkap",
+            "logoUrl" : "https://placehold.co/32x32/png?text=himatif",
+            "thumbnailUrl" : "https://placehold.co/320x120/png?text=himatif",
+            "deskripsi" : "Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas officiis illo voluptates minima earum tempora officia libero, fugiat cupiditate ullam ex, quidem quos sequi reiciendis! Repudiandae consequatur dolorum voluptatibus optio?"
+        }
+    ]
+}

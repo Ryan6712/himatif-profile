@@ -1,5 +1,5 @@
 <section class="min-w-full bg-background stack section px-3 mt-3 ">
-    <div class="flex flex-col md:flex-row flex-wrap stack-lg lg:mt-0 justify-around">
+    <div class="flex flex-col md:flex-row container stack-lg lg:mt-0 gap-4">
         <div class="flex flex-col stack-lg md:gap-4 max-w-3xl p-3 ">
             <h1 class="capitalize text-2xl font-bold">Himpunan Mahasiswa Tekonologi informasi 
                 <br> ITB YADIKA Bangil
@@ -35,7 +35,7 @@
         </div>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
             <!-- 1 -->
-            <div class="card grid grid-cols-1 justify-evenly bg-surface border border-primary rounded-2xl p-3 gap-4 h-full group group-hover:shadow-lg">
+            <div class="card grid grid-cols-1 justify-evenly bg-primary/30 border border-slate-800/10 rounded-2xl p-3 gap-4 h-full group group-hover:shadow-lg">
                 <div class="header flex flex-row items-center gap-4">
                     <div class="logo border border-primary shadow-sm group-hover:shadow-md p-2 rounded-2xl">
                         <img src="https://placehold.co/32x32/png?text=himatif" alt="">
@@ -49,7 +49,7 @@
                 </p>
             </div>
             <!-- 2 -->
-            <div class="card grid grid-cols-1 justify-evenly bg-surface border border-primary rounded-2xl p-3 gap-4 md:col-span-2 h-full group group-hover:shadow-lg">
+            <div class="card grid grid-cols-1 justify-evenly bg-primary/30 border border-slate-800/10 rounded-2xl p-3 gap-4 md:col-span-2 h-full group group-hover:shadow-lg">
                 <div class="header flex flex-row items-center gap-4">
                     <div class="logo border border-primary shadow-sm group-hover:shadow-md p-2 rounded-2xl">
                         <img src="https://placehold.co/32x32/png?text=himatif" alt="">
@@ -65,7 +65,7 @@
                 </ul>
             </div>
             <!-- 3 -->
-            <div class="card flex flex-col justify-evenly bg-surface border border-primary rounded-2xl p-3 gap-4 md:col-span-3 h-full group group-hover:shadow-lg">
+            <div class="card flex flex-col justify-evenly bg-primary/30 border border-slate-800/10 rounded-2xl p-3 gap-4 md:col-span-3 h-full group group-hover:shadow-lg">
                 <div class="header flex flex-row items-center gap-4">
                     <div class="logo border border-primary shadow-sm group-hover:shadow-md p-2 rounded-2xl">
                         <img src="https://placehold.co/32x32/png?text=himatif" alt="">

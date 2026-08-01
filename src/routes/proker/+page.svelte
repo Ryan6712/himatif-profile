@@ -19,7 +19,7 @@
     </div>
     <div class="proker-wrapper gap-6 grid grid-cols-1 container mt-10">
     {#each proker as item}
-        <div class="proker px-3 py-5 bg-surface border border-primary shadow-xl rounded-2xl flex gap-3 flex-wrap justify-center items-start lg:justify-start group">
+        <div class="proker px-3 py-5 bg-primary/30 border border-slate-800/10 shadow-xl rounded-2xl flex gap-3 flex-wrap justify-center items-start lg:justify-start group">
             <img src={item.thumbnail} alt="">
             <div class="desc flex flex-col">
                 <span class="title font-bold text-2xl">{item.title}</span>
