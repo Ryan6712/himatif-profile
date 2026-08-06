@@ -54,7 +54,7 @@
                 </a>
             </div>
             <ul class="hidden gap-8 md:flex">
-            {#each navItems as item}
+            {#each navItems as item (item.name)}
                 <li><a href="{item.path}" class="hover:text-secondary-hover hover:border-b-2 border-b-secondary-hover capitalize" class:active={page.url.pathname == item.path}>{item.name}</a></li>
             {/each}
             </ul>
@@ -97,8 +97,8 @@
 
     </div>
     <ul class="flex flex-col stack container mt-4 text-primary-text">
-    {#each navItems as item}
-         <li><a href={item.path} class="hover:text-primary text-lg capitalize">{item.name}</a></li>
+    {#each navItems as item (item.name)}
+        <li><a href={item.path} class="hover:text-primary text-lg capitalize">{item.name}</a></li>
     {/each}
     </ul>
     <button class="bg-secondary hover:bg-secondary-hover px-6 py-3 rounded-full text-white mt-auto shadow-md">

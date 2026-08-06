@@ -22,7 +22,7 @@
 
 <section class="min-w-full bg-background stack section px-3 mt-3 ">
     <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {#each devisi as item}
+    {#each devisi as item, i (i)}
         <div class="card grid grid-cols-1 justify-evenly bg-primary/30 border border-slate-800/10 rounded-2xl px-3 py-6 gap-4 h-full group group-hover:shadow-lg shadow-md shadow-slate-800/10">
             <div class="header flex flex-col items-start stack-sm">
                 <div class="logo border border-primary shadow-sm group-hover:shadow-md p-2 rounded-2xl ">
