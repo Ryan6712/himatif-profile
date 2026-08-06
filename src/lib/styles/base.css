@@ -1,4 +1,4 @@
-/* src/lib/styles/layout.css */
+/* src/lib/styles/base.css */
 @layer utilities {
     .container {
         @apply mx-auto max-w-7xl;
@@ -31,12 +31,109 @@
     }
 
     .smooth-transition {
-        transition: all ease-in-out 300ms;
+        transition: all var(--duration-normal) var(--ease-out-expo);
     }
 
     .bg-dot-pattern {
-        background-image: radial-gradient(circle at 2px 2px, var(--color-bg-secondary) 1px, transparent 0);
-        background-size: 32px 32px;
-        background-blend-mode: multiply;
+        background-image: radial-gradient(circle at 2px 2px, var(--color-tertiary) 0.8px, transparent 0);
+        background-size: 28px 28px;
+        opacity: 0.35;
+    }
+
+    /* === Glassmorphism === */
+    .glass {
+        background: rgba(237, 242, 228, 0.55);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+    }
+
+    .glass-card {
+        background: linear-gradient(
+            145deg,
+            rgba(123, 237, 79, 0.12) 0%,
+            rgba(45, 155, 90, 0.06) 100%
+        );
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border: 1px solid rgba(123, 237, 79, 0.18);
+    }
+
+    /* === Hover Lift Effect === */
+    .hover-lift {
+        transition: transform var(--duration-normal) var(--ease-out-expo),
+                    box-shadow var(--duration-normal) var(--ease-out-expo),
+                    border-color var(--duration-normal) var(--ease-out-expo);
+    }
+    .hover-lift:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-card-lg);
+    }
+
+    /* === Gradient Text === */
+    .gradient-text {
+        background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    /* === Gradient Background Surface === */
+    .bg-gradient-surface {
+        background: linear-gradient(180deg, var(--color-background) 0%, var(--color-surface) 100%);
+    }
+
+    /* === Badge Pill === */
+    .badge-pill {
+        @apply rounded-full py-2 px-5 font-bold shadow-md;
+        box-shadow: var(--shadow-card-md);
+        transition: box-shadow var(--duration-normal) var(--ease-out-expo),
+                    transform var(--duration-normal) var(--ease-out-expo);
+    }
+    .badge-pill:hover {
+        box-shadow: var(--shadow-card-lg);
+    }
+
+    /* === Gradient Border Bottom (via pseudo) === */
+    .gradient-border-bottom {
+        position: relative;
+    }
+    .gradient-border-bottom::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-secondary) 50%, var(--color-tertiary) 100%);
+        border-radius: 3px;
+    }
+
+    /* === CTA Button === */
+    .btn-cta {
+        @apply rounded-full text-white font-semibold;
+        background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-hover) 100%);
+        box-shadow: var(--shadow-card-md);
+        transition: all var(--duration-normal) var(--ease-out-expo);
+    }
+    .btn-cta:hover {
+        box-shadow: var(--shadow-card-lg), 0 0 20px rgba(45, 155, 90, 0.3);
+        transform: translateY(-2px);
+    }
+    .btn-cta:active {
+        transform: translateY(0);
+        box-shadow: var(--shadow-card);
+    }
+
+    /* === Icon Container === */
+    .icon-container {
+        background: linear-gradient(135deg, rgba(123, 237, 79, 0.2) 0%, rgba(45, 155, 90, 0.12) 100%);
+        border: 1px solid rgba(123, 237, 79, 0.25);
+        @apply p-2.5 rounded-xl;
+        transition: all var(--duration-normal) var(--ease-out-expo);
+    }
+    .icon-container:hover,
+    .group:hover .icon-container {
+        box-shadow: var(--shadow-glow);
+        border-color: rgba(123, 237, 79, 0.4);
     }
 }

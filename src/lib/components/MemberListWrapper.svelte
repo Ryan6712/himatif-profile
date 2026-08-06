@@ -6,9 +6,11 @@
 
 
 <div class="wrapper">
-    <div class="title-wrapper flex flex-row gap-4 items-center pb-2 border-b-4 border-b-tertiary mb-6">
-        <img src="https://placehold.co/48x48/png?text=himatif" alt="">
-        <h1 class="text-xl font-bold">{jabatan}</h1>
+    <div class="title-wrapper flex flex-row gap-4 items-center pb-3 mb-6 gradient-border-bottom relative">
+        <div class="icon-container">
+            <img src="https://placehold.co/48x48/png?text=himatif" alt="" class="w-10 h-10">
+        </div>
+        <h1 class="text-2xl font-bold tracking-wide text-title-text">{jabatan}</h1>
     </div>
 
     <div class="content container">

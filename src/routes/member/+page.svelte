@@ -12,19 +12,20 @@
 </script>
 
 
-<section class="min-w-full bg-background stack section px-3 mt-3 ">
-    <div class="flex flex-col  stack-lg gap-4 container">
-        <div class="header flex flex-col items-start gap-2 justify-center">
-            <span class="label bg-secondary rounded-full py-2 px-5 text-slate-100 font-bold shadow-md capitalize text-center">
+<section class="min-w-full bg-gradient-surface stack section px-3 mt-3 relative overflow-hidden section">
+    <div class="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
+    <div class="flex flex-col stack-lg gap-4 container relative z-10">
+        <div class="header flex flex-col items-start gap-3 justify-center">
+            <span class="badge-pill bg-secondary text-slate-100 capitalize text-center">
                 struktur anggota HIMATIF
             </span>
-            <h1 class="head text-4xl font-bold text-title-text mb-3">Anggota HIMATIF</h1>
-            <p class="max-w-4xl text-lg/7">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, ullam eligendi! Aspernatur cupiditate dolor cumque vitae omnis deleniti illo numquam? Fugiat repellat accusamus assumenda repellendus quidem rem voluptatibus vel dolorum?</p>
+            <h1 class="head text-4xl font-extrabold text-title-text mb-3 tracking-tight">Anggota <span class="gradient-text">HIMATIF</span></h1>
+            <p class="max-w-4xl text-lg/7 leading-relaxed opacity-80">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, ullam eligendi! Aspernatur cupiditate dolor cumque vitae omnis deleniti illo numquam? Fugiat repellat accusamus assumenda repellendus quidem rem voluptatibus vel dolorum?</p>
         </div>
     </div>
 </section>
 
-<section class="list-wrapper container stack-lg">
+<section class="list-wrapper container stack-lg section">
 	<MemberListWrapper jabatan="BPH">
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:justify-items-center">
 		{#each dummyBph as member, i (i)}
