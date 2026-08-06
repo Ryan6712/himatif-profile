@@ -10,11 +10,11 @@
 
 </script>
 
-<div class="card bg-primary/30 border border-slate-800/10 rounded-2xl p-3 gap-4 h-full group group-hover:shadow-lg max-w-100 flex flex-row items-center justify-start w-full">
-    <img src={imageUrl} alt={name} class="rounded-md w-24 h-24 object-cover mb-2" />
-    <div class="card-body">
-        <h2 class="card-title text-lg font-bold">{name}</h2>
+<div class="card glass-card rounded-2xl p-4 gap-4 h-full group hover-lift max-w-100 min-w-75 flex flex-row items-center justify-start w-full">
+    <img src={imageUrl} alt={name} class="rounded-xl w-24 h-24 object-cover ring-2 ring-primary/30 ring-offset-2 ring-offset-background" />
+    <div class="card-body flex flex-col gap-0.5">
+        <h2 class="card-title text-lg font-bold text-title-text">{name}</h2>
         <p class="text-secondary font-semibold">{position}</p>
-        <p class="font-light">{devisi}</p>
+        <p class="font-light opacity-70">{devisi}</p>
     </div>
 </div>
