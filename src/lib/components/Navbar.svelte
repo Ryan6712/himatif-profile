@@ -19,7 +19,7 @@
             path: "/member"
         },
         {
-            name: "proker",
+            name: "program kerja",
             path: "/proker"
         },
         {
@@ -133,7 +133,7 @@
         </button>
 
     </div>
-    <div class="mx-4 mb-4 h-px bg-gradient-to-r from-primary/40 via-secondary/30 to-transparent"></div>
+    <div class="mx-4 mb-4 h-px bg-linear-to-r from-primary/40 via-secondary/30 to-transparent"></div>
     <ul class="flex flex-col container mt-2 text-primary-text">
     {#each navItems as item (item.name)}
         <li><a href={item.path} class="mobile-link text-lg capitalize">{item.name}</a></li>

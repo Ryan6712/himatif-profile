@@ -14,7 +14,7 @@
             path: "/member"
         },
         {
-            name: "proker",
+            name: "program kerja",
             path: "/proker"
         },
         {
@@ -51,7 +51,7 @@
 
 <footer class="bg-surface text-primary-text pt-15 pb-10 relative overflow-hidden">
     <!-- Gradient border top -->
-    <div class="absolute top-0 left-0 right-0 h-[3px] bg-gradient-to-r from-primary via-secondary to-tertiary"></div>
+    <div class="absolute top-0 left-0 right-0 h-0.75 bg-linear-to-r from-primary via-secondary to-tertiary"></div>
 
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
@@ -87,7 +87,7 @@
 
 
         <!-- Divider -->
-        <div class="mb-6 h-px bg-gradient-to-r from-transparent via-secondary/40 to-transparent"></div>
+        <div class="mb-6 h-px bg-linear-to-r from-transparent via-secondary/40 to-transparent"></div>
 
         <!-- Bottom -->
         <div class="flex flex-col md:flex-row items-center justify-between text-sm opacity-60">
