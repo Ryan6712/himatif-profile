@@ -1,6 +1,6 @@
 export const load = async ({ fetch }) => {
     try {
-        const res = await fetch("/dummy-data/devisi.json")
+        const res = await fetch("/data/devisi.json")
 
         if(!res.ok) throw new Error(`error fetching ${res.status}`);
 

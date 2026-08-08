@@ -60,7 +60,7 @@
         <div class="md:col-span-2">
             <img src="https://placehold.co/215x35/png?text=himatif" alt="" class="w-auto h-8 mb-3">
             <p class="text-sm leading-relaxed opacity-75">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repudiandae, 
+                Himpunan Mahasiswa Teknologi Informasi ITB Yadika adalah wadah bagi mahasiswa Teknologi Informasi untuk berkolaborasi, mengeksplorasi, dan mengembangkan diri dalam bidang teknologi informasi. 
             </p>
         </div>
 
@@ -77,7 +77,7 @@
         <div class="md:text-end">
             <h4 class="text-lg font-semibold text-title-text mb-4">Menu</h4>
             <ul class="stack-sm text-sm">
-            {#each navItems as item}
+            {#each navItems as item, i (i)}
                 <li><a href={item.path} class="footer-link capitalize">{item.name}</a></li>
             {/each}
             </ul>

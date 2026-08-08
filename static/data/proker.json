@@ -1,0 +1,34 @@
+{
+    "proker" : [
+        {
+            "title" : "Upgrading Organisasi",
+            "date": "2024-06-01",
+            "thumbnail": "https://placehold.co/400x230/png?text=himatif",
+            "description": "Program Upgrading Organisasi adalah kegiatan yang bertujuan untuk meningkatkan kemampuan dan pengetahuan anggota HIMATIF dalam mengelola organisasi. Kegiatan ini mencakup pelatihan, workshop, dan diskusi yang dirancang untuk memperkuat struktur organisasi dan meningkatkan efektivitas kerja tim." 
+        },
+        {
+            "title" : "Lomba Slicing Design tingkat SMA/SMK",
+            "date": "2026-05-21",
+            "thumbnail": "https://placehold.co/400x230/png?text=himatif",
+            "description": "Lomba Slicing Design tingkat SMA/SMK adalah ajang kompetisi yang diadakan untuk mendorong kreativitas dan bakat peserta dalam bidang desain. Lomba ini memberikan platform bagi siswa SMA/SMK untuk menunjukkan kemampuan mereka dalam membuat desain yang inovatif dan menarik." 
+        },
+        {
+            "title" : "HIMATIF Introductory Program",
+            "date": "Upcoming",
+            "thumbnail": "https://placehold.co/400x230/png?text=himatif",
+            "description": "HIMATIF Introductory Program adalah program yang dirancang untuk memperkenalkan anggota HIMATIF kepada kegiatan dan struktur organisasi. Kegiatan ini mencakup sesi pengenalan, diskusi, dan aktivitas yang bertujuan untuk membekali peserta dengan pemahaman dasar tentang HIMATIF."
+        },
+        {
+            "title" : "HIMATIF ITB Yadika Open Recruitment",
+            "date": "Upcoming",
+            "thumbnail": "https://placehold.co/400x230/png?text=himatif",
+            "description": "Open Recruitment HIMATIF ITB Yadika adalah proses seleksi untuk mencari anggota baru yang memiliki minat dan bakat di bidang teknologi informasi. Kegiatan ini melibatkan serangkaian tes dan wawancara untuk memastikan calon anggota memiliki kompetensi yang sesuai dengan visi dan misi HIMATIF."
+        },
+        {
+            "title" : "Jatim Developer Day - Local Organizing Committee",
+            "date": "Upcoming",
+            "thumbnail": "https://placehold.co/400x230/png?text=himatif",
+            "description": "Jatim Developer Day adalah acara tahunan yang diselenggarakan untuk mempertemukan para pengembang perangkat lunak, profesional IT, dan komunitas teknologi di Jawa Timur. Local Organizing Committee bertanggung jawab untuk mengatur logistik, koordinasi, dan pelaksanaan acara agar berjalan lancar dan sukses." 
+        }
+    ]
+}

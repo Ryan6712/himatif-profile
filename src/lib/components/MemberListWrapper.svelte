@@ -1,5 +1,8 @@
 <script lang="ts">
-    let { jabatan = "himatif" , children } = $props()
+    import type { Snippet } from "svelte";
+
+
+    let { jabatan = "himatif", icon, children }: { jabatan?: string; icon: Snippet; children: Snippet } = $props()
 
 
 </script>
@@ -7,8 +10,8 @@
 
 <div class="wrapper">
     <div class="title-wrapper flex flex-row gap-4 items-center pb-3 mb-6 gradient-border-bottom relative">
-        <div class="icon-container">
-            <img src="https://placehold.co/48x48/png?text=himatif" alt="" class="w-10 h-10">
+        <div class="icon-container  flex justify-center items-center">
+            {@render icon()}
         </div>
         <h1 class="text-2xl font-bold tracking-wide text-title-text">{jabatan}</h1>
     </div>
@@ -17,8 +20,3 @@
         {@render children()}
     </div>
 </div>
-
-
-<style>
-  
-</style>

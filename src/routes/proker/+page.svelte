@@ -34,17 +34,18 @@
             Program <span class="gradient-text">Kerja</span>
         </h1>
         <h2 class="max-w-3xl leading-relaxed opacity-80 text-lg">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus excepturi sunt architecto nisi ea placeat beatae nostrum perspiciatis numquam magnam. Voluptatem quisquam maiores consectetur eius neque cumque. Aspernatur, voluptatem ipsum?
+            Program kerja HIMATIF ITB Yadika adalah inisiatif yang dirancang untuk mendorong kolaborasi, inovasi, dan pengembangan diri mahasiswa Teknologi Informasi. Setiap program kerja dirancang untuk memberikan pengalaman berharga, memperluas wawasan, dan membangun keterampilan yang relevan dengan dunia teknologi informasi.
         </h2>
     </div>
     <div class="proker-wrapper gap-6 grid grid-cols-1 container mt-10 relative z-10">
-    {#each proker as item}
+    {#each proker as item, i (i)}
         <div class="proker px-4 py-6 glass-card rounded-2xl flex gap-4 flex-wrap justify-center items-start lg:justify-start group hover-lift" style="box-shadow: var(--shadow-card-md);">
             <img src={item.thumbnail} alt="" class="rounded-xl" style="box-shadow: var(--shadow-card);">
             <div class="desc flex flex-col">
                 <span class="title font-extrabold text-2xl text-title-text tracking-tight">{item.title}</span>
+                <span class="date text-secondary font-semibold text-sm mt-2">{item.date ? item.date : 'Tanggal tidak tersedia'}</span>
                 <p class="max-w-2xl mt-5 leading-relaxed opacity-85">{item.description}</p>
-                <a href="/" class="read-more mt-4 text-secondary font-semibold inline-flex items-center gap-1">baca selengkapnya <span class="group-hover:ms-3 transition-all ease-in-out duration-300">&rarr;</span></a>
+                <a href="/proker/proker-detail" class="read-more mt-4 text-secondary font-semibold inline-flex items-center gap-1">baca selengkapnya <span class="group-hover:ms-3 transition-all ease-in-out duration-300">&rarr;</span></a>
             </div>
         </div>
     {/each}

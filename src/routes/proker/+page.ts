@@ -1,6 +1,6 @@
 export const load = async ({ fetch }) => {
     try {
-        const res = await fetch("/dummy-data/proker.json")
+        const res = await fetch("/data/proker.json")
 
         if(!res.ok) throw new Error(`error fetching ${res.status}`);
 

@@ -4,6 +4,13 @@
 	import Member from "$lib/components/memberCard/Member.svelte";
 	import MemberListWrapper from "$lib/components/MemberListWrapper.svelte";
 
+	import { Landmark, UserStar, Users } from "@lucide/svelte";
+	import { setLucideProps } from "@lucide/svelte";
+
+	setLucideProps({
+		strokeWidth: 2
+	});
+
 	let { data } = $props();
 
 	const dummyBph = $derived(data.bph);
@@ -20,13 +27,16 @@
                 struktur anggota HIMATIF
             </span>
             <h1 class="head text-4xl font-extrabold text-title-text mb-3 tracking-tight">Anggota <span class="gradient-text">HIMATIF</span></h1>
-            <p class="max-w-4xl text-lg/7 leading-relaxed opacity-80">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, ullam eligendi! Aspernatur cupiditate dolor cumque vitae omnis deleniti illo numquam? Fugiat repellat accusamus assumenda repellendus quidem rem voluptatibus vel dolorum?</p>
+            <p class="max-w-4xl text-lg/7 leading-relaxed opacity-80">Struktur inti HIMATIF ITB Yadika. Kenali sosok-sosok berdedikasi yang menggerakkan inovasi teknologi dan keunggulan akademik.</p>
         </div>
     </div>
 </section>
 
 <section class="list-wrapper container stack-lg section">
-	<MemberListWrapper jabatan="BPH">
+	<MemberListWrapper jabatan="Badan Pengurus Harian">
+	{#snippet icon()}
+		<Landmark />
+	{/snippet}
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:justify-items-center">
 		{#each dummyBph as member, i (i)}
 			<Bph name={member.name} position={member.position} imageUrl={member.imageUrl} />
@@ -35,7 +45,10 @@
 	
 	</MemberListWrapper>
 
-	<MemberListWrapper jabatan="Kadiv">
+	<MemberListWrapper jabatan="Ketua Divisi">
+	{#snippet icon()}
+		<UserStar />
+	{/snippet}
 		<div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-items-center">
 			{#each dummyKadiv as member, i (i)}
 				<Kadiv name={member.name} position={member.position} imageUrl={member.imageUrl} devisi={member.devisi} />
@@ -43,7 +56,10 @@
 		</div>
 	</MemberListWrapper>
 
-	<MemberListWrapper jabatan="Member">
+	<MemberListWrapper jabatan="Anggota">
+	{#snippet icon()}
+		<Users />
+	{/snippet}
 		<div class=" grid-autofit justify-items-center">
 			{#each dummyMember as member, i (i)}
 				<Member name={member.name} devisi={member.devisi} imageUrl={member.imageUrl} />

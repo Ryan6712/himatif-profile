@@ -1,6 +1,7 @@
 <script lang="ts">
     import { page } from "$app/state";
 	import { fade, fly } from "svelte/transition";
+    import { Menu, X } from "@lucide/svelte"
 
     let isOpen = $state(false);
 
@@ -108,9 +109,7 @@
                 aria-controls="mobile-menu"
                 class="btn btn-primary relative flex h-8 w-8 flex-col justify-center items-center rounded-full pointer-events-auto md:hidden"
             >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="h-5 w-5">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"></path>
-            </svg>
+            <Menu />
             </button>
         </div>
     </div>
@@ -127,9 +126,7 @@
             aria-controls="mobile-menu"
             class="h-8 w-8 p-2 rounded-full btn btn-primary hover:bg-primary/20 transition-colors"
         >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
+            <X/>
         </button>
 
     </div>

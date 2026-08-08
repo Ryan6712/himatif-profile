@@ -1,0 +1,25 @@
+{
+    "devisi" : [
+        {
+            "nama" : "Kominfo",
+            "namaLengkap" : "Kominfo - Komunikasi dan Informasi",
+            "logoUrl" : "https://placehold.co/32x32/png?text=himatif",
+            "thumbnailUrl" : "https://placehold.co/320x120/png?text=himatif",
+            "deskripsi" : "Pusat pergerakan arus informasi HIMATIF. Departemen Kominfo mengelola seluruh kanal media sosial dan website himpunan. Kami bertugas untuk menyebarkan informasi akademik, event, dan berita terkini dengan desain visual yang profesional dan komunikasi yang terstruktur."
+        },
+        {
+            "nama" : "Humas",
+            "namaLengkap" : "Humas - Hubungan Masyarakat",
+            "logoUrl" : "https://placehold.co/32x32/png?text=himatif",
+            "thumbnailUrl" : "https://placehold.co/320x120/png?text=himatif",
+            "deskripsi" : "Departemen Humas bertugas untuk menjalin komunikasi antara HIMATIF ITB Yadika dengan pihak eksternal, termasuk media massa, institusi lain, dan masyarakat umum. Kami berperan dalam menyebarkan informasi tentang kegiatan dan prestasi HIMATIF secara efektif dan menarik."
+        },
+        {
+            "nama" : "DBM",
+            "namaLengkap" : "DBM - Devisi Bakat dan Minat",
+            "logoUrl" : "https://placehold.co/32x32/png?text=himatif",
+            "thumbnailUrl" : "https://placehold.co/320x120/png?text=himatif",
+            "deskripsi" : "Departemen DBM bertugas untuk mengembangkan bakat dan minat anggota HIMATIF ITB Yadika. Kami menyelenggarakan berbagai kegiatan yang dapat memperkaya pengalaman dan keterampilan anggota himpunan."
+        }
+    ]
+}

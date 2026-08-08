@@ -16,7 +16,7 @@
                 struktur organisasi
             </span>
             <h1 class="head text-4xl font-extrabold text-title-text mb-3 tracking-tight">Devisi <span class="gradient-text">HIMATIF</span></h1>
-            <p class="max-w-4xl text-center text-lg/7 leading-relaxed opacity-80">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint, ullam eligendi! Aspernatur cupiditate dolor cumque vitae omnis deleniti illo numquam? Fugiat repellat accusamus assumenda repellendus quidem rem voluptatibus vel dolorum?</p>
+            <p class="max-w-4xl text-center text-lg/7 leading-relaxed opacity-80">Jelajahi berbagai divisi di dalam HIMATIF ITB Yadika dan lihat bagaimana setiap divisi berkontribusi terhadap misi dan visi organisasi.</p>
         </div>
     </div>
 </section>

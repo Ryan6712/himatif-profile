@@ -1,131 +1,125 @@
 {
     "bph" : [
         {
-            "name": "Muhammad Fadhlan",
-            "position": "Ketua",
+            "name": "Zaskia Az-zara Dewi",
+            "position": "Ketua Umum",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
             "devisi": "bph"
         },
         {
-            "name": "Muhammad Fadhlan",
-            "position": "Ketua",
+            "name": "Haidar 'Ali",
+            "position": "Wakil Ketua Umum",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
             "devisi": "bph"
         },
         {
-            "name": "Muhammad Fadhlan",
-            "position": "Ketua",
+            "name": "Jazilah Nur Intania",
+            "position": "Seketaris",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
             "devisi": "bph"
         },
         {
-            "name": "Muhammad Fadhlan",
-            "position": "Ketua",
-            "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "bph"
-        },
-        {
-            "name": "Muhammad Fadhlan",
-            "position": "Ketua",
+            "name": "Ilmi Nur Rahmawati",
+            "position": "Bendahara",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
             "devisi": "bph"
         }
     ],
     "kadiv" : [
         {
-            "name": "Muhammad Fadhlan",
+            "name": "M. Bayu Adisaputra",
             "position": "Ketua devisi",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "KOMINFO"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Akmal Mirza Oktavianto",
             "position": "Ketua devisi",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "HUMAS"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Moh. Rian Abdullah",
             "position": "Ketua devisi",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "DBM"
         }
     ],
     "member" : [
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Agustia Rizky Ekasari",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "HUMAS"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Nikita Putri Andini",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "KOMINFO"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Fakhrul Mauludin",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "DBM"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Nabila Fatimatul Khusnah",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "KOMINFO"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Muhammad Arthur Rozi",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "KOMINFO"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "M Rafihul Akhiroh",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "DBM"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "M Murtadlo",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "DBM"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Mukhammad Dwi Wahyudin",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "KOMINFO"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Maulana Luthfi Wardana",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "HUMAS"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Asmaul Khusna",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "DBM"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "M. Ainun Najib",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "Alumni"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Fahmi Said Navyanto",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
-            "devisi": "Divisi 1"
+            "devisi": "Alumni"
         },
         {
-            "name": "Muhammad Fadhlan",
+            "name": "Bagus Stiyo Budi",
             "position": "member biasa",
             "imageUrl": "https://placehold.co/96x96/png?text=himatif",
             "devisi": "Divisi 1"

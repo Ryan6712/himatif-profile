@@ -1,3 +1,7 @@
+<script>
+    import  { Rocket, Eye, Gem }  from "@lucide/svelte";
+</script>
+
 <section class="min-w-full bg-gradient-surface stack section px-3 mt-3 relative overflow-hidden">
     <!-- Subtle dot pattern overlay -->
     <div class="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
@@ -7,7 +11,8 @@
                 Himpunan Mahasiswa <span class="gradient-text">Tekonologi Informasi</span>
                 <br> ITB YADIKA Bangil
             </h1>
-            <p class="md:text-base leading-relaxed opacity-80">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur quidem distinctio dolores eum nulla quibusdam architecto, quaerat explicabo pariatur, harum consectetur iure ratione saepe rerum magni aperiam. Quae, expedita et?</p>
+            <p class="md:text-base leading-relaxed opacity-80">Himpunan Mahasiswa Teknologi Informasi ITB Yadika. Wadah kolaborasi,
+eksplorasi, dan pengembangan diri bagi mahasiswa IT.</p>
             <button class="btn-cta py-3 px-7 self-start text-base">
                 <a href="mailto:himatif@stimik.itb.ac.id">Hubungi Kami</a>
             </button>
@@ -26,7 +31,7 @@
         </div>
         <p
         class="max-w-3xl text-center leading-relaxed text-lg/7"
-        >Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti voluptatibus possimus labore, nulla, amet dolores ipsam, quo voluptatum quasi iste ullam suscipit sed ea iusto molestiae alias? Illo, architecto optio!</p>
+        >Himpunan Mahasiswa Teknologi Informasi ITB Yadika adalah wadah bagi mahasiswa Teknologi Informasi untuk berkolaborasi, mengeksplorasi, dan mengembangkan diri dalam bidang teknologi informasi.</p>
     </div>
 </section>
 
@@ -41,46 +46,44 @@
             <div class="card grid grid-cols-1 justify-evenly glass-card rounded-2xl p-4 gap-4 h-full group hover-lift">
                 <div class="header flex flex-row items-center gap-4">
                     <div class="icon-container">
-                        <img src="https://placehold.co/32x32/png?text=himatif" alt="">
+                        <Eye />
                     </div>
                     <div class="title text-title-text font-bold text-lg tracking-wide">
                         Visi
                     </div>
                 </div>
                 <p class="leading-relaxed">
-                    oluptatem voluptatibus pariatur inventore neque excepturi, quam animi distinctio laborum beatae est ab eligendi, facilis vero praesentium minus maiores! Placeat accusamus iure quae modi hic, sequi temporibus in dolores maxime?
+                    Menjadi wadah yang mendorong kolaborasi, eksplorasi, dan pengembangan diri bagi mahasiswa Teknologi Informasi untuk menjadi pemimpin masa depan di era digital.
                 </p>
             </div>
             <!-- 2 -->
             <div class="card grid grid-cols-1 justify-evenly glass-card rounded-2xl p-4 gap-4 md:col-span-2 h-full group hover-lift">
                 <div class="header flex flex-row items-center gap-4">
                     <div class="icon-container">
-                        <img src="https://placehold.co/32x32/png?text=himatif" alt="">
+                        <Rocket />
                     </div>
                     <div class="title text-title-text font-bold text-lg tracking-wide">
                         Misi
                     </div>
                 </div>
                 <ul class="list-disc list-outside ps-5 space-y-2 leading-relaxed">
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia excepturi molestias porro magnam tenetur. Quae quam doloribus, totam delectus recusandae quo hic vero qui a iusto, eos in et beatae.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia excepturi molestias porro magnam tenetur. Quae quam doloribus, totam delectus recusandae quo hic vero qui a iusto, eos in et beatae.</li>
-                    <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia excepturi molestias porro magnam tenetur. Quae quam doloribus, totam delectus recusandae quo hic vero qui a iusto, eos in et beatae.</li>
+                    <li>Menyelenggarakan kegiatan yang mendorong kolaborasi dan komunikasi antar mahasiswa Teknologi Informasi.</li>
+                    <li>Mengadakan kegiatan pembelajaran dan pelatihan untuk meningkatkan kemampuan dan keterampilan mahasiswa.</li>
+                    <li>Memberikan wadah bagi mahasiswa untuk mengeksplorasi minat dan bakat mereka dalam bidang teknologi informasi.</li>
                 </ul>
             </div>
             <!-- 3 -->
             <div class="card flex flex-col justify-evenly glass-card rounded-2xl p-4 gap-4 md:col-span-3 h-full group hover-lift">
                 <div class="header flex flex-row items-center gap-4">
                     <div class="icon-container">
-                        <img src="https://placehold.co/32x32/png?text=himatif" alt="">
+                        <Gem />
                     </div>
                     <div class="title text-title-text font-bold text-lg tracking-wide">
                         Tujuan
                     </div>
                 </div>
                 <p class="leading-relaxed">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae esse reiciendis eaque, ipsam enim iste ipsa recusandae. Aperiam officia et doloribus temporibus, est ea omnis tempora aliquam repellat dolor quibusdam?
-                    Doloribus mollitia quis unde, vero modi debitis maiores qui accusamus a, ipsa aliquam, repudiandae dicta expedita. Dolorem maiores laborum, alias fugiat officiis repudiandae repellendus consequatur. Illum quis quo repellat magnam.
-                    Voluptatem voluptatibus pariatur inventore neque excepturi, quam animi distinctio laborum beatae est ab eligendi, facilis vero praesentium minus maiores! Placeat accusamus iure quae modi hic, sequi temporibus in dolores maxime?
+                    Menjadi wadah yang mendorong kolaborasi, eksplorasi, dan pengembangan diri bagi mahasiswa Teknologi Informasi untuk menjadi pemimpin masa depan di era digital.
                 </p>
             </div>
         </div>
