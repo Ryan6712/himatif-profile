@@ -14,7 +14,7 @@
             <p class="md:text-base leading-relaxed opacity-80">Himpunan Mahasiswa Teknologi Informasi ITB Yadika. Wadah kolaborasi,
 eksplorasi, dan pengembangan diri bagi mahasiswa IT.</p>
             <button class="btn-cta py-3 px-7 self-start text-base">
-                <a href="mailto:himatif@stimik.itb.ac.id">Hubungi Kami</a>
+                <a href="mailto:himatif@stmik-yadika.ac.id">Hubungi Kami</a>
             </button>
         </div>
         <div class="self-center">

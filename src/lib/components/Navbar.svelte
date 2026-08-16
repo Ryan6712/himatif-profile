@@ -97,7 +97,7 @@
             {/each}
             </ul>
             <button class="btn-cta py-2 px-5 hidden md:block pointer-events-auto cursor-pointer">
-                <a href="mailto:himatif@stmik-yadika.ac.id">
+                <a href="mailto:himatif@stmik-yadika.ac.id" data-sveltekit-reload rel="external">
                     Hubungi kami
                 </a>
             </button>
@@ -138,7 +138,9 @@
     </ul>
     <div class="mt-auto mx-4">
         <button class="btn-cta py-3 px-6 w-full">
-            Hubungi kami
+            <a href="mailto:himatif@stmik-yadika.ac.id" data-sveltekit-reload>
+                Hubungi kami
+            </a>
         </button>
     </div>
 </div>
