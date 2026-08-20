@@ -1,0 +1,89 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/lib/server/generated/prisma"
+}
+
+datasource db {
+  provider = "mysql"
+}
+
+model Organization {
+  id           Int      @id @default(1)
+  nama         String   @default("HIMATIF")
+  namaLengkap  String   @default("Himpunan Mahasiswa Informasi ITB Yadika Pasuruan")
+  visi         String   @db.Text
+  misi         String   @db.Text
+  tujuan       String   @db.Text
+  logoSmallUrl String
+  logoBigUrl   String
+  createdAt    DateTime @default(now())
+  updateAt     DateTime @updatedAt
+
+  @@unique([id])
+}
+
+model Devisi {
+  id           Int      @id @default(autoincrement())
+  nama         String   @unique
+  namaLengkap  String
+  logoUrl      String
+  thumbnailUrl String?
+  deskripsi    String   @db.Text
+  members      Member[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([nama])
+}
+
+model Member {
+  id         Int        @id @default(autoincrement())
+  name       String     @unique
+  imageUrl   String
+  memberType MemberType @default(REGULAR)
+  devisi     Devisi?    @relation(fields: [devisiId], references: [id], onDelete: SetNull)
+  devisiId   Int?
+  createdAt  DateTime   @default(now())
+  updateAt   DateTime   @updatedAt
+
+  @@index([memberType])
+  @@index([devisiId])
+}
+
+enum MemberType {
+  REGULAR
+  ALUMNI
+  KADIV
+  BPH
+}
+
+model Proker {
+  id           Int       @id @default(autoincrement())
+  title        String    @unique
+  date         DateTime
+  thumbnailUrl String?
+  description  String    @db.Text
+  content      String    @db.LongText
+  slug         String    @unique
+  publishedAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([slug])
+  @@index([date])
+}
+
+model AdminAccount {
+  id           Int       @id @default(autoincrement())
+  username     String    @unique
+  passwordHash String
+  email        String    @unique
+  lastLogin    DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
