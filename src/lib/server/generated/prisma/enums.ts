@@ -9,7 +9,11 @@
 * 🟢 You can import this file directly.
 */
 
+export const MemberType = {
+  REGULAR: 'REGULAR',
+  ALUMNI: 'ALUMNI',
+  KADIV: 'KADIV',
+  BPH: 'BPH'
+} as const
 
-
-// This file is empty because there are no enums in the schema.
-export {}
+export type MemberType = (typeof MemberType)[keyof typeof MemberType]

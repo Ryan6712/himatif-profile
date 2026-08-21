@@ -24,7 +24,7 @@
 
 # Part 1: PRE-SPRINT REQUIREMENTS
 
-## 📋 Pre-Sprint Checklist
+## 📋 Pre-Sprint Checklist ✅
 
 Sebelum mulai, pastikan semua sudah siap:
 
