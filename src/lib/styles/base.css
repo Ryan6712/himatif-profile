@@ -110,7 +110,7 @@
 
     /* === CTA Button === */
     .btn-cta {
-        @apply rounded-full text-white font-semibold;
+        @apply rounded-lg text-white font-semibold;
         background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-secondary-hover) 100%);
         box-shadow: var(--shadow-card-md);
         transition: all var(--duration-normal) var(--ease-out-expo);

@@ -315,18 +315,18 @@ src/lib/components/admin/
 
 ## Checklist
 
-- [ ] `src/routes/admin/login/+page.server.ts` - Redirect jika sudah login
-- [ ] `src/routes/admin/login/+page.svelte` - Login form dengan authClient
-- [ ] `src/routes/admin/+layout.server.ts` - Auth guard, pass user data
+- [*] `src/routes/admin/login/+page.server.ts` - Redirect jika sudah login
+- [*] `src/routes/admin/login/+page.svelte` - Login form dengan authClient
+- [*] `src/routes/admin/+layout.server.ts` - Auth guard, pass user data
 - [ ] `src/routes/admin/+layout.svelte` - Admin layout (sidebar + header)
 - [ ] `src/lib/components/admin/Sidebar.svelte` - Sidebar navigation component
 - [ ] `src/lib/components/admin/AdminHeader.svelte` - Header component
 - [ ] `src/routes/admin/+page.server.ts` - Dashboard stats loader
 - [ ] `src/routes/admin/+page.svelte` - Dashboard page dengan summary cards
-- [ ] Test: login dengan admin user yang di-seed
-- [ ] Test: akses `/admin` tanpa login -> redirect ke login
-- [ ] Test: akses `/admin/login` saat sudah login -> redirect ke dashboard
-- [ ] Test: logout -> redirect ke login
+- [*] Test: login dengan admin user yang di-seed
+- [*] Test: akses `/admin` tanpa login -> redirect ke login
+- [*] Test: akses `/admin/login` saat sudah login -> redirect ke dashboard
+- [*] Test: logout -> redirect ke login
 - [ ] Test: responsive sidebar (mobile toggle)
 
 ---

@@ -2,11 +2,11 @@
 // Re-export types from Prisma 7 schema
 
 export type {
-  Organization,
-  Devisi,
-  Member,
-  MemberType,
-  Proker
+  organization,
+  devisi,
+  member,
+  member_memberType,
+  proker
 } from '../lib/server/generated/prisma/client.js';
 
 // ============================================

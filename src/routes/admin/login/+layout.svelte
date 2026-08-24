@@ -4,7 +4,7 @@
 	const { children } = $props();
 </script>
 
-<main class="flex flex-col min-h-screen bg-background justify-center items-center ">
+<main class="min-h-screen bg-background">
 	{@render children()}
 </main>
 
