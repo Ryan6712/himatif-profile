@@ -2,6 +2,7 @@ import { betterAuth } from "better-auth";
 import { prismaAdapter } from "better-auth/adapters/prisma";
 import { prisma } from "./db.ts";
 import { username } from "better-auth/plugins";
+import { BETTER_AUTH_URL } from "$env/static/private";
 
 
 export const auth = betterAuth({
@@ -15,7 +16,6 @@ export const auth = betterAuth({
         username()
     ],
     trustedOrigins: [
-    "https://himatif-profile.netlify.app/",
-    "https://himatif-profile.netlify.app/" // antisipasi jika browser mengakses via IP loopback
+        BETTER_AUTH_URL,
     ],
 });
