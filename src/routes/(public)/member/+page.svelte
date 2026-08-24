@@ -13,9 +13,10 @@
 
 	let { data } = $props();
 
-	const dummyBph = $derived(data.bph);
-	const dummyKadiv = $derived(data.kadiv);
-	const dummyMember = $derived(data.member);
+	const bphList = $derived(data.bph);
+	const kadivList = $derived(data.kadiv);
+	const memberList = $derived(data.member);
+	const alumni = $derived(data.alumni);
 </script>
 
 
@@ -38,8 +39,8 @@
 		<Landmark />
 	{/snippet}
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 md:justify-items-center">
-		{#each dummyBph as member, i (i)}
-			<Bph name={member.name} position={member.position} imageUrl={member.imageUrl} />
+		{#each bphList as member (member.id)}
+			<Bph name={member.name} position="Badan Pengurus Harian" imageUrl={member.imageUrl} />
 		{/each}
 	</div>
 	
@@ -50,8 +51,8 @@
 		<UserStar />
 	{/snippet}
 		<div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 justify-items-center">
-			{#each dummyKadiv as member, i (i)}
-				<Kadiv name={member.name} position={member.position} imageUrl={member.imageUrl} devisi={member.devisi} />
+			{#each kadivList as member (member.id)}
+				<Kadiv name={member.name} position="Ketua Divisi" imageUrl={member.imageUrl} devisi={member.devisi?.nama || "-"} />
 			{/each}
 		</div>
 	</MemberListWrapper>
@@ -61,8 +62,19 @@
 		<Users />
 	{/snippet}
 		<div class=" grid-autofit justify-items-center">
-			{#each dummyMember as member, i (i)}
-				<Member name={member.name} devisi={member.devisi} imageUrl={member.imageUrl} />
+			{#each memberList as member (member.id)}
+				<Member name={member.name} devisi={member.devisi?.nama || "-"} imageUrl={member.imageUrl} />
+			{/each}
+		</div>
+	</MemberListWrapper>
+
+	<MemberListWrapper jabatan="Alumni">
+	{#snippet icon()}
+		<Users />
+	{/snippet}
+		<div class=" grid-autofit justify-items-center">
+			{#each alumni as member (member.id)}
+				<Member name={member.name} devisi="-" imageUrl={member.imageUrl} />
 			{/each}
 		</div>
 	</MemberListWrapper>

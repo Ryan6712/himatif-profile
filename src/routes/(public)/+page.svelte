@@ -1,5 +1,30 @@
-<script>
+<script lang="ts">
     import  { Rocket, Eye, Gem }  from "@lucide/svelte";
+    
+    let { data } = $props();
+    
+    // Fallback data if DB is empty
+    const defaultOrg = {
+        nama: "HIMATIF",
+        namaLengkap: "Himpunan Mahasiswa Teknologi Informasi ITB Yadika",
+        logoBigUrl: "https://placehold.co/500x400/png?text=himatif",
+        visi: "Menjadi wadah yang mendorong kolaborasi, eksplorasi, dan pengembangan diri bagi mahasiswa Teknologi Informasi untuk menjadi pemimpin masa depan di era digital.",
+        misi: '["Menyelenggarakan kegiatan yang mendorong kolaborasi dan komunikasi antar mahasiswa Teknologi Informasi.", "Mengadakan kegiatan pembelajaran dan pelatihan untuk meningkatkan kemampuan dan keterampilan mahasiswa.", "Memberikan wadah bagi mahasiswa untuk mengeksplorasi minat dan bakat mereka dalam bidang teknologi informasi."]',
+        tujuan: "Menjadi wadah yang mendorong kolaborasi, eksplorasi, dan pengembangan diri bagi mahasiswa Teknologi Informasi untuk menjadi pemimpin masa depan di era digital."
+    };
+
+    const org = $derived(data.organization || defaultOrg)
+
+    // Parse misi safely
+    const misiList = $derived.by<string[]>(() => {
+		if (!org.misi) return [];
+		try {
+			const parsed = JSON.parse(org.misi);
+			return Array.isArray(parsed) ? parsed : [org.misi];
+		} catch {
+			return org.misi.split('\n').map(s => s.trim()).filter(Boolean);
+		}
+	});
 </script>
 
 <section class="min-w-full bg-gradient-surface stack section px-3 mt-3 relative overflow-hidden">
@@ -8,17 +33,15 @@
     <div class="flex flex-col md:flex-row container stack-lg lg:mt-0 gap-4 relative z-10">
         <div class="flex flex-col stack-lg md:gap-4 max-w-3xl p-3 ">
             <h1 class="capitalize text-3xl md:text-4xl font-extrabold leading-tight tracking-tight">
-                Himpunan Mahasiswa <span class="gradient-text">Tekonologi Informasi</span>
-                <br> ITB YADIKA Bangil
+                {org.namaLengkap}
             </h1>
-            <p class="md:text-base leading-relaxed opacity-80">Himpunan Mahasiswa Teknologi Informasi ITB Yadika. Wadah kolaborasi,
-eksplorasi, dan pengembangan diri bagi mahasiswa IT.</p>
+            <p class="md:text-base leading-relaxed opacity-80">{org.nama} ITB Yadika. Wadah kolaborasi, eksplorasi, dan pengembangan diri bagi mahasiswa IT.</p>
             <button class="btn-cta py-3 px-7 self-start text-base">
                 <a href="mailto:himatif@stmik-yadika.ac.id">Hubungi Kami</a>
             </button>
         </div>
         <div class="self-center">
-            <img src="https://placehold.co/500x400/png?text=himatif" alt="" class="rounded-2xl" style="box-shadow: var(--shadow-card-xl);">
+            <img src={org.logoBigUrl} alt={org.nama} class="rounded-2xl" style="box-shadow: var(--shadow-card-xl);">
         </div>
     </div>
 </section>
@@ -29,9 +52,9 @@ eksplorasi, dan pengembangan diri bagi mahasiswa IT.</p>
         <div class="flex justify-center items-center">
             <span class="badge-pill bg-primary text-title-text">Tentang Kami</span>
         </div>
-        <p
-        class="max-w-3xl text-center leading-relaxed text-lg/7"
-        >Himpunan Mahasiswa Teknologi Informasi ITB Yadika adalah wadah bagi mahasiswa Teknologi Informasi untuk berkolaborasi, mengeksplorasi, dan mengembangkan diri dalam bidang teknologi informasi.</p>
+        <p class="max-w-3xl text-center leading-relaxed text-lg/7">
+            {org.namaLengkap} adalah wadah bagi mahasiswa Teknologi Informasi untuk berkolaborasi, mengeksplorasi, dan mengembangkan diri dalam bidang teknologi informasi.
+        </p>
     </div>
 </section>
 
@@ -53,7 +76,7 @@ eksplorasi, dan pengembangan diri bagi mahasiswa IT.</p>
                     </div>
                 </div>
                 <p class="leading-relaxed">
-                    Menjadi wadah yang mendorong kolaborasi, eksplorasi, dan pengembangan diri bagi mahasiswa Teknologi Informasi untuk menjadi pemimpin masa depan di era digital.
+                    {org.visi}
                 </p>
             </div>
             <!-- 2 -->
@@ -67,9 +90,9 @@ eksplorasi, dan pengembangan diri bagi mahasiswa IT.</p>
                     </div>
                 </div>
                 <ul class="list-disc list-outside ps-5 space-y-2 leading-relaxed">
-                    <li>Menyelenggarakan kegiatan yang mendorong kolaborasi dan komunikasi antar mahasiswa Teknologi Informasi.</li>
-                    <li>Mengadakan kegiatan pembelajaran dan pelatihan untuk meningkatkan kemampuan dan keterampilan mahasiswa.</li>
-                    <li>Memberikan wadah bagi mahasiswa untuk mengeksplorasi minat dan bakat mereka dalam bidang teknologi informasi.</li>
+                    {#each misiList as misiItem (misiItem)}
+                        <li>{misiItem}</li>
+                    {/each}
                 </ul>
             </div>
             <!-- 3 -->
@@ -83,7 +106,7 @@ eksplorasi, dan pengembangan diri bagi mahasiswa IT.</p>
                     </div>
                 </div>
                 <p class="leading-relaxed">
-                    Menjadi wadah yang mendorong kolaborasi, eksplorasi, dan pengembangan diri bagi mahasiswa Teknologi Informasi untuk menjadi pemimpin masa depan di era digital.
+                    {org.tujuan}
                 </p>
             </div>
         </div>

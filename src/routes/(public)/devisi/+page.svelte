@@ -1,9 +1,7 @@
 <script lang="ts">
     let { data } = $props();
 
-    const devisi = $derived(data.devisi);
-
-    
+    const devisiList = $derived(data.devisiList || []);
 </script>
 
 
@@ -23,7 +21,7 @@
 
 <section class="min-w-full bg-background stack section px-3 mt-3 ">
     <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {#each devisi as item, i (i)}
+    {#each devisiList as item, i (item.id)}
         <div class="card grid grid-cols-1 justify-evenly glass-card rounded-2xl px-4 py-6 gap-4 h-full group hover-lift" style="box-shadow: var(--shadow-card-md);">
             <div class="header flex flex-col items-start stack-sm">
                 <div class="icon-container">

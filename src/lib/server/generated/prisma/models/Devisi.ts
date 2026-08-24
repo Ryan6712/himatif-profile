@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Devisi` model and its related types.
+ * This file exports the `devisi` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.ts"
 import type * as Prisma from "../internal/prismaNamespace.ts"
 
 /**
- * Model Devisi
+ * Model devisi
  * 
  */
-export type DevisiModel = runtime.Types.Result.DefaultSelection<Prisma.$DevisiPayload>
+export type devisiModel = runtime.Types.Result.DefaultSelection<Prisma.$devisiPayload>
 
 export type AggregateDevisi = {
   _count: DevisiCountAggregateOutputType | null
@@ -113,37 +113,37 @@ export type DevisiCountAggregateInputType = {
 
 export type DevisiAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Devisi to aggregate.
+   * Filter which devisi to aggregate.
    */
-  where?: Prisma.DevisiWhereInput
+  where?: Prisma.devisiWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Devisis to fetch.
+   * Determine the order of devisis to fetch.
    */
-  orderBy?: Prisma.DevisiOrderByWithRelationInput | Prisma.DevisiOrderByWithRelationInput[]
+  orderBy?: Prisma.devisiOrderByWithRelationInput | Prisma.devisiOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.DevisiWhereUniqueInput
+  cursor?: Prisma.devisiWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Devisis from the position of the cursor.
+   * Take `±n` devisis from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Devisis.
+   * Skip the first `n` devisis.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Devisis
+   * Count returned devisis
   **/
   _count?: true | DevisiCountAggregateInputType
   /**
@@ -183,11 +183,11 @@ export type GetDevisiAggregateType<T extends DevisiAggregateArgs> = {
 
 
 
-export type DevisiGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.DevisiWhereInput
-  orderBy?: Prisma.DevisiOrderByWithAggregationInput | Prisma.DevisiOrderByWithAggregationInput[]
+export type devisiGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.devisiWhereInput
+  orderBy?: Prisma.devisiOrderByWithAggregationInput | Prisma.devisiOrderByWithAggregationInput[]
   by: Prisma.DevisiScalarFieldEnum[] | Prisma.DevisiScalarFieldEnum
-  having?: Prisma.DevisiScalarWhereWithAggregatesInput
+  having?: Prisma.devisiScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: DevisiCountAggregateInputType | true
@@ -213,7 +213,7 @@ export type DevisiGroupByOutputType = {
   _max: DevisiMaxAggregateOutputType | null
 }
 
-export type GetDevisiGroupByPayload<T extends DevisiGroupByArgs> = Prisma.PrismaPromise<
+export type GetDevisiGroupByPayload<T extends devisiGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<DevisiGroupByOutputType, T['by']> &
       {
@@ -228,22 +228,22 @@ export type GetDevisiGroupByPayload<T extends DevisiGroupByArgs> = Prisma.Prisma
 
 
 
-export type DevisiWhereInput = {
-  AND?: Prisma.DevisiWhereInput | Prisma.DevisiWhereInput[]
-  OR?: Prisma.DevisiWhereInput[]
-  NOT?: Prisma.DevisiWhereInput | Prisma.DevisiWhereInput[]
-  id?: Prisma.IntFilter<"Devisi"> | number
-  nama?: Prisma.StringFilter<"Devisi"> | string
-  namaLengkap?: Prisma.StringFilter<"Devisi"> | string
-  logoUrl?: Prisma.StringFilter<"Devisi"> | string
-  thumbnailUrl?: Prisma.StringNullableFilter<"Devisi"> | string | null
-  deskripsi?: Prisma.StringFilter<"Devisi"> | string
-  createdAt?: Prisma.DateTimeFilter<"Devisi"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Devisi"> | Date | string
-  members?: Prisma.MemberListRelationFilter
+export type devisiWhereInput = {
+  AND?: Prisma.devisiWhereInput | Prisma.devisiWhereInput[]
+  OR?: Prisma.devisiWhereInput[]
+  NOT?: Prisma.devisiWhereInput | Prisma.devisiWhereInput[]
+  id?: Prisma.IntFilter<"devisi"> | number
+  nama?: Prisma.StringFilter<"devisi"> | string
+  namaLengkap?: Prisma.StringFilter<"devisi"> | string
+  logoUrl?: Prisma.StringFilter<"devisi"> | string
+  thumbnailUrl?: Prisma.StringNullableFilter<"devisi"> | string | null
+  deskripsi?: Prisma.StringFilter<"devisi"> | string
+  createdAt?: Prisma.DateTimeFilter<"devisi"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"devisi"> | Date | string
+  member?: Prisma.MemberListRelationFilter
 }
 
-export type DevisiOrderByWithRelationInput = {
+export type devisiOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   nama?: Prisma.SortOrder
   namaLengkap?: Prisma.SortOrder
@@ -252,26 +252,26 @@ export type DevisiOrderByWithRelationInput = {
   deskripsi?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  members?: Prisma.MemberOrderByRelationAggregateInput
-  _relevance?: Prisma.DevisiOrderByRelevanceInput
+  member?: Prisma.memberOrderByRelationAggregateInput
+  _relevance?: Prisma.devisiOrderByRelevanceInput
 }
 
-export type DevisiWhereUniqueInput = Prisma.AtLeast<{
+export type devisiWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   nama?: string
-  AND?: Prisma.DevisiWhereInput | Prisma.DevisiWhereInput[]
-  OR?: Prisma.DevisiWhereInput[]
-  NOT?: Prisma.DevisiWhereInput | Prisma.DevisiWhereInput[]
-  namaLengkap?: Prisma.StringFilter<"Devisi"> | string
-  logoUrl?: Prisma.StringFilter<"Devisi"> | string
-  thumbnailUrl?: Prisma.StringNullableFilter<"Devisi"> | string | null
-  deskripsi?: Prisma.StringFilter<"Devisi"> | string
-  createdAt?: Prisma.DateTimeFilter<"Devisi"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Devisi"> | Date | string
-  members?: Prisma.MemberListRelationFilter
+  AND?: Prisma.devisiWhereInput | Prisma.devisiWhereInput[]
+  OR?: Prisma.devisiWhereInput[]
+  NOT?: Prisma.devisiWhereInput | Prisma.devisiWhereInput[]
+  namaLengkap?: Prisma.StringFilter<"devisi"> | string
+  logoUrl?: Prisma.StringFilter<"devisi"> | string
+  thumbnailUrl?: Prisma.StringNullableFilter<"devisi"> | string | null
+  deskripsi?: Prisma.StringFilter<"devisi"> | string
+  createdAt?: Prisma.DateTimeFilter<"devisi"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"devisi"> | Date | string
+  member?: Prisma.MemberListRelationFilter
 }, "id" | "nama">
 
-export type DevisiOrderByWithAggregationInput = {
+export type devisiOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   nama?: Prisma.SortOrder
   namaLengkap?: Prisma.SortOrder
@@ -280,28 +280,28 @@ export type DevisiOrderByWithAggregationInput = {
   deskripsi?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.DevisiCountOrderByAggregateInput
-  _avg?: Prisma.DevisiAvgOrderByAggregateInput
-  _max?: Prisma.DevisiMaxOrderByAggregateInput
-  _min?: Prisma.DevisiMinOrderByAggregateInput
-  _sum?: Prisma.DevisiSumOrderByAggregateInput
+  _count?: Prisma.devisiCountOrderByAggregateInput
+  _avg?: Prisma.devisiAvgOrderByAggregateInput
+  _max?: Prisma.devisiMaxOrderByAggregateInput
+  _min?: Prisma.devisiMinOrderByAggregateInput
+  _sum?: Prisma.devisiSumOrderByAggregateInput
 }
 
-export type DevisiScalarWhereWithAggregatesInput = {
-  AND?: Prisma.DevisiScalarWhereWithAggregatesInput | Prisma.DevisiScalarWhereWithAggregatesInput[]
-  OR?: Prisma.DevisiScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.DevisiScalarWhereWithAggregatesInput | Prisma.DevisiScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"Devisi"> | number
-  nama?: Prisma.StringWithAggregatesFilter<"Devisi"> | string
-  namaLengkap?: Prisma.StringWithAggregatesFilter<"Devisi"> | string
-  logoUrl?: Prisma.StringWithAggregatesFilter<"Devisi"> | string
-  thumbnailUrl?: Prisma.StringNullableWithAggregatesFilter<"Devisi"> | string | null
-  deskripsi?: Prisma.StringWithAggregatesFilter<"Devisi"> | string
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Devisi"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Devisi"> | Date | string
+export type devisiScalarWhereWithAggregatesInput = {
+  AND?: Prisma.devisiScalarWhereWithAggregatesInput | Prisma.devisiScalarWhereWithAggregatesInput[]
+  OR?: Prisma.devisiScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.devisiScalarWhereWithAggregatesInput | Prisma.devisiScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"devisi"> | number
+  nama?: Prisma.StringWithAggregatesFilter<"devisi"> | string
+  namaLengkap?: Prisma.StringWithAggregatesFilter<"devisi"> | string
+  logoUrl?: Prisma.StringWithAggregatesFilter<"devisi"> | string
+  thumbnailUrl?: Prisma.StringNullableWithAggregatesFilter<"devisi"> | string | null
+  deskripsi?: Prisma.StringWithAggregatesFilter<"devisi"> | string
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"devisi"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"devisi"> | Date | string
 }
 
-export type DevisiCreateInput = {
+export type devisiCreateInput = {
   nama: string
   namaLengkap: string
   logoUrl: string
@@ -309,10 +309,10 @@ export type DevisiCreateInput = {
   deskripsi: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.MemberCreateNestedManyWithoutDevisiInput
+  member?: Prisma.memberCreateNestedManyWithoutDevisiInput
 }
 
-export type DevisiUncheckedCreateInput = {
+export type devisiUncheckedCreateInput = {
   id?: number
   nama: string
   namaLengkap: string
@@ -321,10 +321,10 @@ export type DevisiUncheckedCreateInput = {
   deskripsi: string
   createdAt?: Date | string
   updatedAt?: Date | string
-  members?: Prisma.MemberUncheckedCreateNestedManyWithoutDevisiInput
+  member?: Prisma.memberUncheckedCreateNestedManyWithoutDevisiInput
 }
 
-export type DevisiUpdateInput = {
+export type devisiUpdateInput = {
   nama?: Prisma.StringFieldUpdateOperationsInput | string
   namaLengkap?: Prisma.StringFieldUpdateOperationsInput | string
   logoUrl?: Prisma.StringFieldUpdateOperationsInput | string
@@ -332,10 +332,10 @@ export type DevisiUpdateInput = {
   deskripsi?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.MemberUpdateManyWithoutDevisiNestedInput
+  member?: Prisma.memberUpdateManyWithoutDevisiNestedInput
 }
 
-export type DevisiUncheckedUpdateInput = {
+export type devisiUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   nama?: Prisma.StringFieldUpdateOperationsInput | string
   namaLengkap?: Prisma.StringFieldUpdateOperationsInput | string
@@ -344,10 +344,10 @@ export type DevisiUncheckedUpdateInput = {
   deskripsi?: Prisma.StringFieldUpdateOperationsInput | string
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  members?: Prisma.MemberUncheckedUpdateManyWithoutDevisiNestedInput
+  member?: Prisma.memberUncheckedUpdateManyWithoutDevisiNestedInput
 }
 
-export type DevisiCreateManyInput = {
+export type devisiCreateManyInput = {
   id?: number
   nama: string
   namaLengkap: string
@@ -358,7 +358,7 @@ export type DevisiCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type DevisiUpdateManyMutationInput = {
+export type devisiUpdateManyMutationInput = {
   nama?: Prisma.StringFieldUpdateOperationsInput | string
   namaLengkap?: Prisma.StringFieldUpdateOperationsInput | string
   logoUrl?: Prisma.StringFieldUpdateOperationsInput | string
@@ -368,7 +368,7 @@ export type DevisiUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DevisiUncheckedUpdateManyInput = {
+export type devisiUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   nama?: Prisma.StringFieldUpdateOperationsInput | string
   namaLengkap?: Prisma.StringFieldUpdateOperationsInput | string
@@ -379,13 +379,13 @@ export type DevisiUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DevisiOrderByRelevanceInput = {
-  fields: Prisma.DevisiOrderByRelevanceFieldEnum | Prisma.DevisiOrderByRelevanceFieldEnum[]
+export type devisiOrderByRelevanceInput = {
+  fields: Prisma.devisiOrderByRelevanceFieldEnum | Prisma.devisiOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type DevisiCountOrderByAggregateInput = {
+export type devisiCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nama?: Prisma.SortOrder
   namaLengkap?: Prisma.SortOrder
@@ -396,22 +396,11 @@ export type DevisiCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type DevisiAvgOrderByAggregateInput = {
+export type devisiAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
 }
 
-export type DevisiMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  nama?: Prisma.SortOrder
-  namaLengkap?: Prisma.SortOrder
-  logoUrl?: Prisma.SortOrder
-  thumbnailUrl?: Prisma.SortOrder
-  deskripsi?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
-}
-
-export type DevisiMinOrderByAggregateInput = {
+export type devisiMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   nama?: Prisma.SortOrder
   namaLengkap?: Prisma.SortOrder
@@ -422,36 +411,51 @@ export type DevisiMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type DevisiSumOrderByAggregateInput = {
+export type devisiMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  nama?: Prisma.SortOrder
+  namaLengkap?: Prisma.SortOrder
+  logoUrl?: Prisma.SortOrder
+  thumbnailUrl?: Prisma.SortOrder
+  deskripsi?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type devisiSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
 }
 
 export type DevisiNullableScalarRelationFilter = {
-  is?: Prisma.DevisiWhereInput | null
-  isNot?: Prisma.DevisiWhereInput | null
+  is?: Prisma.devisiWhereInput | null
+  isNot?: Prisma.devisiWhereInput | null
 }
 
-export type NullableStringFieldUpdateOperationsInput = {
-  set?: string | null
+export type IntFieldUpdateOperationsInput = {
+  set?: number
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
 }
 
-export type DevisiCreateNestedOneWithoutMembersInput = {
-  create?: Prisma.XOR<Prisma.DevisiCreateWithoutMembersInput, Prisma.DevisiUncheckedCreateWithoutMembersInput>
-  connectOrCreate?: Prisma.DevisiCreateOrConnectWithoutMembersInput
-  connect?: Prisma.DevisiWhereUniqueInput
+export type devisiCreateNestedOneWithoutMemberInput = {
+  create?: Prisma.XOR<Prisma.devisiCreateWithoutMemberInput, Prisma.devisiUncheckedCreateWithoutMemberInput>
+  connectOrCreate?: Prisma.devisiCreateOrConnectWithoutMemberInput
+  connect?: Prisma.devisiWhereUniqueInput
 }
 
-export type DevisiUpdateOneWithoutMembersNestedInput = {
-  create?: Prisma.XOR<Prisma.DevisiCreateWithoutMembersInput, Prisma.DevisiUncheckedCreateWithoutMembersInput>
-  connectOrCreate?: Prisma.DevisiCreateOrConnectWithoutMembersInput
-  upsert?: Prisma.DevisiUpsertWithoutMembersInput
-  disconnect?: Prisma.DevisiWhereInput | boolean
-  delete?: Prisma.DevisiWhereInput | boolean
-  connect?: Prisma.DevisiWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.DevisiUpdateToOneWithWhereWithoutMembersInput, Prisma.DevisiUpdateWithoutMembersInput>, Prisma.DevisiUncheckedUpdateWithoutMembersInput>
+export type devisiUpdateOneWithoutMemberNestedInput = {
+  create?: Prisma.XOR<Prisma.devisiCreateWithoutMemberInput, Prisma.devisiUncheckedCreateWithoutMemberInput>
+  connectOrCreate?: Prisma.devisiCreateOrConnectWithoutMemberInput
+  upsert?: Prisma.devisiUpsertWithoutMemberInput
+  disconnect?: Prisma.devisiWhereInput | boolean
+  delete?: Prisma.devisiWhereInput | boolean
+  connect?: Prisma.devisiWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.devisiUpdateToOneWithWhereWithoutMemberInput, Prisma.devisiUpdateWithoutMemberInput>, Prisma.devisiUncheckedUpdateWithoutMemberInput>
 }
 
-export type DevisiCreateWithoutMembersInput = {
+export type devisiCreateWithoutMemberInput = {
   nama: string
   namaLengkap: string
   logoUrl: string
@@ -461,7 +465,7 @@ export type DevisiCreateWithoutMembersInput = {
   updatedAt?: Date | string
 }
 
-export type DevisiUncheckedCreateWithoutMembersInput = {
+export type devisiUncheckedCreateWithoutMemberInput = {
   id?: number
   nama: string
   namaLengkap: string
@@ -472,23 +476,23 @@ export type DevisiUncheckedCreateWithoutMembersInput = {
   updatedAt?: Date | string
 }
 
-export type DevisiCreateOrConnectWithoutMembersInput = {
-  where: Prisma.DevisiWhereUniqueInput
-  create: Prisma.XOR<Prisma.DevisiCreateWithoutMembersInput, Prisma.DevisiUncheckedCreateWithoutMembersInput>
+export type devisiCreateOrConnectWithoutMemberInput = {
+  where: Prisma.devisiWhereUniqueInput
+  create: Prisma.XOR<Prisma.devisiCreateWithoutMemberInput, Prisma.devisiUncheckedCreateWithoutMemberInput>
 }
 
-export type DevisiUpsertWithoutMembersInput = {
-  update: Prisma.XOR<Prisma.DevisiUpdateWithoutMembersInput, Prisma.DevisiUncheckedUpdateWithoutMembersInput>
-  create: Prisma.XOR<Prisma.DevisiCreateWithoutMembersInput, Prisma.DevisiUncheckedCreateWithoutMembersInput>
-  where?: Prisma.DevisiWhereInput
+export type devisiUpsertWithoutMemberInput = {
+  update: Prisma.XOR<Prisma.devisiUpdateWithoutMemberInput, Prisma.devisiUncheckedUpdateWithoutMemberInput>
+  create: Prisma.XOR<Prisma.devisiCreateWithoutMemberInput, Prisma.devisiUncheckedCreateWithoutMemberInput>
+  where?: Prisma.devisiWhereInput
 }
 
-export type DevisiUpdateToOneWithWhereWithoutMembersInput = {
-  where?: Prisma.DevisiWhereInput
-  data: Prisma.XOR<Prisma.DevisiUpdateWithoutMembersInput, Prisma.DevisiUncheckedUpdateWithoutMembersInput>
+export type devisiUpdateToOneWithWhereWithoutMemberInput = {
+  where?: Prisma.devisiWhereInput
+  data: Prisma.XOR<Prisma.devisiUpdateWithoutMemberInput, Prisma.devisiUncheckedUpdateWithoutMemberInput>
 }
 
-export type DevisiUpdateWithoutMembersInput = {
+export type devisiUpdateWithoutMemberInput = {
   nama?: Prisma.StringFieldUpdateOperationsInput | string
   namaLengkap?: Prisma.StringFieldUpdateOperationsInput | string
   logoUrl?: Prisma.StringFieldUpdateOperationsInput | string
@@ -498,7 +502,7 @@ export type DevisiUpdateWithoutMembersInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type DevisiUncheckedUpdateWithoutMembersInput = {
+export type devisiUncheckedUpdateWithoutMemberInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   nama?: Prisma.StringFieldUpdateOperationsInput | string
   namaLengkap?: Prisma.StringFieldUpdateOperationsInput | string
@@ -515,11 +519,11 @@ export type DevisiUncheckedUpdateWithoutMembersInput = {
  */
 
 export type DevisiCountOutputType = {
-  members: number
+  member: number
 }
 
 export type DevisiCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  members?: boolean | DevisiCountOutputTypeCountMembersArgs
+  member?: boolean | DevisiCountOutputTypeCountMemberArgs
 }
 
 /**
@@ -535,12 +539,12 @@ export type DevisiCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Exten
 /**
  * DevisiCountOutputType without action
  */
-export type DevisiCountOutputTypeCountMembersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.MemberWhereInput
+export type DevisiCountOutputTypeCountMemberArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.memberWhereInput
 }
 
 
-export type DevisiSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type devisiSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   nama?: boolean
   namaLengkap?: boolean
@@ -549,13 +553,13 @@ export type DevisiSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
   deskripsi?: boolean
   createdAt?: boolean
   updatedAt?: boolean
-  members?: boolean | Prisma.Devisi$membersArgs<ExtArgs>
+  member?: boolean | Prisma.devisi$memberArgs<ExtArgs>
   _count?: boolean | Prisma.DevisiCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["devisi"]>
 
 
 
-export type DevisiSelectScalar = {
+export type devisiSelectScalar = {
   id?: boolean
   nama?: boolean
   namaLengkap?: boolean
@@ -566,16 +570,16 @@ export type DevisiSelectScalar = {
   updatedAt?: boolean
 }
 
-export type DevisiOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nama" | "namaLengkap" | "logoUrl" | "thumbnailUrl" | "deskripsi" | "createdAt" | "updatedAt", ExtArgs["result"]["devisi"]>
-export type DevisiInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  members?: boolean | Prisma.Devisi$membersArgs<ExtArgs>
+export type devisiOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "nama" | "namaLengkap" | "logoUrl" | "thumbnailUrl" | "deskripsi" | "createdAt" | "updatedAt", ExtArgs["result"]["devisi"]>
+export type devisiInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  member?: boolean | Prisma.devisi$memberArgs<ExtArgs>
   _count?: boolean | Prisma.DevisiCountOutputTypeDefaultArgs<ExtArgs>
 }
 
-export type $DevisiPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Devisi"
+export type $devisiPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "devisi"
   objects: {
-    members: Prisma.$MemberPayload<ExtArgs>[]
+    member: Prisma.$memberPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -590,18 +594,18 @@ export type $DevisiPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   composites: {}
 }
 
-export type DevisiGetPayload<S extends boolean | null | undefined | DevisiDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$DevisiPayload, S>
+export type devisiGetPayload<S extends boolean | null | undefined | devisiDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$devisiPayload, S>
 
-export type DevisiCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<DevisiFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type devisiCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<devisiFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: DevisiCountAggregateInputType | true
   }
 
-export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Devisi'], meta: { name: 'Devisi' } }
+export interface devisiDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['devisi'], meta: { name: 'devisi' } }
   /**
    * Find zero or one Devisi that matches the filter.
-   * @param {DevisiFindUniqueArgs} args - Arguments to find a Devisi
+   * @param {devisiFindUniqueArgs} args - Arguments to find a Devisi
    * @example
    * // Get one Devisi
    * const devisi = await prisma.devisi.findUnique({
@@ -610,12 +614,12 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findUnique<T extends DevisiFindUniqueArgs>(args: Prisma.SelectSubset<T, DevisiFindUniqueArgs<ExtArgs>>): Prisma.Prisma__DevisiClient<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends devisiFindUniqueArgs>(args: Prisma.SelectSubset<T, devisiFindUniqueArgs<ExtArgs>>): Prisma.Prisma__devisiClient<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Devisi that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {DevisiFindUniqueOrThrowArgs} args - Arguments to find a Devisi
+   * @param {devisiFindUniqueOrThrowArgs} args - Arguments to find a Devisi
    * @example
    * // Get one Devisi
    * const devisi = await prisma.devisi.findUniqueOrThrow({
@@ -624,13 +628,13 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findUniqueOrThrow<T extends DevisiFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, DevisiFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__DevisiClient<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends devisiFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, devisiFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__devisiClient<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Devisi that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DevisiFindFirstArgs} args - Arguments to find a Devisi
+   * @param {devisiFindFirstArgs} args - Arguments to find a Devisi
    * @example
    * // Get one Devisi
    * const devisi = await prisma.devisi.findFirst({
@@ -639,14 +643,14 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findFirst<T extends DevisiFindFirstArgs>(args?: Prisma.SelectSubset<T, DevisiFindFirstArgs<ExtArgs>>): Prisma.Prisma__DevisiClient<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends devisiFindFirstArgs>(args?: Prisma.SelectSubset<T, devisiFindFirstArgs<ExtArgs>>): Prisma.Prisma__devisiClient<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Devisi that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DevisiFindFirstOrThrowArgs} args - Arguments to find a Devisi
+   * @param {devisiFindFirstOrThrowArgs} args - Arguments to find a Devisi
    * @example
    * // Get one Devisi
    * const devisi = await prisma.devisi.findFirstOrThrow({
@@ -655,13 +659,13 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findFirstOrThrow<T extends DevisiFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, DevisiFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__DevisiClient<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends devisiFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, devisiFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__devisiClient<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Devisis that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DevisiFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {devisiFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Devisis
    * const devisis = await prisma.devisi.findMany()
@@ -673,11 +677,11 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * const devisiWithIdOnly = await prisma.devisi.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends DevisiFindManyArgs>(args?: Prisma.SelectSubset<T, DevisiFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends devisiFindManyArgs>(args?: Prisma.SelectSubset<T, devisiFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Devisi.
-   * @param {DevisiCreateArgs} args - Arguments to create a Devisi.
+   * @param {devisiCreateArgs} args - Arguments to create a Devisi.
    * @example
    * // Create one Devisi
    * const Devisi = await prisma.devisi.create({
@@ -687,11 +691,11 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  create<T extends DevisiCreateArgs>(args: Prisma.SelectSubset<T, DevisiCreateArgs<ExtArgs>>): Prisma.Prisma__DevisiClient<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends devisiCreateArgs>(args: Prisma.SelectSubset<T, devisiCreateArgs<ExtArgs>>): Prisma.Prisma__devisiClient<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Devisis.
-   * @param {DevisiCreateManyArgs} args - Arguments to create many Devisis.
+   * @param {devisiCreateManyArgs} args - Arguments to create many Devisis.
    * @example
    * // Create many Devisis
    * const devisi = await prisma.devisi.createMany({
@@ -701,11 +705,11 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    *     
    */
-  createMany<T extends DevisiCreateManyArgs>(args?: Prisma.SelectSubset<T, DevisiCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends devisiCreateManyArgs>(args?: Prisma.SelectSubset<T, devisiCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Devisi.
-   * @param {DevisiDeleteArgs} args - Arguments to delete one Devisi.
+   * @param {devisiDeleteArgs} args - Arguments to delete one Devisi.
    * @example
    * // Delete one Devisi
    * const Devisi = await prisma.devisi.delete({
@@ -715,11 +719,11 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  delete<T extends DevisiDeleteArgs>(args: Prisma.SelectSubset<T, DevisiDeleteArgs<ExtArgs>>): Prisma.Prisma__DevisiClient<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends devisiDeleteArgs>(args: Prisma.SelectSubset<T, devisiDeleteArgs<ExtArgs>>): Prisma.Prisma__devisiClient<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Devisi.
-   * @param {DevisiUpdateArgs} args - Arguments to update one Devisi.
+   * @param {devisiUpdateArgs} args - Arguments to update one Devisi.
    * @example
    * // Update one Devisi
    * const devisi = await prisma.devisi.update({
@@ -732,11 +736,11 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  update<T extends DevisiUpdateArgs>(args: Prisma.SelectSubset<T, DevisiUpdateArgs<ExtArgs>>): Prisma.Prisma__DevisiClient<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends devisiUpdateArgs>(args: Prisma.SelectSubset<T, devisiUpdateArgs<ExtArgs>>): Prisma.Prisma__devisiClient<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Devisis.
-   * @param {DevisiDeleteManyArgs} args - Arguments to filter Devisis to delete.
+   * @param {devisiDeleteManyArgs} args - Arguments to filter Devisis to delete.
    * @example
    * // Delete a few Devisis
    * const { count } = await prisma.devisi.deleteMany({
@@ -746,13 +750,13 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  deleteMany<T extends DevisiDeleteManyArgs>(args?: Prisma.SelectSubset<T, DevisiDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends devisiDeleteManyArgs>(args?: Prisma.SelectSubset<T, devisiDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Devisis.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DevisiUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {devisiUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Devisis
    * const devisi = await prisma.devisi.updateMany({
@@ -765,11 +769,11 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  updateMany<T extends DevisiUpdateManyArgs>(args: Prisma.SelectSubset<T, DevisiUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends devisiUpdateManyArgs>(args: Prisma.SelectSubset<T, devisiUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Devisi.
-   * @param {DevisiUpsertArgs} args - Arguments to update or create a Devisi.
+   * @param {devisiUpsertArgs} args - Arguments to update or create a Devisi.
    * @example
    * // Update or create a Devisi
    * const devisi = await prisma.devisi.upsert({
@@ -784,14 +788,14 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  upsert<T extends DevisiUpsertArgs>(args: Prisma.SelectSubset<T, DevisiUpsertArgs<ExtArgs>>): Prisma.Prisma__DevisiClient<runtime.Types.Result.GetResult<Prisma.$DevisiPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends devisiUpsertArgs>(args: Prisma.SelectSubset<T, devisiUpsertArgs<ExtArgs>>): Prisma.Prisma__devisiClient<runtime.Types.Result.GetResult<Prisma.$devisiPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Devisis.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DevisiCountArgs} args - Arguments to filter Devisis to count.
+   * @param {devisiCountArgs} args - Arguments to filter Devisis to count.
    * @example
    * // Count the number of Devisis
    * const count = await prisma.devisi.count({
@@ -800,8 +804,8 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
   **/
-  count<T extends DevisiCountArgs>(
-    args?: Prisma.Subset<T, DevisiCountArgs>,
+  count<T extends devisiCountArgs>(
+    args?: Prisma.Subset<T, devisiCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -840,7 +844,7 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * Group by Devisi.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {DevisiGroupByArgs} args - Group by arguments.
+   * @param {devisiGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -855,14 +859,14 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * 
   **/
   groupBy<
-    T extends DevisiGroupByArgs,
+    T extends devisiGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: DevisiGroupByArgs['orderBy'] }
-      : { orderBy?: DevisiGroupByArgs['orderBy'] },
+      ? { orderBy: devisiGroupByArgs['orderBy'] }
+      : { orderBy?: devisiGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -911,22 +915,22 @@ export interface DevisiDelegate<ExtArgs extends runtime.Types.Extensions.Interna
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, DevisiGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDevisiGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, devisiGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetDevisiGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Devisi model
+ * Fields of the devisi model
  */
-readonly fields: DevisiFieldRefs;
+readonly fields: devisiFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Devisi.
+ * The delegate class that acts as a "Promise-like" for devisi.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__DevisiClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__devisiClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  members<T extends Prisma.Devisi$membersArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.Devisi$membersArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$MemberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  member<T extends Prisma.devisi$memberArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.devisi$memberArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$memberPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -953,402 +957,402 @@ export interface Prisma__DevisiClient<T, Null = never, ExtArgs extends runtime.T
 
 
 /**
- * Fields of the Devisi model
+ * Fields of the devisi model
  */
-export interface DevisiFieldRefs {
-  readonly id: Prisma.FieldRef<"Devisi", 'Int'>
-  readonly nama: Prisma.FieldRef<"Devisi", 'String'>
-  readonly namaLengkap: Prisma.FieldRef<"Devisi", 'String'>
-  readonly logoUrl: Prisma.FieldRef<"Devisi", 'String'>
-  readonly thumbnailUrl: Prisma.FieldRef<"Devisi", 'String'>
-  readonly deskripsi: Prisma.FieldRef<"Devisi", 'String'>
-  readonly createdAt: Prisma.FieldRef<"Devisi", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Devisi", 'DateTime'>
+export interface devisiFieldRefs {
+  readonly id: Prisma.FieldRef<"devisi", 'Int'>
+  readonly nama: Prisma.FieldRef<"devisi", 'String'>
+  readonly namaLengkap: Prisma.FieldRef<"devisi", 'String'>
+  readonly logoUrl: Prisma.FieldRef<"devisi", 'String'>
+  readonly thumbnailUrl: Prisma.FieldRef<"devisi", 'String'>
+  readonly deskripsi: Prisma.FieldRef<"devisi", 'String'>
+  readonly createdAt: Prisma.FieldRef<"devisi", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"devisi", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Devisi findUnique
+ * devisi findUnique
  */
-export type DevisiFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * Filter, which Devisi to fetch.
+   * Filter, which devisi to fetch.
    */
-  where: Prisma.DevisiWhereUniqueInput
+  where: Prisma.devisiWhereUniqueInput
 }
 
 /**
- * Devisi findUniqueOrThrow
+ * devisi findUniqueOrThrow
  */
-export type DevisiFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * Filter, which Devisi to fetch.
+   * Filter, which devisi to fetch.
    */
-  where: Prisma.DevisiWhereUniqueInput
+  where: Prisma.devisiWhereUniqueInput
 }
 
 /**
- * Devisi findFirst
+ * devisi findFirst
  */
-export type DevisiFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * Filter, which Devisi to fetch.
+   * Filter, which devisi to fetch.
    */
-  where?: Prisma.DevisiWhereInput
+  where?: Prisma.devisiWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Devisis to fetch.
+   * Determine the order of devisis to fetch.
    */
-  orderBy?: Prisma.DevisiOrderByWithRelationInput | Prisma.DevisiOrderByWithRelationInput[]
+  orderBy?: Prisma.devisiOrderByWithRelationInput | Prisma.devisiOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Devisis.
+   * Sets the position for searching for devisis.
    */
-  cursor?: Prisma.DevisiWhereUniqueInput
+  cursor?: Prisma.devisiWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Devisis from the position of the cursor.
+   * Take `±n` devisis from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Devisis.
+   * Skip the first `n` devisis.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Devisis.
+   * Filter by unique combinations of devisis.
    */
   distinct?: Prisma.DevisiScalarFieldEnum | Prisma.DevisiScalarFieldEnum[]
 }
 
 /**
- * Devisi findFirstOrThrow
+ * devisi findFirstOrThrow
  */
-export type DevisiFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * Filter, which Devisi to fetch.
+   * Filter, which devisi to fetch.
    */
-  where?: Prisma.DevisiWhereInput
+  where?: Prisma.devisiWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Devisis to fetch.
+   * Determine the order of devisis to fetch.
    */
-  orderBy?: Prisma.DevisiOrderByWithRelationInput | Prisma.DevisiOrderByWithRelationInput[]
+  orderBy?: Prisma.devisiOrderByWithRelationInput | Prisma.devisiOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Devisis.
+   * Sets the position for searching for devisis.
    */
-  cursor?: Prisma.DevisiWhereUniqueInput
+  cursor?: Prisma.devisiWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Devisis from the position of the cursor.
+   * Take `±n` devisis from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Devisis.
+   * Skip the first `n` devisis.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Devisis.
+   * Filter by unique combinations of devisis.
    */
   distinct?: Prisma.DevisiScalarFieldEnum | Prisma.DevisiScalarFieldEnum[]
 }
 
 /**
- * Devisi findMany
+ * devisi findMany
  */
-export type DevisiFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * Filter, which Devisis to fetch.
+   * Filter, which devisis to fetch.
    */
-  where?: Prisma.DevisiWhereInput
+  where?: Prisma.devisiWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Devisis to fetch.
+   * Determine the order of devisis to fetch.
    */
-  orderBy?: Prisma.DevisiOrderByWithRelationInput | Prisma.DevisiOrderByWithRelationInput[]
+  orderBy?: Prisma.devisiOrderByWithRelationInput | Prisma.devisiOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Devisis.
+   * Sets the position for listing devisis.
    */
-  cursor?: Prisma.DevisiWhereUniqueInput
+  cursor?: Prisma.devisiWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Devisis from the position of the cursor.
+   * Take `±n` devisis from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Devisis.
+   * Skip the first `n` devisis.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Devisis.
+   * Filter by unique combinations of devisis.
    */
   distinct?: Prisma.DevisiScalarFieldEnum | Prisma.DevisiScalarFieldEnum[]
 }
 
 /**
- * Devisi create
+ * devisi create
  */
-export type DevisiCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * The data needed to create a Devisi.
+   * The data needed to create a devisi.
    */
-  data: Prisma.XOR<Prisma.DevisiCreateInput, Prisma.DevisiUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.devisiCreateInput, Prisma.devisiUncheckedCreateInput>
 }
 
 /**
- * Devisi createMany
+ * devisi createMany
  */
-export type DevisiCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Devisis.
+   * The data used to create many devisis.
    */
-  data: Prisma.DevisiCreateManyInput | Prisma.DevisiCreateManyInput[]
+  data: Prisma.devisiCreateManyInput | Prisma.devisiCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Devisi update
+ * devisi update
  */
-export type DevisiUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * The data needed to update a Devisi.
+   * The data needed to update a devisi.
    */
-  data: Prisma.XOR<Prisma.DevisiUpdateInput, Prisma.DevisiUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.devisiUpdateInput, Prisma.devisiUncheckedUpdateInput>
   /**
-   * Choose, which Devisi to update.
+   * Choose, which devisi to update.
    */
-  where: Prisma.DevisiWhereUniqueInput
+  where: Prisma.devisiWhereUniqueInput
 }
 
 /**
- * Devisi updateMany
+ * devisi updateMany
  */
-export type DevisiUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Devisis.
+   * The data used to update devisis.
    */
-  data: Prisma.XOR<Prisma.DevisiUpdateManyMutationInput, Prisma.DevisiUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.devisiUpdateManyMutationInput, Prisma.devisiUncheckedUpdateManyInput>
   /**
-   * Filter which Devisis to update
+   * Filter which devisis to update
    */
-  where?: Prisma.DevisiWhereInput
+  where?: Prisma.devisiWhereInput
   /**
-   * Limit how many Devisis to update.
+   * Limit how many devisis to update.
    */
   limit?: number
 }
 
 /**
- * Devisi upsert
+ * devisi upsert
  */
-export type DevisiUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * The filter to search for the Devisi to update in case it exists.
+   * The filter to search for the devisi to update in case it exists.
    */
-  where: Prisma.DevisiWhereUniqueInput
+  where: Prisma.devisiWhereUniqueInput
   /**
-   * In case the Devisi found by the `where` argument doesn't exist, create a new Devisi with this data.
+   * In case the devisi found by the `where` argument doesn't exist, create a new devisi with this data.
    */
-  create: Prisma.XOR<Prisma.DevisiCreateInput, Prisma.DevisiUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.devisiCreateInput, Prisma.devisiUncheckedCreateInput>
   /**
-   * In case the Devisi was found with the provided `where` argument, update it with this data.
+   * In case the devisi was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.DevisiUpdateInput, Prisma.DevisiUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.devisiUpdateInput, Prisma.devisiUncheckedUpdateInput>
 }
 
 /**
- * Devisi delete
+ * devisi delete
  */
-export type DevisiDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
   /**
-   * Filter which Devisi to delete.
+   * Filter which devisi to delete.
    */
-  where: Prisma.DevisiWhereUniqueInput
+  where: Prisma.devisiWhereUniqueInput
 }
 
 /**
- * Devisi deleteMany
+ * devisi deleteMany
  */
-export type DevisiDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Devisis to delete
+   * Filter which devisis to delete
    */
-  where?: Prisma.DevisiWhereInput
+  where?: Prisma.devisiWhereInput
   /**
-   * Limit how many Devisis to delete.
+   * Limit how many devisis to delete.
    */
   limit?: number
 }
 
 /**
- * Devisi.members
+ * devisi.member
  */
-export type Devisi$membersArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisi$memberArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Member
+   * Select specific fields to fetch from the member
    */
-  select?: Prisma.MemberSelect<ExtArgs> | null
+  select?: Prisma.memberSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Member
+   * Omit specific fields from the member
    */
-  omit?: Prisma.MemberOmit<ExtArgs> | null
+  omit?: Prisma.memberOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.MemberInclude<ExtArgs> | null
-  where?: Prisma.MemberWhereInput
-  orderBy?: Prisma.MemberOrderByWithRelationInput | Prisma.MemberOrderByWithRelationInput[]
-  cursor?: Prisma.MemberWhereUniqueInput
+  include?: Prisma.memberInclude<ExtArgs> | null
+  where?: Prisma.memberWhereInput
+  orderBy?: Prisma.memberOrderByWithRelationInput | Prisma.memberOrderByWithRelationInput[]
+  cursor?: Prisma.memberWhereUniqueInput
   take?: number
   skip?: number
   distinct?: Prisma.MemberScalarFieldEnum | Prisma.MemberScalarFieldEnum[]
 }
 
 /**
- * Devisi without action
+ * devisi without action
  */
-export type DevisiDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type devisiDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Devisi
+   * Select specific fields to fetch from the devisi
    */
-  select?: Prisma.DevisiSelect<ExtArgs> | null
+  select?: Prisma.devisiSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Devisi
+   * Omit specific fields from the devisi
    */
-  omit?: Prisma.DevisiOmit<ExtArgs> | null
+  omit?: Prisma.devisiOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.DevisiInclude<ExtArgs> | null
+  include?: Prisma.devisiInclude<ExtArgs> | null
 }

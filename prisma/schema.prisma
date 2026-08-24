@@ -1,8 +1,3 @@
-// This is your Prisma schema file,
-// learn more about it in the docs: https://pris.ly/d/prisma-schema
-
-// Get a free hosted Postgres database in seconds: `npx create-db`
-
 generator client {
   provider = "prisma-client"
   output   = "../src/lib/server/generated/prisma"
@@ -12,94 +7,26 @@ datasource db {
   provider = "mysql"
 }
 
-model Organization {
-  id           Int      @id @default(1)
-  nama         String   @default("HIMATIF")
-  namaLengkap  String   @default("Himpunan Mahasiswa Informasi ITB Yadika Pasuruan")
-  visi         String   @db.Text
-  misi         String   @db.Text
-  tujuan       String   @db.Text
-  logoSmallUrl String
-  logoBigUrl   String
-  createdAt    DateTime @default(now())
-  updateAt     DateTime @updatedAt
-
-  @@unique([id])
-}
-
-model Devisi {
-  id           Int      @id @default(autoincrement())
-  nama         String   @unique
-  namaLengkap  String
-  logoUrl      String
-  thumbnailUrl String?
-  deskripsi    String   @db.Text
-  members      Member[]
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
-
-  @@index([nama])
-}
-
-model Member {
-  id         Int        @id @default(autoincrement())
-  name       String     @unique
-  imageUrl   String
-  memberType MemberType @default(REGULAR)
-  devisi     Devisi?    @relation(fields: [devisiId], references: [id], onDelete: SetNull)
-  devisiId   Int?
-  createdAt  DateTime   @default(now())
-  updateAt   DateTime   @updatedAt
-
-  @@index([memberType])
-  @@index([devisiId])
-}
-
-enum MemberType {
-  REGULAR
-  ALUMNI
-  KADIV
-  BPH
-}
-
-model Proker {
-  id           Int       @id @default(autoincrement())
-  title        String    @unique
-  date         DateTime
-  thumbnailUrl String?
-  description  String    @db.Text
-  content      String    @db.LongText
-  slug         String    @unique
-  publishedAt  DateTime?
-  createdAt    DateTime  @default(now())
-  updatedAt    DateTime  @updatedAt
-
-  @@index([slug])
-  @@index([date])
-}
-
 model User {
   id              String    @id
   name            String    @db.Text
-  email           String
+  email           String    @unique
   emailVerified   Boolean   @default(false)
   image           String?   @db.Text
   createdAt       DateTime  @default(now())
   updatedAt       DateTime  @updatedAt
-  username        String?
+  username        String?   @unique
   displayUsername String?   @db.Text
-  sessions        Session[]
   accounts        Account[]
+  sessions        Session[]
 
-  @@unique([email])
-  @@unique([username])
   @@map("user")
 }
 
 model Session {
   id        String   @id
   expiresAt DateTime
-  token     String
+  token     String   @unique
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   ipAddress String?  @db.Text
@@ -107,18 +34,16 @@ model Session {
   userId    String
   user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([token])
-  @@index([userId(length: 191)])
+  @@index([userId])
   @@map("session")
 }
 
 model Account {
   id                    String    @id
-  issuer                String    @db.VarChar(191)
-  accountId             String    @db.VarChar(191)
+  issuer                String
+  accountId             String
   providerId            String    @db.Text
   userId                String
-  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
   accessToken           String?   @db.Text
   refreshToken          String?   @db.Text
   idToken               String?   @db.Text
@@ -128,9 +53,10 @@ model Account {
   password              String?   @db.Text
   createdAt             DateTime  @default(now())
   updatedAt             DateTime  @updatedAt
+  user                  User      @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@unique([issuer, accountId], map: "account_issuer_accountId_uidx")
-  @@index([userId(length: 191)])
+  @@index([userId])
   @@map("account")
 }
 
@@ -144,4 +70,68 @@ model Verification {
 
   @@index([identifier(length: 191)])
   @@map("verification")
+}
+
+model devisi {
+  id           Int      @id @default(autoincrement())
+  nama         String   @unique(map: "Devisi_nama_key")
+  namaLengkap  String
+  logoUrl      String
+  thumbnailUrl String?
+  deskripsi    String   @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  member       member[]
+
+  @@index([nama], map: "Devisi_nama_idx")
+}
+
+model member {
+  id         Int               @id @default(autoincrement())
+  name       String            @unique(map: "Member_name_key")
+  imageUrl   String
+  memberType member_memberType @default(REGULAR)
+  devisiId   Int?
+  createdAt  DateTime          @default(now())
+  updateAt   DateTime          @updatedAt
+  devisi     devisi?           @relation(fields: [devisiId], references: [id], map: "Member_devisiId_fkey")
+
+  @@index([devisiId], map: "Member_devisiId_idx")
+  @@index([memberType], map: "Member_memberType_idx")
+}
+
+model organization {
+  id           Int      @id @unique(map: "Organization_id_key") @default(1)
+  nama         String   @default("HIMATIF")
+  namaLengkap  String   @default("Himpunan Mahasiswa Informasi ITB Yadika Pasuruan")
+  visi         String   @db.Text
+  misi         String   @db.Text
+  tujuan       String   @db.Text
+  logoSmallUrl String
+  logoBigUrl   String
+  createdAt    DateTime @default(now())
+  updateAt     DateTime @updatedAt
+}
+
+model proker {
+  id           Int       @id @default(autoincrement())
+  title        String    @unique(map: "Proker_title_key")
+  date         DateTime
+  thumbnailUrl String?
+  description  String    @db.Text
+  content      String    @db.LongText
+  slug         String    @unique(map: "Proker_slug_key")
+  publishedAt  DateTime?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@index([date], map: "Proker_date_idx")
+  @@index([slug], map: "Proker_slug_idx")
+}
+
+enum member_memberType {
+  REGULAR
+  ALUMNI
+  KADIV
+  BPH
 }

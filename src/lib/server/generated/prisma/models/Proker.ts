@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `Proker` model and its related types.
+ * This file exports the `proker` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums.ts"
 import type * as Prisma from "../internal/prismaNamespace.ts"
 
 /**
- * Model Proker
+ * Model proker
  * 
  */
-export type ProkerModel = runtime.Types.Result.DefaultSelection<Prisma.$ProkerPayload>
+export type prokerModel = runtime.Types.Result.DefaultSelection<Prisma.$prokerPayload>
 
 export type AggregateProker = {
   _count: ProkerCountAggregateOutputType | null
@@ -125,37 +125,37 @@ export type ProkerCountAggregateInputType = {
 
 export type ProkerAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Proker to aggregate.
+   * Filter which proker to aggregate.
    */
-  where?: Prisma.ProkerWhereInput
+  where?: Prisma.prokerWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Prokers to fetch.
+   * Determine the order of prokers to fetch.
    */
-  orderBy?: Prisma.ProkerOrderByWithRelationInput | Prisma.ProkerOrderByWithRelationInput[]
+  orderBy?: Prisma.prokerOrderByWithRelationInput | Prisma.prokerOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.ProkerWhereUniqueInput
+  cursor?: Prisma.prokerWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Prokers from the position of the cursor.
+   * Take `±n` prokers from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Prokers.
+   * Skip the first `n` prokers.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned Prokers
+   * Count returned prokers
   **/
   _count?: true | ProkerCountAggregateInputType
   /**
@@ -195,11 +195,11 @@ export type GetProkerAggregateType<T extends ProkerAggregateArgs> = {
 
 
 
-export type ProkerGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.ProkerWhereInput
-  orderBy?: Prisma.ProkerOrderByWithAggregationInput | Prisma.ProkerOrderByWithAggregationInput[]
+export type prokerGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.prokerWhereInput
+  orderBy?: Prisma.prokerOrderByWithAggregationInput | Prisma.prokerOrderByWithAggregationInput[]
   by: Prisma.ProkerScalarFieldEnum[] | Prisma.ProkerScalarFieldEnum
-  having?: Prisma.ProkerScalarWhereWithAggregatesInput
+  having?: Prisma.prokerScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: ProkerCountAggregateInputType | true
@@ -227,7 +227,7 @@ export type ProkerGroupByOutputType = {
   _max: ProkerMaxAggregateOutputType | null
 }
 
-export type GetProkerGroupByPayload<T extends ProkerGroupByArgs> = Prisma.PrismaPromise<
+export type GetProkerGroupByPayload<T extends prokerGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<ProkerGroupByOutputType, T['by']> &
       {
@@ -242,23 +242,23 @@ export type GetProkerGroupByPayload<T extends ProkerGroupByArgs> = Prisma.Prisma
 
 
 
-export type ProkerWhereInput = {
-  AND?: Prisma.ProkerWhereInput | Prisma.ProkerWhereInput[]
-  OR?: Prisma.ProkerWhereInput[]
-  NOT?: Prisma.ProkerWhereInput | Prisma.ProkerWhereInput[]
-  id?: Prisma.IntFilter<"Proker"> | number
-  title?: Prisma.StringFilter<"Proker"> | string
-  date?: Prisma.DateTimeFilter<"Proker"> | Date | string
-  thumbnailUrl?: Prisma.StringNullableFilter<"Proker"> | string | null
-  description?: Prisma.StringFilter<"Proker"> | string
-  content?: Prisma.StringFilter<"Proker"> | string
-  slug?: Prisma.StringFilter<"Proker"> | string
-  publishedAt?: Prisma.DateTimeNullableFilter<"Proker"> | Date | string | null
-  createdAt?: Prisma.DateTimeFilter<"Proker"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Proker"> | Date | string
+export type prokerWhereInput = {
+  AND?: Prisma.prokerWhereInput | Prisma.prokerWhereInput[]
+  OR?: Prisma.prokerWhereInput[]
+  NOT?: Prisma.prokerWhereInput | Prisma.prokerWhereInput[]
+  id?: Prisma.IntFilter<"proker"> | number
+  title?: Prisma.StringFilter<"proker"> | string
+  date?: Prisma.DateTimeFilter<"proker"> | Date | string
+  thumbnailUrl?: Prisma.StringNullableFilter<"proker"> | string | null
+  description?: Prisma.StringFilter<"proker"> | string
+  content?: Prisma.StringFilter<"proker"> | string
+  slug?: Prisma.StringFilter<"proker"> | string
+  publishedAt?: Prisma.DateTimeNullableFilter<"proker"> | Date | string | null
+  createdAt?: Prisma.DateTimeFilter<"proker"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"proker"> | Date | string
 }
 
-export type ProkerOrderByWithRelationInput = {
+export type prokerOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -269,26 +269,26 @@ export type ProkerOrderByWithRelationInput = {
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _relevance?: Prisma.ProkerOrderByRelevanceInput
+  _relevance?: Prisma.prokerOrderByRelevanceInput
 }
 
-export type ProkerWhereUniqueInput = Prisma.AtLeast<{
+export type prokerWhereUniqueInput = Prisma.AtLeast<{
   id?: number
   title?: string
   slug?: string
-  AND?: Prisma.ProkerWhereInput | Prisma.ProkerWhereInput[]
-  OR?: Prisma.ProkerWhereInput[]
-  NOT?: Prisma.ProkerWhereInput | Prisma.ProkerWhereInput[]
-  date?: Prisma.DateTimeFilter<"Proker"> | Date | string
-  thumbnailUrl?: Prisma.StringNullableFilter<"Proker"> | string | null
-  description?: Prisma.StringFilter<"Proker"> | string
-  content?: Prisma.StringFilter<"Proker"> | string
-  publishedAt?: Prisma.DateTimeNullableFilter<"Proker"> | Date | string | null
-  createdAt?: Prisma.DateTimeFilter<"Proker"> | Date | string
-  updatedAt?: Prisma.DateTimeFilter<"Proker"> | Date | string
+  AND?: Prisma.prokerWhereInput | Prisma.prokerWhereInput[]
+  OR?: Prisma.prokerWhereInput[]
+  NOT?: Prisma.prokerWhereInput | Prisma.prokerWhereInput[]
+  date?: Prisma.DateTimeFilter<"proker"> | Date | string
+  thumbnailUrl?: Prisma.StringNullableFilter<"proker"> | string | null
+  description?: Prisma.StringFilter<"proker"> | string
+  content?: Prisma.StringFilter<"proker"> | string
+  publishedAt?: Prisma.DateTimeNullableFilter<"proker"> | Date | string | null
+  createdAt?: Prisma.DateTimeFilter<"proker"> | Date | string
+  updatedAt?: Prisma.DateTimeFilter<"proker"> | Date | string
 }, "id" | "title" | "slug">
 
-export type ProkerOrderByWithAggregationInput = {
+export type prokerOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -299,30 +299,30 @@ export type ProkerOrderByWithAggregationInput = {
   publishedAt?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
   updatedAt?: Prisma.SortOrder
-  _count?: Prisma.ProkerCountOrderByAggregateInput
-  _avg?: Prisma.ProkerAvgOrderByAggregateInput
-  _max?: Prisma.ProkerMaxOrderByAggregateInput
-  _min?: Prisma.ProkerMinOrderByAggregateInput
-  _sum?: Prisma.ProkerSumOrderByAggregateInput
+  _count?: Prisma.prokerCountOrderByAggregateInput
+  _avg?: Prisma.prokerAvgOrderByAggregateInput
+  _max?: Prisma.prokerMaxOrderByAggregateInput
+  _min?: Prisma.prokerMinOrderByAggregateInput
+  _sum?: Prisma.prokerSumOrderByAggregateInput
 }
 
-export type ProkerScalarWhereWithAggregatesInput = {
-  AND?: Prisma.ProkerScalarWhereWithAggregatesInput | Prisma.ProkerScalarWhereWithAggregatesInput[]
-  OR?: Prisma.ProkerScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.ProkerScalarWhereWithAggregatesInput | Prisma.ProkerScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"Proker"> | number
-  title?: Prisma.StringWithAggregatesFilter<"Proker"> | string
-  date?: Prisma.DateTimeWithAggregatesFilter<"Proker"> | Date | string
-  thumbnailUrl?: Prisma.StringNullableWithAggregatesFilter<"Proker"> | string | null
-  description?: Prisma.StringWithAggregatesFilter<"Proker"> | string
-  content?: Prisma.StringWithAggregatesFilter<"Proker"> | string
-  slug?: Prisma.StringWithAggregatesFilter<"Proker"> | string
-  publishedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"Proker"> | Date | string | null
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"Proker"> | Date | string
-  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"Proker"> | Date | string
+export type prokerScalarWhereWithAggregatesInput = {
+  AND?: Prisma.prokerScalarWhereWithAggregatesInput | Prisma.prokerScalarWhereWithAggregatesInput[]
+  OR?: Prisma.prokerScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.prokerScalarWhereWithAggregatesInput | Prisma.prokerScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"proker"> | number
+  title?: Prisma.StringWithAggregatesFilter<"proker"> | string
+  date?: Prisma.DateTimeWithAggregatesFilter<"proker"> | Date | string
+  thumbnailUrl?: Prisma.StringNullableWithAggregatesFilter<"proker"> | string | null
+  description?: Prisma.StringWithAggregatesFilter<"proker"> | string
+  content?: Prisma.StringWithAggregatesFilter<"proker"> | string
+  slug?: Prisma.StringWithAggregatesFilter<"proker"> | string
+  publishedAt?: Prisma.DateTimeNullableWithAggregatesFilter<"proker"> | Date | string | null
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"proker"> | Date | string
+  updatedAt?: Prisma.DateTimeWithAggregatesFilter<"proker"> | Date | string
 }
 
-export type ProkerCreateInput = {
+export type prokerCreateInput = {
   title: string
   date: Date | string
   thumbnailUrl?: string | null
@@ -334,7 +334,7 @@ export type ProkerCreateInput = {
   updatedAt?: Date | string
 }
 
-export type ProkerUncheckedCreateInput = {
+export type prokerUncheckedCreateInput = {
   id?: number
   title: string
   date: Date | string
@@ -347,7 +347,7 @@ export type ProkerUncheckedCreateInput = {
   updatedAt?: Date | string
 }
 
-export type ProkerUpdateInput = {
+export type prokerUpdateInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   thumbnailUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -359,7 +359,7 @@ export type ProkerUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ProkerUncheckedUpdateInput = {
+export type prokerUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   title?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -372,7 +372,7 @@ export type ProkerUncheckedUpdateInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ProkerCreateManyInput = {
+export type prokerCreateManyInput = {
   id?: number
   title: string
   date: Date | string
@@ -385,7 +385,7 @@ export type ProkerCreateManyInput = {
   updatedAt?: Date | string
 }
 
-export type ProkerUpdateManyMutationInput = {
+export type prokerUpdateManyMutationInput = {
   title?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   thumbnailUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
@@ -397,7 +397,7 @@ export type ProkerUpdateManyMutationInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ProkerUncheckedUpdateManyInput = {
+export type prokerUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   title?: Prisma.StringFieldUpdateOperationsInput | string
   date?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -410,13 +410,13 @@ export type ProkerUncheckedUpdateManyInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type ProkerOrderByRelevanceInput = {
-  fields: Prisma.ProkerOrderByRelevanceFieldEnum | Prisma.ProkerOrderByRelevanceFieldEnum[]
+export type prokerOrderByRelevanceInput = {
+  fields: Prisma.prokerOrderByRelevanceFieldEnum | Prisma.prokerOrderByRelevanceFieldEnum[]
   sort: Prisma.SortOrder
   search: string
 }
 
-export type ProkerCountOrderByAggregateInput = {
+export type prokerCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -429,24 +429,11 @@ export type ProkerCountOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ProkerAvgOrderByAggregateInput = {
+export type prokerAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
 }
 
-export type ProkerMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  title?: Prisma.SortOrder
-  date?: Prisma.SortOrder
-  thumbnailUrl?: Prisma.SortOrder
-  description?: Prisma.SortOrder
-  content?: Prisma.SortOrder
-  slug?: Prisma.SortOrder
-  publishedAt?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-  updatedAt?: Prisma.SortOrder
-}
-
-export type ProkerMinOrderByAggregateInput = {
+export type prokerMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   title?: Prisma.SortOrder
   date?: Prisma.SortOrder
@@ -459,17 +446,26 @@ export type ProkerMinOrderByAggregateInput = {
   updatedAt?: Prisma.SortOrder
 }
 
-export type ProkerSumOrderByAggregateInput = {
+export type prokerMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  title?: Prisma.SortOrder
+  date?: Prisma.SortOrder
+  thumbnailUrl?: Prisma.SortOrder
+  description?: Prisma.SortOrder
+  content?: Prisma.SortOrder
+  slug?: Prisma.SortOrder
+  publishedAt?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+  updatedAt?: Prisma.SortOrder
+}
+
+export type prokerSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
 }
 
-export type NullableDateTimeFieldUpdateOperationsInput = {
-  set?: Date | string | null
-}
 
 
-
-export type ProkerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type prokerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   title?: boolean
   date?: boolean
@@ -484,7 +480,7 @@ export type ProkerSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
 
 
 
-export type ProkerSelectScalar = {
+export type prokerSelectScalar = {
   id?: boolean
   title?: boolean
   date?: boolean
@@ -497,10 +493,10 @@ export type ProkerSelectScalar = {
   updatedAt?: boolean
 }
 
-export type ProkerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "date" | "thumbnailUrl" | "description" | "content" | "slug" | "publishedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["proker"]>
+export type prokerOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "title" | "date" | "thumbnailUrl" | "description" | "content" | "slug" | "publishedAt" | "createdAt" | "updatedAt", ExtArgs["result"]["proker"]>
 
-export type $ProkerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "Proker"
+export type $prokerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "proker"
   objects: {}
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -517,18 +513,18 @@ export type $ProkerPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   composites: {}
 }
 
-export type ProkerGetPayload<S extends boolean | null | undefined | ProkerDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$ProkerPayload, S>
+export type prokerGetPayload<S extends boolean | null | undefined | prokerDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$prokerPayload, S>
 
-export type ProkerCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<ProkerFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type prokerCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<prokerFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: ProkerCountAggregateInputType | true
   }
 
-export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['Proker'], meta: { name: 'Proker' } }
+export interface prokerDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['proker'], meta: { name: 'proker' } }
   /**
    * Find zero or one Proker that matches the filter.
-   * @param {ProkerFindUniqueArgs} args - Arguments to find a Proker
+   * @param {prokerFindUniqueArgs} args - Arguments to find a Proker
    * @example
    * // Get one Proker
    * const proker = await prisma.proker.findUnique({
@@ -537,12 +533,12 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findUnique<T extends ProkerFindUniqueArgs>(args: Prisma.SelectSubset<T, ProkerFindUniqueArgs<ExtArgs>>): Prisma.Prisma__ProkerClient<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends prokerFindUniqueArgs>(args: Prisma.SelectSubset<T, prokerFindUniqueArgs<ExtArgs>>): Prisma.Prisma__prokerClient<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one Proker that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {ProkerFindUniqueOrThrowArgs} args - Arguments to find a Proker
+   * @param {prokerFindUniqueOrThrowArgs} args - Arguments to find a Proker
    * @example
    * // Get one Proker
    * const proker = await prisma.proker.findUniqueOrThrow({
@@ -551,13 +547,13 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findUniqueOrThrow<T extends ProkerFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, ProkerFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__ProkerClient<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends prokerFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, prokerFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__prokerClient<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Proker that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ProkerFindFirstArgs} args - Arguments to find a Proker
+   * @param {prokerFindFirstArgs} args - Arguments to find a Proker
    * @example
    * // Get one Proker
    * const proker = await prisma.proker.findFirst({
@@ -566,14 +562,14 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findFirst<T extends ProkerFindFirstArgs>(args?: Prisma.SelectSubset<T, ProkerFindFirstArgs<ExtArgs>>): Prisma.Prisma__ProkerClient<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends prokerFindFirstArgs>(args?: Prisma.SelectSubset<T, prokerFindFirstArgs<ExtArgs>>): Prisma.Prisma__prokerClient<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first Proker that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ProkerFindFirstOrThrowArgs} args - Arguments to find a Proker
+   * @param {prokerFindFirstOrThrowArgs} args - Arguments to find a Proker
    * @example
    * // Get one Proker
    * const proker = await prisma.proker.findFirstOrThrow({
@@ -582,13 +578,13 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  findFirstOrThrow<T extends ProkerFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, ProkerFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__ProkerClient<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends prokerFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, prokerFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__prokerClient<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more Prokers that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ProkerFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {prokerFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all Prokers
    * const prokers = await prisma.proker.findMany()
@@ -600,11 +596,11 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * const prokerWithIdOnly = await prisma.proker.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends ProkerFindManyArgs>(args?: Prisma.SelectSubset<T, ProkerFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends prokerFindManyArgs>(args?: Prisma.SelectSubset<T, prokerFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a Proker.
-   * @param {ProkerCreateArgs} args - Arguments to create a Proker.
+   * @param {prokerCreateArgs} args - Arguments to create a Proker.
    * @example
    * // Create one Proker
    * const Proker = await prisma.proker.create({
@@ -614,11 +610,11 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  create<T extends ProkerCreateArgs>(args: Prisma.SelectSubset<T, ProkerCreateArgs<ExtArgs>>): Prisma.Prisma__ProkerClient<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends prokerCreateArgs>(args: Prisma.SelectSubset<T, prokerCreateArgs<ExtArgs>>): Prisma.Prisma__prokerClient<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many Prokers.
-   * @param {ProkerCreateManyArgs} args - Arguments to create many Prokers.
+   * @param {prokerCreateManyArgs} args - Arguments to create many Prokers.
    * @example
    * // Create many Prokers
    * const proker = await prisma.proker.createMany({
@@ -628,11 +624,11 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    *     
    */
-  createMany<T extends ProkerCreateManyArgs>(args?: Prisma.SelectSubset<T, ProkerCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends prokerCreateManyArgs>(args?: Prisma.SelectSubset<T, prokerCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Delete a Proker.
-   * @param {ProkerDeleteArgs} args - Arguments to delete one Proker.
+   * @param {prokerDeleteArgs} args - Arguments to delete one Proker.
    * @example
    * // Delete one Proker
    * const Proker = await prisma.proker.delete({
@@ -642,11 +638,11 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  delete<T extends ProkerDeleteArgs>(args: Prisma.SelectSubset<T, ProkerDeleteArgs<ExtArgs>>): Prisma.Prisma__ProkerClient<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends prokerDeleteArgs>(args: Prisma.SelectSubset<T, prokerDeleteArgs<ExtArgs>>): Prisma.Prisma__prokerClient<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one Proker.
-   * @param {ProkerUpdateArgs} args - Arguments to update one Proker.
+   * @param {prokerUpdateArgs} args - Arguments to update one Proker.
    * @example
    * // Update one Proker
    * const proker = await prisma.proker.update({
@@ -659,11 +655,11 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  update<T extends ProkerUpdateArgs>(args: Prisma.SelectSubset<T, ProkerUpdateArgs<ExtArgs>>): Prisma.Prisma__ProkerClient<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends prokerUpdateArgs>(args: Prisma.SelectSubset<T, prokerUpdateArgs<ExtArgs>>): Prisma.Prisma__prokerClient<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more Prokers.
-   * @param {ProkerDeleteManyArgs} args - Arguments to filter Prokers to delete.
+   * @param {prokerDeleteManyArgs} args - Arguments to filter Prokers to delete.
    * @example
    * // Delete a few Prokers
    * const { count } = await prisma.proker.deleteMany({
@@ -673,13 +669,13 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  deleteMany<T extends ProkerDeleteManyArgs>(args?: Prisma.SelectSubset<T, ProkerDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends prokerDeleteManyArgs>(args?: Prisma.SelectSubset<T, prokerDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more Prokers.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ProkerUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {prokerUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many Prokers
    * const proker = await prisma.proker.updateMany({
@@ -692,11 +688,11 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * })
    * 
    */
-  updateMany<T extends ProkerUpdateManyArgs>(args: Prisma.SelectSubset<T, ProkerUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends prokerUpdateManyArgs>(args: Prisma.SelectSubset<T, prokerUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create or update one Proker.
-   * @param {ProkerUpsertArgs} args - Arguments to update or create a Proker.
+   * @param {prokerUpsertArgs} args - Arguments to update or create a Proker.
    * @example
    * // Update or create a Proker
    * const proker = await prisma.proker.upsert({
@@ -711,14 +707,14 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
    */
-  upsert<T extends ProkerUpsertArgs>(args: Prisma.SelectSubset<T, ProkerUpsertArgs<ExtArgs>>): Prisma.Prisma__ProkerClient<runtime.Types.Result.GetResult<Prisma.$ProkerPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends prokerUpsertArgs>(args: Prisma.SelectSubset<T, prokerUpsertArgs<ExtArgs>>): Prisma.Prisma__prokerClient<runtime.Types.Result.GetResult<Prisma.$prokerPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of Prokers.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ProkerCountArgs} args - Arguments to filter Prokers to count.
+   * @param {prokerCountArgs} args - Arguments to filter Prokers to count.
    * @example
    * // Count the number of Prokers
    * const count = await prisma.proker.count({
@@ -727,8 +723,8 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    *   }
    * })
   **/
-  count<T extends ProkerCountArgs>(
-    args?: Prisma.Subset<T, ProkerCountArgs>,
+  count<T extends prokerCountArgs>(
+    args?: Prisma.Subset<T, prokerCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -767,7 +763,7 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * Group by Proker.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {ProkerGroupByArgs} args - Group by arguments.
+   * @param {prokerGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -782,14 +778,14 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
    * 
   **/
   groupBy<
-    T extends ProkerGroupByArgs,
+    T extends prokerGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: ProkerGroupByArgs['orderBy'] }
-      : { orderBy?: ProkerGroupByArgs['orderBy'] },
+      ? { orderBy: prokerGroupByArgs['orderBy'] }
+      : { orderBy?: prokerGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -838,20 +834,20 @@ export interface ProkerDelegate<ExtArgs extends runtime.Types.Extensions.Interna
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, ProkerGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProkerGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, prokerGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetProkerGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the Proker model
+ * Fields of the proker model
  */
-readonly fields: ProkerFieldRefs;
+readonly fields: prokerFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for Proker.
+ * The delegate class that acts as a "Promise-like" for proker.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__ProkerClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__prokerClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
@@ -879,340 +875,340 @@ export interface Prisma__ProkerClient<T, Null = never, ExtArgs extends runtime.T
 
 
 /**
- * Fields of the Proker model
+ * Fields of the proker model
  */
-export interface ProkerFieldRefs {
-  readonly id: Prisma.FieldRef<"Proker", 'Int'>
-  readonly title: Prisma.FieldRef<"Proker", 'String'>
-  readonly date: Prisma.FieldRef<"Proker", 'DateTime'>
-  readonly thumbnailUrl: Prisma.FieldRef<"Proker", 'String'>
-  readonly description: Prisma.FieldRef<"Proker", 'String'>
-  readonly content: Prisma.FieldRef<"Proker", 'String'>
-  readonly slug: Prisma.FieldRef<"Proker", 'String'>
-  readonly publishedAt: Prisma.FieldRef<"Proker", 'DateTime'>
-  readonly createdAt: Prisma.FieldRef<"Proker", 'DateTime'>
-  readonly updatedAt: Prisma.FieldRef<"Proker", 'DateTime'>
+export interface prokerFieldRefs {
+  readonly id: Prisma.FieldRef<"proker", 'Int'>
+  readonly title: Prisma.FieldRef<"proker", 'String'>
+  readonly date: Prisma.FieldRef<"proker", 'DateTime'>
+  readonly thumbnailUrl: Prisma.FieldRef<"proker", 'String'>
+  readonly description: Prisma.FieldRef<"proker", 'String'>
+  readonly content: Prisma.FieldRef<"proker", 'String'>
+  readonly slug: Prisma.FieldRef<"proker", 'String'>
+  readonly publishedAt: Prisma.FieldRef<"proker", 'DateTime'>
+  readonly createdAt: Prisma.FieldRef<"proker", 'DateTime'>
+  readonly updatedAt: Prisma.FieldRef<"proker", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * Proker findUnique
+ * proker findUnique
  */
-export type ProkerFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * Filter, which Proker to fetch.
+   * Filter, which proker to fetch.
    */
-  where: Prisma.ProkerWhereUniqueInput
+  where: Prisma.prokerWhereUniqueInput
 }
 
 /**
- * Proker findUniqueOrThrow
+ * proker findUniqueOrThrow
  */
-export type ProkerFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * Filter, which Proker to fetch.
+   * Filter, which proker to fetch.
    */
-  where: Prisma.ProkerWhereUniqueInput
+  where: Prisma.prokerWhereUniqueInput
 }
 
 /**
- * Proker findFirst
+ * proker findFirst
  */
-export type ProkerFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * Filter, which Proker to fetch.
+   * Filter, which proker to fetch.
    */
-  where?: Prisma.ProkerWhereInput
+  where?: Prisma.prokerWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Prokers to fetch.
+   * Determine the order of prokers to fetch.
    */
-  orderBy?: Prisma.ProkerOrderByWithRelationInput | Prisma.ProkerOrderByWithRelationInput[]
+  orderBy?: Prisma.prokerOrderByWithRelationInput | Prisma.prokerOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Prokers.
+   * Sets the position for searching for prokers.
    */
-  cursor?: Prisma.ProkerWhereUniqueInput
+  cursor?: Prisma.prokerWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Prokers from the position of the cursor.
+   * Take `±n` prokers from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Prokers.
+   * Skip the first `n` prokers.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Prokers.
+   * Filter by unique combinations of prokers.
    */
   distinct?: Prisma.ProkerScalarFieldEnum | Prisma.ProkerScalarFieldEnum[]
 }
 
 /**
- * Proker findFirstOrThrow
+ * proker findFirstOrThrow
  */
-export type ProkerFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * Filter, which Proker to fetch.
+   * Filter, which proker to fetch.
    */
-  where?: Prisma.ProkerWhereInput
+  where?: Prisma.prokerWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Prokers to fetch.
+   * Determine the order of prokers to fetch.
    */
-  orderBy?: Prisma.ProkerOrderByWithRelationInput | Prisma.ProkerOrderByWithRelationInput[]
+  orderBy?: Prisma.prokerOrderByWithRelationInput | Prisma.prokerOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for Prokers.
+   * Sets the position for searching for prokers.
    */
-  cursor?: Prisma.ProkerWhereUniqueInput
+  cursor?: Prisma.prokerWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Prokers from the position of the cursor.
+   * Take `±n` prokers from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Prokers.
+   * Skip the first `n` prokers.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Prokers.
+   * Filter by unique combinations of prokers.
    */
   distinct?: Prisma.ProkerScalarFieldEnum | Prisma.ProkerScalarFieldEnum[]
 }
 
 /**
- * Proker findMany
+ * proker findMany
  */
-export type ProkerFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * Filter, which Prokers to fetch.
+   * Filter, which prokers to fetch.
    */
-  where?: Prisma.ProkerWhereInput
+  where?: Prisma.prokerWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of Prokers to fetch.
+   * Determine the order of prokers to fetch.
    */
-  orderBy?: Prisma.ProkerOrderByWithRelationInput | Prisma.ProkerOrderByWithRelationInput[]
+  orderBy?: Prisma.prokerOrderByWithRelationInput | Prisma.prokerOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing Prokers.
+   * Sets the position for listing prokers.
    */
-  cursor?: Prisma.ProkerWhereUniqueInput
+  cursor?: Prisma.prokerWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` Prokers from the position of the cursor.
+   * Take `±n` prokers from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` Prokers.
+   * Skip the first `n` prokers.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of Prokers.
+   * Filter by unique combinations of prokers.
    */
   distinct?: Prisma.ProkerScalarFieldEnum | Prisma.ProkerScalarFieldEnum[]
 }
 
 /**
- * Proker create
+ * proker create
  */
-export type ProkerCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * The data needed to create a Proker.
+   * The data needed to create a proker.
    */
-  data: Prisma.XOR<Prisma.ProkerCreateInput, Prisma.ProkerUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.prokerCreateInput, Prisma.prokerUncheckedCreateInput>
 }
 
 /**
- * Proker createMany
+ * proker createMany
  */
-export type ProkerCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many Prokers.
+   * The data used to create many prokers.
    */
-  data: Prisma.ProkerCreateManyInput | Prisma.ProkerCreateManyInput[]
+  data: Prisma.prokerCreateManyInput | Prisma.prokerCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * Proker update
+ * proker update
  */
-export type ProkerUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * The data needed to update a Proker.
+   * The data needed to update a proker.
    */
-  data: Prisma.XOR<Prisma.ProkerUpdateInput, Prisma.ProkerUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.prokerUpdateInput, Prisma.prokerUncheckedUpdateInput>
   /**
-   * Choose, which Proker to update.
+   * Choose, which proker to update.
    */
-  where: Prisma.ProkerWhereUniqueInput
+  where: Prisma.prokerWhereUniqueInput
 }
 
 /**
- * Proker updateMany
+ * proker updateMany
  */
-export type ProkerUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update Prokers.
+   * The data used to update prokers.
    */
-  data: Prisma.XOR<Prisma.ProkerUpdateManyMutationInput, Prisma.ProkerUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.prokerUpdateManyMutationInput, Prisma.prokerUncheckedUpdateManyInput>
   /**
-   * Filter which Prokers to update
+   * Filter which prokers to update
    */
-  where?: Prisma.ProkerWhereInput
+  where?: Prisma.prokerWhereInput
   /**
-   * Limit how many Prokers to update.
+   * Limit how many prokers to update.
    */
   limit?: number
 }
 
 /**
- * Proker upsert
+ * proker upsert
  */
-export type ProkerUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * The filter to search for the Proker to update in case it exists.
+   * The filter to search for the proker to update in case it exists.
    */
-  where: Prisma.ProkerWhereUniqueInput
+  where: Prisma.prokerWhereUniqueInput
   /**
-   * In case the Proker found by the `where` argument doesn't exist, create a new Proker with this data.
+   * In case the proker found by the `where` argument doesn't exist, create a new proker with this data.
    */
-  create: Prisma.XOR<Prisma.ProkerCreateInput, Prisma.ProkerUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.prokerCreateInput, Prisma.prokerUncheckedCreateInput>
   /**
-   * In case the Proker was found with the provided `where` argument, update it with this data.
+   * In case the proker was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.ProkerUpdateInput, Prisma.ProkerUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.prokerUpdateInput, Prisma.prokerUncheckedUpdateInput>
 }
 
 /**
- * Proker delete
+ * proker delete
  */
-export type ProkerDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
   /**
-   * Filter which Proker to delete.
+   * Filter which proker to delete.
    */
-  where: Prisma.ProkerWhereUniqueInput
+  where: Prisma.prokerWhereUniqueInput
 }
 
 /**
- * Proker deleteMany
+ * proker deleteMany
  */
-export type ProkerDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which Prokers to delete
+   * Filter which prokers to delete
    */
-  where?: Prisma.ProkerWhereInput
+  where?: Prisma.prokerWhereInput
   /**
-   * Limit how many Prokers to delete.
+   * Limit how many prokers to delete.
    */
   limit?: number
 }
 
 /**
- * Proker without action
+ * proker without action
  */
-export type ProkerDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type prokerDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the Proker
+   * Select specific fields to fetch from the proker
    */
-  select?: Prisma.ProkerSelect<ExtArgs> | null
+  select?: Prisma.prokerSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the Proker
+   * Omit specific fields from the proker
    */
-  omit?: Prisma.ProkerOmit<ExtArgs> | null
+  omit?: Prisma.prokerOmit<ExtArgs> | null
 }

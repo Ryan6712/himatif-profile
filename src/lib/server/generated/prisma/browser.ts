@@ -18,26 +18,6 @@ export { Prisma }
 export * as $Enums from './enums.ts'
 export * from './enums.ts';
 /**
- * Model Organization
- * 
- */
-export type Organization = Prisma.OrganizationModel
-/**
- * Model Devisi
- * 
- */
-export type Devisi = Prisma.DevisiModel
-/**
- * Model Member
- * 
- */
-export type Member = Prisma.MemberModel
-/**
- * Model Proker
- * 
- */
-export type Proker = Prisma.ProkerModel
-/**
  * Model User
  * 
  */
@@ -57,3 +37,23 @@ export type Account = Prisma.AccountModel
  * 
  */
 export type Verification = Prisma.VerificationModel
+/**
+ * Model devisi
+ * 
+ */
+export type devisi = Prisma.devisiModel
+/**
+ * Model member
+ * 
+ */
+export type member = Prisma.memberModel
+/**
+ * Model organization
+ * 
+ */
+export type organization = Prisma.organizationModel
+/**
+ * Model proker
+ * 
+ */
+export type proker = Prisma.prokerModel

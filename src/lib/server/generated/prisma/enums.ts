@@ -9,11 +9,11 @@
 * 🟢 You can import this file directly.
 */
 
-export const MemberType = {
+export const member_memberType = {
   REGULAR: 'REGULAR',
   ALUMNI: 'ALUMNI',
   KADIV: 'KADIV',
   BPH: 'BPH'
 } as const
 
-export type MemberType = (typeof MemberType)[keyof typeof MemberType]
+export type member_memberType = (typeof member_memberType)[keyof typeof member_memberType]

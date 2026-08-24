@@ -13,5 +13,9 @@ export const auth = betterAuth({
     },
     plugins:[
         username()
-    ]
+    ],
+    trustedOrigins: [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173" // antisipasi jika browser mengakses via IP loopback
+    ],
 });

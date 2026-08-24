@@ -6,8 +6,7 @@ export type {
   Devisi,
   Member,
   MemberType,
-  Proker,
-  AdminAccount
+  Proker
 } from '../lib/server/generated/prisma/client.js';
 
 // ============================================

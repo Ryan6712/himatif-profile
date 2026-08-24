@@ -12,6 +12,19 @@ declare global {
 
 			
 			isAuthenticated: boolean;
+
+			user?: { 
+				id: string; 
+				name: string; 
+				email: string; 
+				username?: string | null; 
+			};
+
+
+			session?: { 
+				id: string; 
+				expiresAt: Date;
+			};
 		}
 		// interface PageData {}
 		// interface PageState {}

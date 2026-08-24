@@ -397,14 +397,14 @@ type FieldRefInputType<Model, FieldType> = Model extends never ? never : FieldRe
 
 
 export const ModelName = {
-  Organization: 'Organization',
-  Devisi: 'Devisi',
-  Member: 'Member',
-  Proker: 'Proker',
   User: 'User',
   Session: 'Session',
   Account: 'Account',
-  Verification: 'Verification'
+  Verification: 'Verification',
+  devisi: 'devisi',
+  member: 'member',
+  organization: 'organization',
+  proker: 'proker'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -420,274 +420,10 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "organization" | "devisi" | "member" | "proker" | "user" | "session" | "account" | "verification"
+    modelProps: "user" | "session" | "account" | "verification" | "devisi" | "member" | "organization" | "proker"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
-    Organization: {
-      payload: Prisma.$OrganizationPayload<ExtArgs>
-      fields: Prisma.OrganizationFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.OrganizationFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.OrganizationFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload>
-        }
-        findFirst: {
-          args: Prisma.OrganizationFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.OrganizationFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload>
-        }
-        findMany: {
-          args: Prisma.OrganizationFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload>[]
-        }
-        create: {
-          args: Prisma.OrganizationCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload>
-        }
-        createMany: {
-          args: Prisma.OrganizationCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.OrganizationDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload>
-        }
-        update: {
-          args: Prisma.OrganizationUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload>
-        }
-        deleteMany: {
-          args: Prisma.OrganizationDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.OrganizationUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.OrganizationUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$OrganizationPayload>
-        }
-        aggregate: {
-          args: Prisma.OrganizationAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateOrganization>
-        }
-        groupBy: {
-          args: Prisma.OrganizationGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.OrganizationGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.OrganizationCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.OrganizationCountAggregateOutputType> | number
-        }
-      }
-    }
-    Devisi: {
-      payload: Prisma.$DevisiPayload<ExtArgs>
-      fields: Prisma.DevisiFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.DevisiFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.DevisiFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload>
-        }
-        findFirst: {
-          args: Prisma.DevisiFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.DevisiFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload>
-        }
-        findMany: {
-          args: Prisma.DevisiFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload>[]
-        }
-        create: {
-          args: Prisma.DevisiCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload>
-        }
-        createMany: {
-          args: Prisma.DevisiCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.DevisiDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload>
-        }
-        update: {
-          args: Prisma.DevisiUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload>
-        }
-        deleteMany: {
-          args: Prisma.DevisiDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.DevisiUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.DevisiUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$DevisiPayload>
-        }
-        aggregate: {
-          args: Prisma.DevisiAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateDevisi>
-        }
-        groupBy: {
-          args: Prisma.DevisiGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.DevisiGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.DevisiCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.DevisiCountAggregateOutputType> | number
-        }
-      }
-    }
-    Member: {
-      payload: Prisma.$MemberPayload<ExtArgs>
-      fields: Prisma.MemberFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.MemberFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.MemberFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload>
-        }
-        findFirst: {
-          args: Prisma.MemberFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.MemberFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload>
-        }
-        findMany: {
-          args: Prisma.MemberFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload>[]
-        }
-        create: {
-          args: Prisma.MemberCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload>
-        }
-        createMany: {
-          args: Prisma.MemberCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.MemberDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload>
-        }
-        update: {
-          args: Prisma.MemberUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload>
-        }
-        deleteMany: {
-          args: Prisma.MemberDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.MemberUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.MemberUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$MemberPayload>
-        }
-        aggregate: {
-          args: Prisma.MemberAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateMember>
-        }
-        groupBy: {
-          args: Prisma.MemberGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.MemberGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.MemberCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.MemberCountAggregateOutputType> | number
-        }
-      }
-    }
-    Proker: {
-      payload: Prisma.$ProkerPayload<ExtArgs>
-      fields: Prisma.ProkerFieldRefs
-      operations: {
-        findUnique: {
-          args: Prisma.ProkerFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload> | null
-        }
-        findUniqueOrThrow: {
-          args: Prisma.ProkerFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload>
-        }
-        findFirst: {
-          args: Prisma.ProkerFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload> | null
-        }
-        findFirstOrThrow: {
-          args: Prisma.ProkerFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload>
-        }
-        findMany: {
-          args: Prisma.ProkerFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload>[]
-        }
-        create: {
-          args: Prisma.ProkerCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload>
-        }
-        createMany: {
-          args: Prisma.ProkerCreateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        delete: {
-          args: Prisma.ProkerDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload>
-        }
-        update: {
-          args: Prisma.ProkerUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload>
-        }
-        deleteMany: {
-          args: Prisma.ProkerDeleteManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        updateMany: {
-          args: Prisma.ProkerUpdateManyArgs<ExtArgs>
-          result: BatchPayload
-        }
-        upsert: {
-          args: Prisma.ProkerUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$ProkerPayload>
-        }
-        aggregate: {
-          args: Prisma.ProkerAggregateArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.AggregateProker>
-        }
-        groupBy: {
-          args: Prisma.ProkerGroupByArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.ProkerGroupByOutputType>[]
-        }
-        count: {
-          args: Prisma.ProkerCountArgs<ExtArgs>
-          result: runtime.Types.Utils.Optional<Prisma.ProkerCountAggregateOutputType> | number
-        }
-      }
-    }
     User: {
       payload: Prisma.$UserPayload<ExtArgs>
       fields: Prisma.UserFieldRefs
@@ -952,6 +688,270 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    devisi: {
+      payload: Prisma.$devisiPayload<ExtArgs>
+      fields: Prisma.devisiFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.devisiFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.devisiFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload>
+        }
+        findFirst: {
+          args: Prisma.devisiFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.devisiFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload>
+        }
+        findMany: {
+          args: Prisma.devisiFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload>[]
+        }
+        create: {
+          args: Prisma.devisiCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload>
+        }
+        createMany: {
+          args: Prisma.devisiCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.devisiDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload>
+        }
+        update: {
+          args: Prisma.devisiUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload>
+        }
+        deleteMany: {
+          args: Prisma.devisiDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.devisiUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.devisiUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$devisiPayload>
+        }
+        aggregate: {
+          args: Prisma.DevisiAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDevisi>
+        }
+        groupBy: {
+          args: Prisma.devisiGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevisiGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.devisiCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.DevisiCountAggregateOutputType> | number
+        }
+      }
+    }
+    member: {
+      payload: Prisma.$memberPayload<ExtArgs>
+      fields: Prisma.memberFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.memberFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.memberFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload>
+        }
+        findFirst: {
+          args: Prisma.memberFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.memberFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload>
+        }
+        findMany: {
+          args: Prisma.memberFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload>[]
+        }
+        create: {
+          args: Prisma.memberCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload>
+        }
+        createMany: {
+          args: Prisma.memberCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.memberDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload>
+        }
+        update: {
+          args: Prisma.memberUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload>
+        }
+        deleteMany: {
+          args: Prisma.memberDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.memberUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.memberUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$memberPayload>
+        }
+        aggregate: {
+          args: Prisma.MemberAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateMember>
+        }
+        groupBy: {
+          args: Prisma.memberGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MemberGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.memberCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.MemberCountAggregateOutputType> | number
+        }
+      }
+    }
+    organization: {
+      payload: Prisma.$organizationPayload<ExtArgs>
+      fields: Prisma.organizationFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.organizationFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.organizationFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload>
+        }
+        findFirst: {
+          args: Prisma.organizationFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.organizationFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload>
+        }
+        findMany: {
+          args: Prisma.organizationFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload>[]
+        }
+        create: {
+          args: Prisma.organizationCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload>
+        }
+        createMany: {
+          args: Prisma.organizationCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.organizationDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload>
+        }
+        update: {
+          args: Prisma.organizationUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload>
+        }
+        deleteMany: {
+          args: Prisma.organizationDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.organizationUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.organizationUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$organizationPayload>
+        }
+        aggregate: {
+          args: Prisma.OrganizationAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateOrganization>
+        }
+        groupBy: {
+          args: Prisma.organizationGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OrganizationGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.organizationCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.OrganizationCountAggregateOutputType> | number
+        }
+      }
+    }
+    proker: {
+      payload: Prisma.$prokerPayload<ExtArgs>
+      fields: Prisma.prokerFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.prokerFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.prokerFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload>
+        }
+        findFirst: {
+          args: Prisma.prokerFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.prokerFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload>
+        }
+        findMany: {
+          args: Prisma.prokerFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload>[]
+        }
+        create: {
+          args: Prisma.prokerCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload>
+        }
+        createMany: {
+          args: Prisma.prokerCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        delete: {
+          args: Prisma.prokerDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload>
+        }
+        update: {
+          args: Prisma.prokerUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload>
+        }
+        deleteMany: {
+          args: Prisma.prokerDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.prokerUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        upsert: {
+          args: Prisma.prokerUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$prokerPayload>
+        }
+        aggregate: {
+          args: Prisma.ProkerAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateProker>
+        }
+        groupBy: {
+          args: Prisma.prokerGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProkerGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.prokerCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.ProkerCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -989,65 +989,6 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
-
-
-export const OrganizationScalarFieldEnum = {
-  id: 'id',
-  nama: 'nama',
-  namaLengkap: 'namaLengkap',
-  visi: 'visi',
-  misi: 'misi',
-  tujuan: 'tujuan',
-  logoSmallUrl: 'logoSmallUrl',
-  logoBigUrl: 'logoBigUrl',
-  createdAt: 'createdAt',
-  updateAt: 'updateAt'
-} as const
-
-export type OrganizationScalarFieldEnum = (typeof OrganizationScalarFieldEnum)[keyof typeof OrganizationScalarFieldEnum]
-
-
-export const DevisiScalarFieldEnum = {
-  id: 'id',
-  nama: 'nama',
-  namaLengkap: 'namaLengkap',
-  logoUrl: 'logoUrl',
-  thumbnailUrl: 'thumbnailUrl',
-  deskripsi: 'deskripsi',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type DevisiScalarFieldEnum = (typeof DevisiScalarFieldEnum)[keyof typeof DevisiScalarFieldEnum]
-
-
-export const MemberScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  imageUrl: 'imageUrl',
-  memberType: 'memberType',
-  devisiId: 'devisiId',
-  createdAt: 'createdAt',
-  updateAt: 'updateAt'
-} as const
-
-export type MemberScalarFieldEnum = (typeof MemberScalarFieldEnum)[keyof typeof MemberScalarFieldEnum]
-
-
-export const ProkerScalarFieldEnum = {
-  id: 'id',
-  title: 'title',
-  date: 'date',
-  thumbnailUrl: 'thumbnailUrl',
-  description: 'description',
-  content: 'content',
-  slug: 'slug',
-  publishedAt: 'publishedAt',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ProkerScalarFieldEnum = (typeof ProkerScalarFieldEnum)[keyof typeof ProkerScalarFieldEnum]
 
 
 export const UserScalarFieldEnum = {
@@ -1111,6 +1052,65 @@ export const VerificationScalarFieldEnum = {
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
+export const DevisiScalarFieldEnum = {
+  id: 'id',
+  nama: 'nama',
+  namaLengkap: 'namaLengkap',
+  logoUrl: 'logoUrl',
+  thumbnailUrl: 'thumbnailUrl',
+  deskripsi: 'deskripsi',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DevisiScalarFieldEnum = (typeof DevisiScalarFieldEnum)[keyof typeof DevisiScalarFieldEnum]
+
+
+export const MemberScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  imageUrl: 'imageUrl',
+  memberType: 'memberType',
+  devisiId: 'devisiId',
+  createdAt: 'createdAt',
+  updateAt: 'updateAt'
+} as const
+
+export type MemberScalarFieldEnum = (typeof MemberScalarFieldEnum)[keyof typeof MemberScalarFieldEnum]
+
+
+export const OrganizationScalarFieldEnum = {
+  id: 'id',
+  nama: 'nama',
+  namaLengkap: 'namaLengkap',
+  visi: 'visi',
+  misi: 'misi',
+  tujuan: 'tujuan',
+  logoSmallUrl: 'logoSmallUrl',
+  logoBigUrl: 'logoBigUrl',
+  createdAt: 'createdAt',
+  updateAt: 'updateAt'
+} as const
+
+export type OrganizationScalarFieldEnum = (typeof OrganizationScalarFieldEnum)[keyof typeof OrganizationScalarFieldEnum]
+
+
+export const ProkerScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  date: 'date',
+  thumbnailUrl: 'thumbnailUrl',
+  description: 'description',
+  content: 'content',
+  slug: 'slug',
+  publishedAt: 'publishedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProkerScalarFieldEnum = (typeof ProkerScalarFieldEnum)[keyof typeof ProkerScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1119,55 +1119,12 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-export const OrganizationOrderByRelevanceFieldEnum = {
-  nama: 'nama',
-  namaLengkap: 'namaLengkap',
-  visi: 'visi',
-  misi: 'misi',
-  tujuan: 'tujuan',
-  logoSmallUrl: 'logoSmallUrl',
-  logoBigUrl: 'logoBigUrl'
-} as const
-
-export type OrganizationOrderByRelevanceFieldEnum = (typeof OrganizationOrderByRelevanceFieldEnum)[keyof typeof OrganizationOrderByRelevanceFieldEnum]
-
-
 export const NullsOrder = {
   first: 'first',
   last: 'last'
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
-export const DevisiOrderByRelevanceFieldEnum = {
-  nama: 'nama',
-  namaLengkap: 'namaLengkap',
-  logoUrl: 'logoUrl',
-  thumbnailUrl: 'thumbnailUrl',
-  deskripsi: 'deskripsi'
-} as const
-
-export type DevisiOrderByRelevanceFieldEnum = (typeof DevisiOrderByRelevanceFieldEnum)[keyof typeof DevisiOrderByRelevanceFieldEnum]
-
-
-export const MemberOrderByRelevanceFieldEnum = {
-  name: 'name',
-  imageUrl: 'imageUrl'
-} as const
-
-export type MemberOrderByRelevanceFieldEnum = (typeof MemberOrderByRelevanceFieldEnum)[keyof typeof MemberOrderByRelevanceFieldEnum]
-
-
-export const ProkerOrderByRelevanceFieldEnum = {
-  title: 'title',
-  thumbnailUrl: 'thumbnailUrl',
-  description: 'description',
-  content: 'content',
-  slug: 'slug'
-} as const
-
-export type ProkerOrderByRelevanceFieldEnum = (typeof ProkerOrderByRelevanceFieldEnum)[keyof typeof ProkerOrderByRelevanceFieldEnum]
 
 
 export const UserOrderByRelevanceFieldEnum = {
@@ -1218,6 +1175,49 @@ export const VerificationOrderByRelevanceFieldEnum = {
 export type VerificationOrderByRelevanceFieldEnum = (typeof VerificationOrderByRelevanceFieldEnum)[keyof typeof VerificationOrderByRelevanceFieldEnum]
 
 
+export const devisiOrderByRelevanceFieldEnum = {
+  nama: 'nama',
+  namaLengkap: 'namaLengkap',
+  logoUrl: 'logoUrl',
+  thumbnailUrl: 'thumbnailUrl',
+  deskripsi: 'deskripsi'
+} as const
+
+export type devisiOrderByRelevanceFieldEnum = (typeof devisiOrderByRelevanceFieldEnum)[keyof typeof devisiOrderByRelevanceFieldEnum]
+
+
+export const memberOrderByRelevanceFieldEnum = {
+  name: 'name',
+  imageUrl: 'imageUrl'
+} as const
+
+export type memberOrderByRelevanceFieldEnum = (typeof memberOrderByRelevanceFieldEnum)[keyof typeof memberOrderByRelevanceFieldEnum]
+
+
+export const organizationOrderByRelevanceFieldEnum = {
+  nama: 'nama',
+  namaLengkap: 'namaLengkap',
+  visi: 'visi',
+  misi: 'misi',
+  tujuan: 'tujuan',
+  logoSmallUrl: 'logoSmallUrl',
+  logoBigUrl: 'logoBigUrl'
+} as const
+
+export type organizationOrderByRelevanceFieldEnum = (typeof organizationOrderByRelevanceFieldEnum)[keyof typeof organizationOrderByRelevanceFieldEnum]
+
+
+export const prokerOrderByRelevanceFieldEnum = {
+  title: 'title',
+  thumbnailUrl: 'thumbnailUrl',
+  description: 'description',
+  content: 'content',
+  slug: 'slug'
+} as const
+
+export type prokerOrderByRelevanceFieldEnum = (typeof prokerOrderByRelevanceFieldEnum)[keyof typeof prokerOrderByRelevanceFieldEnum]
+
+
 
 /**
  * Field references
@@ -1225,16 +1225,16 @@ export type VerificationOrderByRelevanceFieldEnum = (typeof VerificationOrderByR
 
 
 /**
- * Reference to a field of type 'Int'
+ * Reference to a field of type 'String'
  */
-export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
+export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
     
 
 
 /**
- * Reference to a field of type 'String'
+ * Reference to a field of type 'Boolean'
  */
-export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String'>
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
     
 
 
@@ -1246,16 +1246,16 @@ export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel
 
 
 /**
- * Reference to a field of type 'MemberType'
+ * Reference to a field of type 'Int'
  */
-export type EnumMemberTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'MemberType'>
+export type IntFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Int'>
     
 
 
 /**
- * Reference to a field of type 'Boolean'
+ * Reference to a field of type 'member_memberType'
  */
-export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+export type Enummember_memberTypeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'member_memberType'>
     
 
 
@@ -1416,14 +1416,14 @@ export interface PrismaClientOptionsWithAdapter extends PrismaClientBaseOptions 
  */
 export type PrismaClientOptions = PrismaClientOptionsWithAccelerateUrl | PrismaClientOptionsWithAdapter
 export type GlobalOmitConfig = {
-  organization?: Prisma.OrganizationOmit
-  devisi?: Prisma.DevisiOmit
-  member?: Prisma.MemberOmit
-  proker?: Prisma.ProkerOmit
   user?: Prisma.UserOmit
   session?: Prisma.SessionOmit
   account?: Prisma.AccountOmit
   verification?: Prisma.VerificationOmit
+  devisi?: Prisma.devisiOmit
+  member?: Prisma.memberOmit
+  organization?: Prisma.organizationOmit
+  proker?: Prisma.prokerOmit
 }
 
 /* Types for Logging */

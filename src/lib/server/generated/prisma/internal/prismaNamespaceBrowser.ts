@@ -51,14 +51,14 @@ export const AnyNull = runtime.AnyNull
 
 
 export const ModelName = {
-  Organization: 'Organization',
-  Devisi: 'Devisi',
-  Member: 'Member',
-  Proker: 'Proker',
   User: 'User',
   Session: 'Session',
   Account: 'Account',
-  Verification: 'Verification'
+  Verification: 'Verification',
+  devisi: 'devisi',
+  member: 'member',
+  organization: 'organization',
+  proker: 'proker'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -75,65 +75,6 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 } as const)
 
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
-
-
-export const OrganizationScalarFieldEnum = {
-  id: 'id',
-  nama: 'nama',
-  namaLengkap: 'namaLengkap',
-  visi: 'visi',
-  misi: 'misi',
-  tujuan: 'tujuan',
-  logoSmallUrl: 'logoSmallUrl',
-  logoBigUrl: 'logoBigUrl',
-  createdAt: 'createdAt',
-  updateAt: 'updateAt'
-} as const
-
-export type OrganizationScalarFieldEnum = (typeof OrganizationScalarFieldEnum)[keyof typeof OrganizationScalarFieldEnum]
-
-
-export const DevisiScalarFieldEnum = {
-  id: 'id',
-  nama: 'nama',
-  namaLengkap: 'namaLengkap',
-  logoUrl: 'logoUrl',
-  thumbnailUrl: 'thumbnailUrl',
-  deskripsi: 'deskripsi',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type DevisiScalarFieldEnum = (typeof DevisiScalarFieldEnum)[keyof typeof DevisiScalarFieldEnum]
-
-
-export const MemberScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  imageUrl: 'imageUrl',
-  memberType: 'memberType',
-  devisiId: 'devisiId',
-  createdAt: 'createdAt',
-  updateAt: 'updateAt'
-} as const
-
-export type MemberScalarFieldEnum = (typeof MemberScalarFieldEnum)[keyof typeof MemberScalarFieldEnum]
-
-
-export const ProkerScalarFieldEnum = {
-  id: 'id',
-  title: 'title',
-  date: 'date',
-  thumbnailUrl: 'thumbnailUrl',
-  description: 'description',
-  content: 'content',
-  slug: 'slug',
-  publishedAt: 'publishedAt',
-  createdAt: 'createdAt',
-  updatedAt: 'updatedAt'
-} as const
-
-export type ProkerScalarFieldEnum = (typeof ProkerScalarFieldEnum)[keyof typeof ProkerScalarFieldEnum]
 
 
 export const UserScalarFieldEnum = {
@@ -197,6 +138,65 @@ export const VerificationScalarFieldEnum = {
 export type VerificationScalarFieldEnum = (typeof VerificationScalarFieldEnum)[keyof typeof VerificationScalarFieldEnum]
 
 
+export const DevisiScalarFieldEnum = {
+  id: 'id',
+  nama: 'nama',
+  namaLengkap: 'namaLengkap',
+  logoUrl: 'logoUrl',
+  thumbnailUrl: 'thumbnailUrl',
+  deskripsi: 'deskripsi',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type DevisiScalarFieldEnum = (typeof DevisiScalarFieldEnum)[keyof typeof DevisiScalarFieldEnum]
+
+
+export const MemberScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  imageUrl: 'imageUrl',
+  memberType: 'memberType',
+  devisiId: 'devisiId',
+  createdAt: 'createdAt',
+  updateAt: 'updateAt'
+} as const
+
+export type MemberScalarFieldEnum = (typeof MemberScalarFieldEnum)[keyof typeof MemberScalarFieldEnum]
+
+
+export const OrganizationScalarFieldEnum = {
+  id: 'id',
+  nama: 'nama',
+  namaLengkap: 'namaLengkap',
+  visi: 'visi',
+  misi: 'misi',
+  tujuan: 'tujuan',
+  logoSmallUrl: 'logoSmallUrl',
+  logoBigUrl: 'logoBigUrl',
+  createdAt: 'createdAt',
+  updateAt: 'updateAt'
+} as const
+
+export type OrganizationScalarFieldEnum = (typeof OrganizationScalarFieldEnum)[keyof typeof OrganizationScalarFieldEnum]
+
+
+export const ProkerScalarFieldEnum = {
+  id: 'id',
+  title: 'title',
+  date: 'date',
+  thumbnailUrl: 'thumbnailUrl',
+  description: 'description',
+  content: 'content',
+  slug: 'slug',
+  publishedAt: 'publishedAt',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+} as const
+
+export type ProkerScalarFieldEnum = (typeof ProkerScalarFieldEnum)[keyof typeof ProkerScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -205,55 +205,12 @@ export const SortOrder = {
 export type SortOrder = (typeof SortOrder)[keyof typeof SortOrder]
 
 
-export const OrganizationOrderByRelevanceFieldEnum = {
-  nama: 'nama',
-  namaLengkap: 'namaLengkap',
-  visi: 'visi',
-  misi: 'misi',
-  tujuan: 'tujuan',
-  logoSmallUrl: 'logoSmallUrl',
-  logoBigUrl: 'logoBigUrl'
-} as const
-
-export type OrganizationOrderByRelevanceFieldEnum = (typeof OrganizationOrderByRelevanceFieldEnum)[keyof typeof OrganizationOrderByRelevanceFieldEnum]
-
-
 export const NullsOrder = {
   first: 'first',
   last: 'last'
 } as const
 
 export type NullsOrder = (typeof NullsOrder)[keyof typeof NullsOrder]
-
-
-export const DevisiOrderByRelevanceFieldEnum = {
-  nama: 'nama',
-  namaLengkap: 'namaLengkap',
-  logoUrl: 'logoUrl',
-  thumbnailUrl: 'thumbnailUrl',
-  deskripsi: 'deskripsi'
-} as const
-
-export type DevisiOrderByRelevanceFieldEnum = (typeof DevisiOrderByRelevanceFieldEnum)[keyof typeof DevisiOrderByRelevanceFieldEnum]
-
-
-export const MemberOrderByRelevanceFieldEnum = {
-  name: 'name',
-  imageUrl: 'imageUrl'
-} as const
-
-export type MemberOrderByRelevanceFieldEnum = (typeof MemberOrderByRelevanceFieldEnum)[keyof typeof MemberOrderByRelevanceFieldEnum]
-
-
-export const ProkerOrderByRelevanceFieldEnum = {
-  title: 'title',
-  thumbnailUrl: 'thumbnailUrl',
-  description: 'description',
-  content: 'content',
-  slug: 'slug'
-} as const
-
-export type ProkerOrderByRelevanceFieldEnum = (typeof ProkerOrderByRelevanceFieldEnum)[keyof typeof ProkerOrderByRelevanceFieldEnum]
 
 
 export const UserOrderByRelevanceFieldEnum = {
@@ -302,4 +259,47 @@ export const VerificationOrderByRelevanceFieldEnum = {
 } as const
 
 export type VerificationOrderByRelevanceFieldEnum = (typeof VerificationOrderByRelevanceFieldEnum)[keyof typeof VerificationOrderByRelevanceFieldEnum]
+
+
+export const devisiOrderByRelevanceFieldEnum = {
+  nama: 'nama',
+  namaLengkap: 'namaLengkap',
+  logoUrl: 'logoUrl',
+  thumbnailUrl: 'thumbnailUrl',
+  deskripsi: 'deskripsi'
+} as const
+
+export type devisiOrderByRelevanceFieldEnum = (typeof devisiOrderByRelevanceFieldEnum)[keyof typeof devisiOrderByRelevanceFieldEnum]
+
+
+export const memberOrderByRelevanceFieldEnum = {
+  name: 'name',
+  imageUrl: 'imageUrl'
+} as const
+
+export type memberOrderByRelevanceFieldEnum = (typeof memberOrderByRelevanceFieldEnum)[keyof typeof memberOrderByRelevanceFieldEnum]
+
+
+export const organizationOrderByRelevanceFieldEnum = {
+  nama: 'nama',
+  namaLengkap: 'namaLengkap',
+  visi: 'visi',
+  misi: 'misi',
+  tujuan: 'tujuan',
+  logoSmallUrl: 'logoSmallUrl',
+  logoBigUrl: 'logoBigUrl'
+} as const
+
+export type organizationOrderByRelevanceFieldEnum = (typeof organizationOrderByRelevanceFieldEnum)[keyof typeof organizationOrderByRelevanceFieldEnum]
+
+
+export const prokerOrderByRelevanceFieldEnum = {
+  title: 'title',
+  thumbnailUrl: 'thumbnailUrl',
+  description: 'description',
+  content: 'content',
+  slug: 'slug'
+} as const
+
+export type prokerOrderByRelevanceFieldEnum = (typeof prokerOrderByRelevanceFieldEnum)[keyof typeof prokerOrderByRelevanceFieldEnum]
 
