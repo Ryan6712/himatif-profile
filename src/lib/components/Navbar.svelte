@@ -91,7 +91,7 @@
             <div class="logo flex items-center shrink-0">
                 <a href="/">
                     <!-- Logo 215x35 aspect ratio ~6:1 -->
-                    <img src={logoUrl} alt="" class="drop-shadow-sm drop-shadow-primary/60 w-[215px] h-[35px] object-contain" >
+                    <img src={logoUrl} alt="" class="drop-shadow-sm drop-shadow-primary/60 w-[215px] h-[35px] object-fill" >
                 </a>
             </div>
             <ul class="hidden gap-8 md:flex items-center">
@@ -122,7 +122,7 @@
 <div class="blur md:hidden fixed inset-0 backdrop-blur-sm bg-title-text/20 z-30" in:fade={{ duration : 300 }} out:fade={{ duration:150}}></div>
 <div id="mobile-menu" class="md:hidden flex flex-col fixed top-0 right-0 w-80 h-full min-h-screen bg-surface/90 backdrop-blur-xl z-100 pb-4" style="box-shadow: var(--shadow-card-xl);" in:fly={{x:300, duration : 400 }} out:fly={{ x: 300, duration:300}}>
     <div class="flex justify-between w-full items-center h-16 p-3 shrink-0">
-        <img src={logoUrl} alt="" class="w-[215px] h-[35px] object-contain">
+        <img src={logoUrl} alt="" class="w-[215px] h-[35px] object-fill">
         <button
             onclick={toggle}
             aria-label="Toggle navigation menu"
