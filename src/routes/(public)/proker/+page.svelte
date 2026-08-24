@@ -48,9 +48,12 @@
     </div>
     <div class="proker-wrapper gap-6 grid grid-cols-1 container mt-10 relative z-10">
     {#each prokerList as item (item.id)}
-        <div class="proker px-4 py-6 glass-card rounded-2xl flex gap-4 flex-wrap justify-center items-start lg:justify-start group hover-lift" style="box-shadow: var(--shadow-card-md);">
-            <img src={item.thumbnailUrl} alt={item.title} class="rounded-xl" style="box-shadow: var(--shadow-card);">
-            <div class="desc flex flex-col">
+        <div class="proker px-4 py-6 glass-card rounded-2xl flex flex-col md:flex-row gap-6 justify-center items-start lg:justify-start group hover-lift w-full" style="box-shadow: var(--shadow-card-md);">
+            <!-- Thumbnail 400x230 aspect ratio ~16:9 for responsive -->
+            <div class="w-full md:w-1/3 max-w-[400px] shrink-0 relative aspect-video rounded-xl overflow-hidden" style="box-shadow: var(--shadow-card);">
+                <img src={item.thumbnailUrl} alt={item.title} class="absolute inset-0 w-full h-full object-cover">
+            </div>
+            <div class="desc flex flex-col flex-1 w-full">
                 <span class="title font-extrabold text-2xl text-title-text tracking-tight">{item.title}</span>
                 <span class="date text-secondary font-semibold text-sm mt-2">{formatDate(item.date)}</span>
                 <p class="max-w-2xl mt-5 leading-relaxed opacity-85">{item.description}</p>

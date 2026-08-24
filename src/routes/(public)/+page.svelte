@@ -40,8 +40,9 @@
                 <a href="mailto:himatif@stmik-yadika.ac.id">Hubungi Kami</a>
             </button>
         </div>
-        <div class="self-center">
-            <img src={org.logoBigUrl} alt={org.nama} class="rounded-2xl" style="box-shadow: var(--shadow-card-xl);">
+        <div class="self-center w-full max-w-125 shrink-0">
+            <!-- 500x400 aspect ratio 5:4 -->
+            <img src={org.logoBigUrl} alt={org.nama} class="rounded-2xl w-full aspect-5/4 object-cover skew-y-5 -skew-x-7 smooth-transition hover:skew-0" style="box-shadow: var(--shadow-card-xl);">
         </div>
     </div>
 </section>

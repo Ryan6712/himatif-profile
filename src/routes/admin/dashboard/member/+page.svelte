@@ -14,10 +14,6 @@
     const filters = $derived(data.filters);
     const devisiList = $derived(data.devisiList || []);
 
-    // // Filter states
-    // let searchInput = filters.search;
-    // let selectedType = $state(() => filters.type);
-    // let selectedDevisi = $state(() => filters.devisiId);
 
     // Toast State
     let showToast = $state(false);

@@ -23,9 +23,10 @@
     <div class="container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
     {#each devisiList as item, i (item.id)}
         <div class="card grid grid-cols-1 justify-evenly glass-card rounded-2xl px-4 py-6 gap-4 h-full group hover-lift" style="box-shadow: var(--shadow-card-md);">
-            <div class="header flex flex-col items-start stack-sm">
-                <div class="icon-container">
-                    <img src="{item.logoUrl}" alt={item.nama}>
+            <div class="header flex flex-col items-start stack-sm w-full">
+                <!-- Logo 32x32 -->
+                <div class="icon-container w-12 h-12 flex items-center justify-center rounded">
+                    <img src="{item.logoUrl}" alt={item.nama} class="w-8 h-8 object-contain">
                 </div>
                 <div class="title text-title-text font-bold text-lg tracking-wide">
                     {item.nama}
@@ -34,11 +35,14 @@
                     {item.namaLengkap}
                 </span>
             </div>
-            <div class="content flex flex-col gap-3 items-center max-w-lg">
-                <p class="leading-relaxed mb-3 opacity-85">
+            <div class="content flex flex-col gap-3 items-center max-w-lg w-full">
+                <p class="leading-relaxed mb-3 opacity-85 w-full">
                     {item.deskripsi}
                 </p>
-                <img src="{item.thumbnailUrl}" alt={item.nama} class="rounded-xl" style="box-shadow: var(--shadow-card);">
+                <!-- Thumbnail 320x120 aspect ratio 8:3 -->
+                <div class="w-full relative pt-[37.5%] rounded-xl overflow-hidden" style="box-shadow: var(--shadow-card);">
+                    <img src="{item.thumbnailUrl}" alt={item.nama} class="absolute inset-0 w-full h-full object-cover">
+                </div>
             </div>
         </div>
     {/each}

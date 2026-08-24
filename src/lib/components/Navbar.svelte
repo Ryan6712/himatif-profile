@@ -86,9 +86,10 @@
 <nav class="bg-surface/70 backdrop-blur-xl rounded-full max-w-7xl mx-auto inset-x-0 fixed top-4 py-1 border border-tertiary/40 z-50" style="box-shadow: var(--shadow-card-md);">
     <div class="container">
         <div class="flex items-center justify-between align-middle">
-            <div class="logo flex items-center">
+            <div class="logo flex items-center shrink-0">
                 <a href="/">
-                    <img src="https://placehold.co/215x35/png?text=himatif" alt="" class="drop-shadow-sm drop-shadow-primary/60" >
+                    <!-- Logo 215x35 aspect ratio ~6:1 -->
+                    <img src="https://placehold.co/215x35/png?text=himatif" alt="" class="drop-shadow-sm drop-shadow-primary/60 w-[215px] h-[35px] object-contain" >
                 </a>
             </div>
             <ul class="hidden gap-8 md:flex items-center">
@@ -118,8 +119,8 @@
 {#if isOpen}
 <div class="blur md:hidden fixed inset-0 backdrop-blur-sm bg-title-text/20 z-30" in:fade={{ duration : 300 }} out:fade={{ duration:150}}></div>
 <div id="mobile-menu" class="md:hidden flex flex-col fixed top-0 right-0 w-80 h-full min-h-screen bg-surface/90 backdrop-blur-xl z-100 pb-4" style="box-shadow: var(--shadow-card-xl);" in:fly={{x:300, duration : 400 }} out:fly={{ x: 300, duration:300}}>
-    <div class="flex justify-between w-full items-center h-16 p-3">
-        <img src="https://placehold.co/215x35/png?text=himatif" alt="" class="w-auto h-8">
+    <div class="flex justify-between w-full items-center h-16 p-3 shrink-0">
+        <img src="https://placehold.co/215x35/png?text=himatif" alt="" class="w-[215px] h-[35px] object-contain">
         <button
             onclick={toggle}
             aria-label="Toggle navigation menu"
