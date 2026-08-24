@@ -15,7 +15,7 @@ export const auth = betterAuth({
         username()
     ],
     trustedOrigins: [
-    "http://localhost:5173",
-    "http://127.0.0.1:5173" // antisipasi jika browser mengakses via IP loopback
+    "https://himatif-profile.netlify.app/",
+    "https://himatif-profile.netlify.app/" // antisipasi jika browser mengakses via IP loopback
     ],
 });
