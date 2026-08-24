@@ -4,6 +4,8 @@
         path: string;
     }
 
+    let { logoUrl } = $props()
+
     let navItems: NavLink[] = [
         {
             name: "home",
@@ -59,7 +61,7 @@
         <!-- Brand -->
         <div class="md:col-span-2">
             <!-- Logo 215x35 aspect ratio ~6:1 -->
-            <img src="https://placehold.co/215x35/png?text=himatif" alt="" class="w-[215px] h-[35px] object-contain mb-3">
+            <img src={logoUrl} alt="" class="w-[215px] h-[35px] object-contain mb-3">
             <p class="text-sm leading-relaxed opacity-75">
                 Himpunan Mahasiswa Teknologi Informasi ITB Yadika adalah wadah bagi mahasiswa Teknologi Informasi untuk berkolaborasi, mengeksplorasi, dan mengembangkan diri dalam bidang teknologi informasi. 
             </p>

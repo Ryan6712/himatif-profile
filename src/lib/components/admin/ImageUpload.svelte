@@ -6,7 +6,7 @@
       label?: string;
       value?: string;
       folder?: string;
-      previewSize?: "sm" | "md" | "lg";
+      previewSize?: "sm" | "md" | "lg" | "long";
       error?: string;
       required?: boolean;
       accept?: string;
@@ -32,6 +32,7 @@
       sm: "w-20 h-20",
       md: "w-32 h-32",
       lg: "w-48 h-48",
+      long: "w-[215px] h-[35px]"
     };
   
     async function handleUpload(file: File) {

@@ -120,7 +120,7 @@
                     label="Logo Kecil (Navbar)" 
                     bind:value={logoSmallUrl} 
                     folder="himatif/org"
-                    previewSize="sm"
+                    previewSize="long"
                     required
                     error={form?.errors?.logoSmallUrl}
                 />

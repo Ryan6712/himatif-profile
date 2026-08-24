@@ -18,6 +18,7 @@ const adapter = new PrismaMariaDb({
   user: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
   database: process.env.DATABASE_NAME,
+  port: Number(process.env.DATABASE_PORT)
   
 });
 const prisma = new PrismaClient({ adapter });
@@ -93,7 +94,7 @@ async function seedOrganization() {
       visi,
       misi,
       tujuan,
-      logoSmallUrl: "https://placehold.co/32x32/png?text=himatif",
+      logoSmallUrl: "https://placehold.co/215x35/png?text=himatif",
       logoBigUrl: "https://placehold.co/500x400/png?text=himatif",
     },
   });
