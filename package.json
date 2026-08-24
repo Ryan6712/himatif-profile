@@ -12,7 +12,9 @@
 		"lint": "prettier --check . && eslint .",
 		"format": "prettier --write .",
 		"test:unit": "vitest",
-		"test": "npm run test:unit -- --run"
+		"test": "npm run test:unit -- --run",
+		"db:seed": "npx tsx prisma/seed.ts",
+		"db:reset-seed": "npx prisma migrate reset && npx tsx prisma/seed.ts"
 	},
 	"files": [
 		"dist",
@@ -43,7 +45,8 @@
 		"@tailwindcss/forms": "^0.5.11",
 		"@tailwindcss/typography": "^0.5.19",
 		"@tailwindcss/vite": "^4.3.0",
-		"@types/node": "^24",
+		"@types/dompurify": "^3.0.5",
+		"@types/node": "^24.13.3",
 		"@vitest/browser-playwright": "^4.1.8",
 		"eslint": "^10.4.1",
 		"eslint-config-prettier": "^10.1.8",
@@ -67,6 +70,14 @@
 		"svelte"
 	],
 	"dependencies": {
-		"@lucide/svelte": "^1.29.0"
+		"@lucide/svelte": "^1.29.0",
+		"@prisma/adapter-mariadb": "^7.9.1",
+		"@prisma/client": "^7.9.1",
+		"better-auth": "^1.7.1",
+		"cloudinary": "^2.10.1",
+		"dotenv": "^17.4.2",
+		"isomorphic-dompurify": "^3.19.0",
+		"marked": "^18.0.10",
+		"prisma": "^7.9.1"
 	}
 }
