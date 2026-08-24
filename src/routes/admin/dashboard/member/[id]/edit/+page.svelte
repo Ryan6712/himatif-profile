@@ -1,6 +1,6 @@
 <script lang="ts">
     import { enhance } from "$app/forms";
-    import { FormField, Toast } from "$lib/components/admin";
+    import { FormField, Toast, ImageUpload } from "$lib/components/admin";
     import { Save, ArrowLeft, Image as ImageIcon } from "@lucide/svelte";
 
     let { data, form } = $props();
@@ -17,6 +17,7 @@
 
     let isSubmitting = $state(false);
     let selectedType = $state(initialValues.memberType);
+    let imageUrl = $state(initialValues.imageUrl);
     
     // Auto disable devisi for BPH & ALUMNI
     let isDevisiDisabled = $derived(selectedType === "BPH" || selectedType === "ALUMNI");
@@ -95,22 +96,15 @@
 
             <!-- URL Foto -->
             <div class="flex flex-col md:flex-row gap-6 p-4 rounded border border-primary/10 bg-primary/5">
-                <div class="w-32 h-32 shrink-0 rounded-full border-2 border-white/40 shadow-sm bg-white/50 flex items-center justify-center overflow-hidden mx-auto md:mx-0">
-                    {#if initialValues.imageUrl}
-                        <img src={initialValues.imageUrl} alt="Preview" class="w-full h-full object-cover" />
-                    {:else}
-                        <ImageIcon class="w-10 h-10 text-secondary/30" />
-                    {/if}
-                </div>
-                
                 <div class="flex-1 flex flex-col justify-center gap-4">
-                    <FormField 
-                        label="URL Foto Anggota" 
+                    <ImageUpload 
                         name="imageUrl" 
-                        value={initialValues.imageUrl} 
-                        required 
+                        label="Foto Anggota" 
+                        bind:value={imageUrl} 
+                        folder="himatif/members"
+                        previewSize="md"
+                        required
                         error={form?.errors?.imageUrl}
-                        placeholder="https://..."
                     />
                 </div>
             </div>

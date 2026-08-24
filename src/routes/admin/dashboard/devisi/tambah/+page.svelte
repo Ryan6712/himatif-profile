@@ -1,6 +1,6 @@
 <script lang="ts">
     import { enhance } from "$app/forms";
-    import { FormField, TextArea, Toast } from "$lib/components/admin";
+    import { FormField, TextArea, Toast, ImageUpload } from "$lib/components/admin";
     import { Save, ArrowLeft } from "@lucide/svelte";
 
     let { form } = $props();
@@ -26,6 +26,9 @@
             showToast = true;
         }
     });
+
+    let logoUrl = $state(initialValues.logoUrl);
+    let thumbnailUrl = $state(initialValues.thumbnailUrl);
 </script>
 
 <Toast 
@@ -79,38 +82,25 @@
                 />
             </div>
 
-            <!-- Nanti di Sprint 6 ini akan diganti dengan ImageUpload component -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 rounded border border-primary/10 bg-primary/5">
-                <div class="flex flex-col gap-4">
-                    <FormField 
-                        label="URL Logo (Icon)" 
-                        name="logoUrl" 
-                        value={initialValues.logoUrl} 
-                        required 
-                        error={form?.errors?.logoUrl}
-                        placeholder="https://..."
-                    />
-                    {#if initialValues.logoUrl}
-                        <div class="w-16 h-16 rounded overflow-hidden border border-white/20 shadow-sm bg-white/50 p-1 mx-auto">
-                            <img src={initialValues.logoUrl} alt="Logo" class="w-full h-full object-contain" />
-                        </div>
-                    {/if}
-                </div>
+                <ImageUpload 
+                    name="logoUrl" 
+                    label="Logo Divisi (Icon)" 
+                    bind:value={logoUrl} 
+                    folder="himatif/divisi"
+                    previewSize="sm"
+                    required
+                    error={form?.errors?.logoUrl}
+                />
 
-                <div class="flex flex-col gap-4">
-                    <FormField 
-                        label="URL Thumbnail (Cover)" 
-                        name="thumbnailUrl" 
-                        value={initialValues.thumbnailUrl} 
-                        error={form?.errors?.thumbnailUrl}
-                        placeholder="https://..."
-                    />
-                    {#if initialValues.thumbnailUrl}
-                        <div class="w-full h-32 rounded overflow-hidden border border-white/20 shadow-sm bg-white/50">
-                            <img src={initialValues.thumbnailUrl} alt="Thumbnail" class="w-full h-full object-cover" />
-                        </div>
-                    {/if}
-                </div>
+                <ImageUpload 
+                    name="thumbnailUrl" 
+                    label="Thumbnail (Cover)" 
+                    bind:value={thumbnailUrl} 
+                    folder="himatif/divisi"
+                    previewSize="md"
+                    error={form?.errors?.thumbnailUrl}
+                />
             </div>
 
             <div class="border-t border-primary/10 pt-6 mt-2">

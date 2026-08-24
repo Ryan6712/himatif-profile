@@ -1,6 +1,6 @@
 <script lang="ts">
     import { enhance } from "$app/forms";
-    import { FormField, TextArea, Toast } from "$lib/components/admin";
+    import { FormField, TextArea, Toast, ImageUpload } from "$lib/components/admin";
     import { Save, Building2 } from "@lucide/svelte";
 
     let { data, form } = $props();
@@ -57,6 +57,10 @@
             return misiString;
         }
     }
+
+    // state reactive properties for image upload values
+    let logoSmallUrl = $state(initialValues.logoSmallUrl);
+    let logoBigUrl = $state(initialValues.logoBigUrl);
 </script>
 
 <Toast 
@@ -110,39 +114,26 @@
                 />
             </div>
 
-            <!-- Nanti di Sprint 6 ini akan diganti dengan ImageUpload component -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 p-4 rounded border border-primary/10 bg-primary/5">
-                <div class="flex flex-col gap-4">
-                    <FormField 
-                        label="URL Logo Kecil (Navbar)" 
-                        name="logoSmallUrl" 
-                        value={initialValues.logoSmallUrl} 
-                        required 
-                        error={form?.errors?.logoSmallUrl}
-                        placeholder="https://..."
-                    />
-                    {#if initialValues.logoSmallUrl}
-                        <div class="w-12 h-12 rounded overflow-hidden border border-white/20 shadow-sm bg-white/50">
-                            <img src={initialValues.logoSmallUrl} alt="Logo Kecil" class="w-full h-full object-contain" />
-                        </div>
-                    {/if}
-                </div>
+                <ImageUpload 
+                    name="logoSmallUrl" 
+                    label="Logo Kecil (Navbar)" 
+                    bind:value={logoSmallUrl} 
+                    folder="himatif/org"
+                    previewSize="sm"
+                    required
+                    error={form?.errors?.logoSmallUrl}
+                />
 
-                <div class="flex flex-col gap-4">
-                    <FormField 
-                        label="URL Logo Besar (Home)" 
-                        name="logoBigUrl" 
-                        value={initialValues.logoBigUrl} 
-                        required 
-                        error={form?.errors?.logoBigUrl}
-                        placeholder="https://..."
-                    />
-                    {#if initialValues.logoBigUrl}
-                        <div class="w-32 h-32 rounded overflow-hidden border border-white/20 shadow-sm bg-white/50">
-                            <img src={initialValues.logoBigUrl} alt="Logo Besar" class="w-full h-full object-cover" />
-                        </div>
-                    {/if}
-                </div>
+                <ImageUpload 
+                    name="logoBigUrl" 
+                    label="Logo Besar (Hero Beranda)" 
+                    bind:value={logoBigUrl} 
+                    folder="himatif/org"
+                    previewSize="lg"
+                    required
+                    error={form?.errors?.logoBigUrl}
+                />
             </div>
 
             <div class="border-t border-primary/10 pt-6 mt-2 flex flex-col gap-6">
@@ -181,7 +172,7 @@
                 <button 
                     type="submit" 
                     disabled={isSubmitting}
-                    class="btn-cta py-3 px-8 text-base flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    class="btn-cta py-3 px-8 text-base flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed rounded-full"
                 >
                     {#if isSubmitting}
                         <span class="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></span>
