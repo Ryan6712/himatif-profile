@@ -9,6 +9,9 @@ const adapter = new PrismaMariaDb({
   password: DATABASE_PASSWORD,
   database: DATABASE_NAME,
   port: Number(DATABASE_PORT),
+  ssl: {
+        rejectUnauthorized: false
+  }
 });
 const prisma = new PrismaClient({ adapter });
 
