@@ -1,65 +1,81 @@
-# Svelte library
+# HIMATIF Profile
 
-Everything you need to build a Svelte library, powered by [`sv`](https://npmjs.com/package/sv).
+Ini adalah proyek *Company Profile* resmi dari **Himpunan Mahasiswa Teknologi Informasi (HIMATIF) ITB Yadika**. Repositori ini menyediakan *showcase* kepada masyarakat publik terkait perkenalan divisi, program kerja (*blogging/news*), dan keanggotaan.
 
-Read more about creating a library [in the docs](https://svelte.dev/docs/kit/packaging).
+Selain halaman publik, aplikasi ini juga terintegrasi dengan **Admin Dashboard** interaktif untuk mengelola (CRUD) struktur organisasi, anggota, divisi, program kerja, dan unggahan galeri.
 
-## Creating a project
+## Tech Stack
+Proyek ini dibangun di atas teknologi termutakhir:
+- **Framework**: SvelteKit (Svelte 5 - Runes Mode)
+- **Styling**: Tailwind CSS v4 & Lucide Svelte (Icons)
+- **Database & ORM**: MariaDB/MySQL menggunakan **Prisma ORM v7** (via `@prisma/adapter-mariadb`)
+- **Autentikasi**: Better-Auth (email/username login session management)
+- **Cloud Storage**: Cloudinary (Image Delivery Content)
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 📦 Panduan Instalasi & Pengembangan
 
-```sh
-# create a new project in the current directory
-npx sv create
+Jika Anda ingin menjalankan atau melanjutkan *development* dari aplikasi ini di mesin lokal, silakan ikuti petunjuk di bawah ini.
 
-# create a new project in my-app
-npx sv create my-app
+### 1. Kebutuhan Dasar
+- **Node.js** (Versi >= 24)
+- **MariaDB** atau **MySQL** (Server database lokal yang berjalan aktif)
+
+### 2. Kloning & Install Dependencies
+1. *Clone* repositori ini.
+2. Buka terminal pada folder proyek.
+3. Jalankan `npm install` untuk menginstal seluruh pustaka yang diperlukan.
+
+### 3. Konfigurasi Environment (Lingkungan)
+Gandakan file `.env.example` menjadi `.env` (atau buat file `.env` baru). Lalu lengkapi variabel berikut ini agar aplikasi bisa terhubung ke database dan cloud.
+
+```ini
+# --- DATABASE KONEKSI ---
+DATABASE_URL="mysql://root:PASSWORD_ANDA@localhost:3306/himatif_profile"
+DATABASE_USER="root"
+DATABASE_PASSWORD="PASSWORD_ANDA"
+DATABASE_NAME="himatif_profile"
+DATABASE_HOST="localhost"
+DATABASE_PORT="3306"
+
+# --- BETTER-AUTH SECRETS ---
+# (Wajib ada untuk menjaga keamanan session admin, cukup generate random string)
+BETTER_AUTH_SECRET="random_string_generator"
+BETTER_AUTH_URL="http://localhost:5173"
+
+# --- CLOUDINARY API ---
+# (Wajib ada untuk mengunggah logo, cover divisi, dll)
+CLOUDINARY_CLOUD_NAME="my_cloud_id"
+CLOUDINARY_API_KEY="00000000"
+CLOUDINARY_API_SECRET="Aaa_BBB"
 ```
 
-To recreate this project with the same configuration:
+### 4. Database Setup & Prisma Migration
+Sebelum menjalankan *server*, skema database lokal Anda perlu disamakan dengan Prisma.
+1. Tarik (Push) struktur tabel `schema.prisma` ke database:
+   ```bash
+   npx prisma db push
+   ```
+2. Anda disarankan melakukan inisiasi (*Seeding*) data *dummy* agar halaman tidak kosong melompong (termasuk membuat akun admin).
+   ```bash
+   npm run db:seed
+   ```
+   > **Note:** Seed di atas akan meng-*generate* akses akun administrator.
+   > **Username:** admin
+   > **Password:** admin123
 
-```sh
-# recreate this project
-npx sv@0.16.6 create --template library --types ts --add eslint prettier vitest="usages:unit,component" tailwindcss="plugins:typography,forms" sveltekit-adapter="adapter:netlify" --install npm ./
-```
+### 5. Menjalankan *Development Server*
+Setelah environment dikonfigurasikan dengan benar dan database telah disuntik skema, mulai *server* lokal Anda:
 
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
+```bash
 npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
 ```
 
-Everything inside `src/lib` is part of your library, everything inside `src/routes` can be used as a showcase or preview app.
+Kunjungi:
+- `http://localhost:5173/` - Untuk laman **Public Company Profile**.
+- `http://localhost:5173/admin/login` - Untuk akses ke laman **Admin Dashboard**.
 
-## Building
+## 📝 Design Pattern Guideline
+Apabila Anda berkontribusi pada pengembangan aplikasi (UI/UX), proyek ini berjalan dengan prinsip *Glassmorphism* dan hierarki *tailwind stack*. **Wajib membaca panduan di `docs/design-pattern.md`** sebelum Anda mengeksekusi penambahan gaya CSS agar harmonisasi komponen tidak pecah.
 
-To build your library:
-
-```sh
-npm pack
-```
-
-To create a production version of your showcase app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
-
-## Publishing
-
-Go into the `package.json` and give your package the desired name through the `"name"` option. Also consider adding a `"license"` field and point it to a `LICENSE` file which you can create from a template (one popular option is the [MIT license](https://opensource.org/license/mit/)).
-
-To publish your library to [npm](https://www.npmjs.com):
-
-```sh
-npm publish
-```
+---
+Dibuat dengan ❤️ oleh Devisi DBM - HIMATIF ITB Yadika.
