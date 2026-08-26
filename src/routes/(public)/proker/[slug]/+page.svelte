@@ -1,10 +1,9 @@
 <script lang="ts">
-    import { parseMarkdown } from "$lib/utils/markdown";
-
     let { data } = $props();
 
     const proker = $derived(data.proker);
-    const htmlContent = $derived(proker?.content ? parseMarkdown(proker.content) : "");
+    // Sekarang content sudah berupa HTML langsung dari Tiptap
+    const htmlContent = $derived(proker?.content || "");
 
     function formatDate(date: string | Date | null) {
         if (!date) return "Tanggal tidak tersedia";

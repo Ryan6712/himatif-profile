@@ -58,7 +58,7 @@
                 <span class="date text-secondary font-semibold text-sm mt-2">{formatDate(item.date)}</span>
                 <p class="max-w-2xl mt-5 leading-relaxed opacity-85">{item.description}</p>
                 <!-- Update to dynamic slug -->
-                <a href="/proker/upcoming" class="read-more mt-4 text-secondary font-semibold inline-flex items-center gap-1">baca selengkapnya <span class="group-hover:ms-3 transition-all ease-in-out duration-300">&rarr;</span></a>
+                <a href="/proker/{item.slug}" class="read-more mt-4 text-secondary font-semibold inline-flex items-center gap-1">baca selengkapnya <span class="group-hover:ms-3 transition-all ease-in-out duration-300">&rarr;</span></a>
             </div>
         </div>
     {/each}
