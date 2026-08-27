@@ -1,11 +1,13 @@
 # HIMATIF Profile
 
-Ini adalah proyek *Company Profile* resmi dari **Himpunan Mahasiswa Teknologi Informasi (HIMATIF) ITB Yadika**. Repositori ini menyediakan *showcase* kepada masyarakat publik terkait perkenalan divisi, program kerja (*blogging/news*), dan keanggotaan.
+Ini adalah proyek _Company Profile_ resmi dari **Himpunan Mahasiswa Teknologi Informasi (HIMATIF) ITB Yadika**. Repositori ini menyediakan _showcase_ kepada masyarakat publik terkait perkenalan divisi, program kerja (_blogging/news_), dan keanggotaan.
 
 Selain halaman publik, aplikasi ini juga terintegrasi dengan **Admin Dashboard** interaktif untuk mengelola (CRUD) struktur organisasi, anggota, divisi, program kerja, dan unggahan galeri.
 
 ## Tech Stack
+
 Proyek ini dibangun di atas teknologi termutakhir:
+
 - **Framework**: SvelteKit (Svelte 5 - Runes Mode)
 - **Styling**: Tailwind CSS v4 & Lucide Svelte (Icons)
 - **Database & ORM**: MariaDB/MySQL menggunakan **Prisma ORM v7** (via `@prisma/adapter-mariadb`)
@@ -14,18 +16,21 @@ Proyek ini dibangun di atas teknologi termutakhir:
 
 ## 📦 Panduan Instalasi & Pengembangan
 
-Jika Anda ingin menjalankan atau melanjutkan *development* dari aplikasi ini di mesin lokal, silakan ikuti petunjuk di bawah ini.
+Jika Anda ingin menjalankan atau melanjutkan _development_ dari aplikasi ini di mesin lokal, silakan ikuti petunjuk di bawah ini.
 
 ### 1. Kebutuhan Dasar
+
 - **Node.js** (Versi >= 24)
 - **MariaDB** atau **MySQL** (Server database lokal yang berjalan aktif)
 
 ### 2. Kloning & Install Dependencies
-1. *Clone* repositori ini.
+
+1. _Clone_ repositori ini.
 2. Buka terminal pada folder proyek.
 3. Jalankan `npm install` untuk menginstal seluruh pustaka yang diperlukan.
 
 ### 3. Konfigurasi Environment (Lingkungan)
+
 Gandakan file `.env.example` menjadi `.env` (atau buat file `.env` baru). Lalu lengkapi variabel berikut ini agar aplikasi bisa terhubung ke database dan cloud.
 
 ```ini
@@ -50,36 +55,43 @@ CLOUDINARY_API_SECRET="Aaa_BBB"
 ```
 
 ### 4. Database Setup & Prisma Migration
-Sebelum menjalankan *server*, skema database lokal Anda perlu disamakan dengan Prisma.
+
+Sebelum menjalankan _server_, skema database lokal Anda perlu disamakan dengan Prisma.
+
 1. Tarik (Push) struktur tabel `schema.prisma` ke database:
    ```bash
    npx prisma db push
    ```
-2. Anda disarankan melakukan inisiasi (*Seeding*) data *dummy* agar halaman tidak kosong melompong (termasuk membuat akun admin).
+2. Anda disarankan melakukan inisiasi (_Seeding_) data _dummy_ agar halaman tidak kosong melompong (termasuk membuat akun admin).
    ```bash
    npm run db:seed
    ```
-   > **Note:** Seed di atas akan meng-*generate* akses akun administrator.
+   > **Note:** Seed di atas akan meng-_generate_ akses akun administrator.
    > **Username:** admin
    > **Password:** admin123
 
-### 5. Menjalankan *Development Server*
-Setelah environment dikonfigurasikan dengan benar dan database telah disuntik skema, mulai *server* lokal Anda:
+### 5. Menjalankan _Development Server_
+
+Setelah environment dikonfigurasikan dengan benar dan database telah disuntik skema, mulai _server_ lokal Anda:
 
 ```bash
 npm run dev
 ```
 
 Kunjungi:
+
 - `http://localhost:5173/` - Untuk laman **Public Company Profile**.
 - `http://localhost:5173/admin/login` - Untuk akses ke laman **Admin Dashboard**.
 
 ## 🚀 CI/CD & Deployment (Dokploy)
+
 Proyek ini dilengkapi dengan GitHub Actions workflow untuk otomatisasi build dan deploy ke **Dokploy** via **Custom Docker Registry**.
 Panduan lengkap setup Secrets dan konfigurasi Dokploy dapat dilihat di [Dokumentasi Deployment Dokploy](docs/DOKPLOY_DEPLOYMENT.md).
 
 ## 📝 Design Pattern Guideline
-Apabila Anda berkontribusi pada pengembangan aplikasi (UI/UX), proyek ini berjalan dengan prinsip *Glassmorphism* dan hierarki *tailwind stack*. **Wajib membaca panduan di `docs/design-pattern.md`** sebelum Anda mengeksekusi penambahan gaya CSS agar harmonisasi komponen tidak pecah.
+
+Apabila Anda berkontribusi pada pengembangan aplikasi (UI/UX), proyek ini berjalan dengan prinsip _Glassmorphism_ dan hierarki _tailwind stack_. **Wajib membaca panduan di `docs/design-pattern.md`** sebelum Anda mengeksekusi penambahan gaya CSS agar harmonisasi komponen tidak pecah.
 
 ---
+
 Dibuat dengan ❤️ oleh Devisi DBM - HIMATIF ITB Yadika.

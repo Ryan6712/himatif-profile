@@ -1,60 +1,60 @@
 @theme {
-     /* ===== SPACING ===== */
-        --space-1: 4px;
-        --space-2: 8px;
-        --space-3: 12px;
-        --space-4: 16px;
-        --space-5: 20px;
-        --space-6: 24px;
-        --space-8: 32px;
-        --space-12: 48px;
-        --space-16: 64px;
+	/* ===== SPACING ===== */
+	--space-1: 4px;
+	--space-2: 8px;
+	--space-3: 12px;
+	--space-4: 16px;
+	--space-5: 20px;
+	--space-6: 24px;
+	--space-8: 32px;
+	--space-12: 48px;
+	--space-16: 64px;
 
-    /* ===== TYPOGRAPHY ===== */
-        --font-base: "Nunito", sans-serif;
+	/* ===== TYPOGRAPHY ===== */
+	--font-base: 'Nunito', sans-serif;
 
-        --text-sm: 0.875rem;
-        --text-base: 1rem;
-        --text-lg: 1.25rem;
-        --text-xl: 1.5rem;
-        --text-2xl: 2rem;
-        --text-3xl: 2.5rem;
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-lg: 1.25rem;
+	--text-xl: 1.5rem;
+	--text-2xl: 2rem;
+	--text-3xl: 2.5rem;
 
-        --lh-tight: 1.2;
-        --lh-normal: 1.5;
-        --lh-loose: 1.7;
+	--lh-tight: 1.2;
+	--lh-normal: 1.5;
+	--lh-loose: 1.7;
 
-    /* ===== Radius ===== */
-        --radius-sm: 0.75rem;
-        --radius-md: 1.5rem;
-        --radius-lg: 2rem;
-        --radius-xl: 3rem;
+	/* ===== Radius ===== */
+	--radius-sm: 0.75rem;
+	--radius-md: 1.5rem;
+	--radius-lg: 2rem;
+	--radius-xl: 3rem;
 
-    /* ===== Colors ===== */
-        --color-primary: #7BED4F;
-        --color-secondary: #2D9B5A;
-        --color-tertiary: #B8D98A;
+	/* ===== Colors ===== */
+	--color-primary: #7bed4f;
+	--color-secondary: #2d9b5a;
+	--color-tertiary: #b8d98a;
 
-        --color-surface: #EDF2E4;
-        --color-background: #F8FAF5;
+	--color-surface: #edf2e4;
+	--color-background: #f8faf5;
 
-        --color-primary-hover: #6ADF3A;
-        --color-secondary-hover: #248A4E;
-        --color-tertiary-hover: #A5CC73;
+	--color-primary-hover: #6adf3a;
+	--color-secondary-hover: #248a4e;
+	--color-tertiary-hover: #a5cc73;
 
-        --color-title-text: #1A2412;
-        --color-primary-text: #3B4A33;
+	--color-title-text: #1a2412;
+	--color-primary-text: #3b4a33;
 
-    /* ===== Shadows ===== */
-        --shadow-card: 0 1px 3px rgba(26, 36, 18, 0.06), 0 1px 2px rgba(26, 36, 18, 0.04);
-        --shadow-card-md: 0 4px 12px rgba(26, 36, 18, 0.08), 0 2px 4px rgba(26, 36, 18, 0.04);
-        --shadow-card-lg: 0 10px 30px rgba(26, 36, 18, 0.10), 0 4px 8px rgba(26, 36, 18, 0.06);
-        --shadow-card-xl: 0 20px 50px rgba(26, 36, 18, 0.12), 0 8px 16px rgba(26, 36, 18, 0.06);
-        --shadow-glow: 0 0 24px rgba(123, 237, 79, 0.25);
+	/* ===== Shadows ===== */
+	--shadow-card: 0 1px 3px rgba(26, 36, 18, 0.06), 0 1px 2px rgba(26, 36, 18, 0.04);
+	--shadow-card-md: 0 4px 12px rgba(26, 36, 18, 0.08), 0 2px 4px rgba(26, 36, 18, 0.04);
+	--shadow-card-lg: 0 10px 30px rgba(26, 36, 18, 0.1), 0 4px 8px rgba(26, 36, 18, 0.06);
+	--shadow-card-xl: 0 20px 50px rgba(26, 36, 18, 0.12), 0 8px 16px rgba(26, 36, 18, 0.06);
+	--shadow-glow: 0 0 24px rgba(123, 237, 79, 0.25);
 
-    /* ===== Transitions ===== */
-        --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
-        --duration-fast: 200ms;
-        --duration-normal: 350ms;
-        --duration-slow: 500ms;
+	/* ===== Transitions ===== */
+	--ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+	--duration-fast: 200ms;
+	--duration-normal: 350ms;
+	--duration-slow: 500ms;
 }

@@ -1,29 +1,39 @@
 <script>
-    import { Construction } from '@lucide/svelte';
+	import { Construction } from '@lucide/svelte';
 </script>
 
-<section class="min-h-[70vh] min-w-full bg-gradient-surface section px-3 mt-7 relative overflow-hidden flex flex-col justify-center items-center">
-    <div class="absolute inset-0 bg-dot-pattern pointer-events-none"></div>
-    
-    <div class="glass-card rounded-2xl flex flex-col items-center text-center p-10 max-w-2xl relative z-10 hover-lift" style="box-shadow: var(--shadow-card-md);">
-        <div class="bg-secondary/10 p-4 rounded-full mb-6">
-            <Construction size={64} class="text-secondary" strokeWidth={1.5} />
-        </div>
-        
-        <h1 class="text-title-text text-4xl font-extrabold tracking-tight mb-4">
-            Masih <span class="gradient-text">Dalam Pengerjaan</span>
-        </h1>
-        
-        <p class="leading-relaxed opacity-80 text-lg mb-8">
-            Halaman detail program kerja ini sedang dalam tahap pengembangan. Silakan kembali lagi nanti untuk melihat informasi lengkapnya.
-        </p>
+<section
+	class="bg-gradient-surface section relative mt-7 flex min-h-[70vh] min-w-full flex-col items-center justify-center overflow-hidden px-3"
+>
+	<div class="bg-dot-pattern pointer-events-none absolute inset-0"></div>
 
-        <p class="leading-relaxed opacity-80 text-sm mb-8">
-            Tim kami sedang sibuk mohon tinggu sebentar. Terima kasih atas pengertiannya.
-        </p>
+	<div
+		class="glass-card hover-lift relative z-10 flex max-w-2xl flex-col items-center rounded-2xl p-10 text-center"
+		style="box-shadow: var(--shadow-card-md);"
+	>
+		<div class="mb-6 rounded-full bg-secondary/10 p-4">
+			<Construction size={64} class="text-secondary" strokeWidth={1.5} />
+		</div>
 
-        <a href="/proker" class="inline-flex items-center gap-2 px-6 py-3 rounded-full font-semibold transition-all ease-in-out duration-300 text-white hover:-translate-y-1" style="background: var(--color-secondary); box-shadow: var(--shadow-md);">
-            &larr; Kembali ke Program Kerja
-        </a>
-    </div>
+		<h1 class="mb-4 text-4xl font-extrabold tracking-tight text-title-text">
+			Masih <span class="gradient-text">Dalam Pengerjaan</span>
+		</h1>
+
+		<p class="mb-8 text-lg leading-relaxed opacity-80">
+			Halaman detail program kerja ini sedang dalam tahap pengembangan. Silakan kembali lagi nanti
+			untuk melihat informasi lengkapnya.
+		</p>
+
+		<p class="mb-8 text-sm leading-relaxed opacity-80">
+			Tim kami sedang sibuk mohon tinggu sebentar. Terima kasih atas pengertiannya.
+		</p>
+
+		<a
+			href="/proker"
+			class="inline-flex items-center gap-2 rounded-full px-6 py-3 font-semibold text-white transition-all duration-300 ease-in-out hover:-translate-y-1"
+			style="background: var(--color-secondary); box-shadow: var(--shadow-md);"
+		>
+			&larr; Kembali ke Program Kerja
+		</a>
+	</div>
 </section>
