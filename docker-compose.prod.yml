@@ -20,7 +20,7 @@ services:
     networks:
       - himatif_network
 
-  # Web Application Service (SvelteKit)
+  # Web Application Service (SvelteKit) - Tarik langsung Image dari Registry
   app:
     image: ${IMAGE_NAME:-himatif-profile}:${IMAGE_TAG:-latest}
     container_name: himatif_app
