@@ -57,6 +57,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Edit {currentProker.title} - Admin HIMATIF</title>
+</svelte:head>
+
 <Toast
 	visible={showToast}
 	message={toastMessage}

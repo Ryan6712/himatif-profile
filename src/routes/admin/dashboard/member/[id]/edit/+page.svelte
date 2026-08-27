@@ -33,6 +33,10 @@
 	});
 </script>
 
+<svelte:head>
+	<title>Edit {currentMember.name} - Admin HIMATIF</title>
+</svelte:head>
+
 <Toast
 	visible={showToast}
 	message={toastMessage}

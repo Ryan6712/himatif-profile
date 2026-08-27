@@ -2,6 +2,11 @@
 	import { Construction } from '@lucide/svelte';
 </script>
 
+<svelte:head>
+	<title>Segera Hadir - HIMATIF ITB Yadika</title>
+	<meta name="description" content="Halaman ini sedang dalam tahap pengembangan. Silakan kembali lagi nanti." />
+</svelte:head>
+
 <section
 	class="bg-gradient-surface section relative mt-7 flex min-h-[70vh] min-w-full flex-col items-center justify-center overflow-hidden px-3"
 >
@@ -22,10 +27,6 @@
 		<p class="mb-8 text-lg leading-relaxed opacity-80">
 			Halaman detail program kerja ini sedang dalam tahap pengembangan. Silakan kembali lagi nanti
 			untuk melihat informasi lengkapnya.
-		</p>
-
-		<p class="mb-8 text-sm leading-relaxed opacity-80">
-			Tim kami sedang sibuk mohon tinggu sebentar. Terima kasih atas pengertiannya.
 		</p>
 
 		<a

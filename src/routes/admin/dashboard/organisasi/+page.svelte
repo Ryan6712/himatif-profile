@@ -63,6 +63,10 @@
 	let logoBigUrl = $state(initialValues.logoBigUrl);
 </script>
 
+<svelte:head>
+	<title>Kelola Organisasi - Admin HIMATIF</title>
+</svelte:head>
+
 <Toast
 	visible={showToast}
 	message={toastMessage}

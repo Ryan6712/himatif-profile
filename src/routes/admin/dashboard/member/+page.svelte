@@ -97,6 +97,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Kelola Anggota - Admin HIMATIF</title>
+</svelte:head>
+
 <Toast
 	visible={showToast}
 	message={toastMessage}

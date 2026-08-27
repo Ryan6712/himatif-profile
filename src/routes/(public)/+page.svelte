@@ -31,6 +31,11 @@
 	});
 </script>
 
+<svelte:head>
+	<title>HIMATIF - Himpunan Mahasiswa Teknologi Informasi ITB Yadika</title>
+	<meta name="description" content="HIMATIF ITB Yadika adalah wadah bagi mahasiswa Teknologi Informasi untuk berkolaborasi, mengeksplorasi, dan mengembangkan diri dalam bidang teknologi informasi." />
+</svelte:head>
+
 <section class="bg-gradient-surface stack section relative mt-3 min-w-full overflow-hidden px-3">
 	<!-- Subtle dot pattern overlay -->
 	<div class="bg-dot-pattern pointer-events-none absolute inset-0"></div>

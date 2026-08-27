@@ -35,6 +35,10 @@
 	let thumbnailUrl = $state(initialValues.thumbnailUrl);
 </script>
 
+<svelte:head>
+	<title>Edit {currentDivisi.nama} - Admin HIMATIF</title>
+</svelte:head>
+
 <Toast
 	visible={showToast}
 	message={toastMessage}

@@ -4,6 +4,11 @@
 	const devisiList = $derived(data.devisiList || []);
 </script>
 
+<svelte:head>
+	<title>Divisi - HIMATIF ITB Yadika</title>
+	<meta name="description" content="Jelajahi berbagai divisi di dalam HIMATIF ITB Yadika dan lihat bagaimana setiap divisi berkontribusi terhadap misi dan visi organisasi." />
+</svelte:head>
+
 <section class="bg-gradient-surface stack section relative mt-3 min-w-full overflow-hidden px-3">
 	<div class="bg-dot-pattern pointer-events-none absolute inset-0"></div>
 	<div class="stack-lg relative z-10 container flex flex-col items-center gap-4">

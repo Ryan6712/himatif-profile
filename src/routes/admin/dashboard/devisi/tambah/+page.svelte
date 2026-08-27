@@ -31,6 +31,10 @@
 	let thumbnailUrl = $state(initialValues.thumbnailUrl);
 </script>
 
+<svelte:head>
+	<title>Tambah Divisi - Admin HIMATIF</title>
+</svelte:head>
+
 <Toast
 	visible={showToast}
 	message={toastMessage}

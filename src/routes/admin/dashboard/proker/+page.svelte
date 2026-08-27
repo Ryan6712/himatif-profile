@@ -93,6 +93,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Kelola Program Kerja - Admin HIMATIF</title>
+</svelte:head>
+
 <Toast
 	visible={showToast}
 	message={toastMessage}

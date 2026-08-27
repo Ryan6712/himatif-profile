@@ -71,6 +71,10 @@
 	};
 </script>
 
+<svelte:head>
+	<title>Login Admin - HIMATIF ITB Yadika</title>
+</svelte:head>
+
 <div
 	class="bg-gradient-surface relative flex min-h-screen w-full items-center justify-center overflow-hidden px-4"
 >

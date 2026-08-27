@@ -15,6 +15,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Dashboard - Admin HIMATIF</title>
+</svelte:head>
+
 <div class="stack-lg flex flex-col">
 	<div class="flex items-center justify-between">
 		<div class="stack-sm">

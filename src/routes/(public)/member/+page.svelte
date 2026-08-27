@@ -19,6 +19,11 @@
 	const alumni = $derived(data.alumni);
 </script>
 
+<svelte:head>
+	<title>Anggota - HIMATIF ITB Yadika</title>
+	<meta name="description" content="Kenali struktur kepengurusan dan anggota HIMATIF ITB Yadika, dari BPH, Ketua Divisi, hingga anggota aktif dan alumni." />
+</svelte:head>
+
 <section
 	class="bg-gradient-surface stack section section relative mt-3 min-w-full overflow-hidden px-3"
 >

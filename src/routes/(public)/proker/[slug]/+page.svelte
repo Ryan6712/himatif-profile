@@ -17,7 +17,8 @@
 </script>
 
 <svelte:head>
-	<title>{proker?.title || 'Program Kerja'} - HIMATIF</title>
+    <title>{proker?.title || 'Program Kerja'} - HIMATIF ITB Yadika</title>
+    <meta name="description" content={proker?.description || 'Detail program kerja HIMATIF ITB Yadika.'} />
 </svelte:head>
 
 {#if proker}

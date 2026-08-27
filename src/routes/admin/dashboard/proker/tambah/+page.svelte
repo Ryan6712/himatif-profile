@@ -46,6 +46,10 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Tulis Artikel Baru - Admin HIMATIF</title>
+</svelte:head>
+
 <Toast
 	visible={showToast}
 	message={toastMessage}

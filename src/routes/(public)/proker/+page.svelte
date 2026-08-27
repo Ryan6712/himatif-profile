@@ -15,6 +15,11 @@
 	}
 </script>
 
+<svelte:head>
+	<title>Program Kerja - HIMATIF ITB Yadika</title>
+	<meta name="description" content="Daftar program kerja dan kegiatan HIMATIF ITB Yadika yang dirancang untuk mendorong kolaborasi, inovasi, dan pengembangan diri mahasiswa Teknologi Informasi." />
+</svelte:head>
+
 <section class="bg-gradient-surface section relative mt-7 min-w-full overflow-hidden px-3">
 	<div class="bg-dot-pattern pointer-events-none absolute inset-0"></div>
 	<div class="header stack relative z-10 container mb-10 flex flex-col items-start justify-start">
@@ -57,6 +62,7 @@
 					>
 					<p class="mt-5 max-w-2xl leading-relaxed opacity-85">{item.description}</p>
 					<!-- Update to dynamic slug -->
+					{#if item.publishedAt}
 					<a
 						href="/proker/{item.slug}"
 						class="read-more mt-4 inline-flex items-center gap-1 font-semibold text-secondary"
@@ -64,6 +70,15 @@
 							class="transition-all duration-300 ease-in-out group-hover:ms-3">&rarr;</span
 						></a
 					>
+					{:else}
+					<a
+						href="/proker/upcoming"
+						class="read-more mt-4 inline-flex items-center gap-1 font-semibold text-secondary"
+						>baca selengkapnya <span
+							class="transition-all duration-300 ease-in-out group-hover:ms-3">&rarr;</span
+						></a
+					>
+					{/if}
 				</div>
 			</div>
 		{/each}
