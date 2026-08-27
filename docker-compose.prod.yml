@@ -9,8 +9,6 @@ services:
       MARIADB_DATABASE: ${DATABASE_NAME:-himatif_profile}
       MARIADB_USER: ${DATABASE_USER:-himatif}
       MARIADB_PASSWORD: ${DATABASE_PASSWORD:-rootpassword}
-    ports:
-      - '${DATABASE_PORT:-3306}:3306'
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
