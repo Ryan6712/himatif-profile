@@ -185,7 +185,7 @@
                         </td>
                         <td class="px-6 py-4 text-center">
                             <div class="w-10 h-10 rounded-full border border-primary/20 mx-auto overflow-hidden bg-white">
-                                <img src={item.imageUrl} alt={item.name} class="w-full h-full object-cover" />
+                                <img src={item.imageUrl} alt={item.name} width="40" height="40" loading="lazy" decoding="async" class="w-full h-full object-cover" />
                             </div>
                         </td>
                         <td class="px-6 py-4">

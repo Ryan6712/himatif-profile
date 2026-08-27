@@ -36,7 +36,7 @@
 
     {#if proker.thumbnailUrl}
     <div class="mb-8 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-md aspect-video relative">
-        <img src={proker.thumbnailUrl} alt={proker.title} class="absolute inset-0 w-full h-full object-cover" />
+        <img src={proker.thumbnailUrl} alt={proker.title} width="896" height="504" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
     </div>
     {/if}
 

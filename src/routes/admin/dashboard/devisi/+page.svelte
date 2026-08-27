@@ -123,7 +123,7 @@
                         </td>
                         <td class="px-6 py-4 text-center">
                             <div class="w-10 h-10 rounded bg-white/50 border border-primary/20 p-1 mx-auto overflow-hidden">
-                                <img src={item.logoUrl} alt="Logo" class="w-full h-full object-contain" />
+                                <img src={item.logoUrl} alt="Logo" width="40" height="40" loading="lazy" decoding="async" class="w-full h-full object-contain" />
                             </div>
                         </td>
                         <td class="px-6 py-4">

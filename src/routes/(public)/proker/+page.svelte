@@ -51,7 +51,7 @@
         <div class="proker px-4 py-6 glass-card rounded-2xl flex flex-col md:flex-row gap-6 justify-center items-start lg:justify-start group hover-lift w-full" style="box-shadow: var(--shadow-card-md);">
             <!-- Thumbnail 400x230 aspect ratio ~16:9 for responsive -->
             <div class="w-full md:w-1/3 max-w-[400px] shrink-0 relative aspect-video rounded-xl overflow-hidden" style="box-shadow: var(--shadow-card);">
-                <img src={item.thumbnailUrl} alt={item.title} class="absolute inset-0 w-full h-full object-cover">
+                <img src={item.thumbnailUrl} alt={item.title} width="400" height="225" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
             </div>
             <div class="desc flex flex-col flex-1 w-full">
                 <span class="title font-extrabold text-2xl text-title-text tracking-tight">{item.title}</span>

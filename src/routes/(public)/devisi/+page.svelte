@@ -26,7 +26,7 @@
             <div class="header flex flex-col items-start stack-sm w-full">
                 <!-- Logo 32x32 -->
                 <div class="icon-container w-12 h-12 flex items-center justify-center rounded">
-                    <img src="{item.logoUrl}" alt={item.nama} class="w-8 h-8 object-contain">
+                    <img src="{item.logoUrl}" alt={item.nama} width="32" height="32" loading="lazy" decoding="async" class="w-8 h-8 object-contain">
                 </div>
                 <div class="title text-title-text font-bold text-lg tracking-wide">
                     {item.nama}
@@ -41,7 +41,7 @@
                 </p>
                 <!-- Thumbnail 320x120 aspect ratio 8:3 -->
                 <div class="w-full relative pt-[37.5%] rounded-xl overflow-hidden" style="box-shadow: var(--shadow-card);">
-                    <img src="{item.thumbnailUrl}" alt={item.nama} class="absolute inset-0 w-full h-full object-cover">
+                    <img src="{item.thumbnailUrl}" alt={item.nama} width="320" height="120" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
                 </div>
             </div>
         </div>
