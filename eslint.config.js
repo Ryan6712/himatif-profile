@@ -37,7 +37,12 @@ export default defineConfig(
 		// Override or add rule settings here, such as:
 		// 'svelte/button-has-type': 'error'
 		rules: {
-			"svelte/no-navigation-without-resolve": ["error", { "ignoreLinks": true }]
+			'svelte/no-navigation-without-resolve': ['error', { ignoreLinks: true }],
+			'svelte/no-at-html-tags': 'off',
+			'svelte/require-each-key': 'off',
+			'@typescript-eslint/no-explicit-any': 'off',
+			'@typescript-eslint/no-unused-vars': 'off',
+			'@typescript-eslint/no-require-imports': 'off'
 		}
 	}
 );

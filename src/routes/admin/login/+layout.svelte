@@ -8,10 +8,8 @@
 	{@render children()}
 </main>
 
-
-
 <style>
 	* {
-    color: var(--color-primary-text);
-}
+		color: var(--color-primary-text);
+	}
 </style>

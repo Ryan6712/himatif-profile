@@ -5,5 +5,12 @@ yarn.lock
 bun.lock
 bun.lockb
 
+# Generated Code (Prisma)
+src/lib/server/generated/
+
 # Miscellaneous
 /static/
+.agents/
+.claude/
+.windsurf/
+docs/

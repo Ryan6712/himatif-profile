@@ -10,19 +10,17 @@ declare global {
 				email: string;
 			};
 
-			
 			isAuthenticated: boolean;
 
-			user?: { 
-				id: string; 
-				name: string; 
-				email: string; 
-				username?: string | null; 
+			user?: {
+				id: string;
+				name: string;
+				email: string;
+				username?: string | null;
 			};
 
-
-			session?: { 
-				id: string; 
+			session?: {
+				id: string;
 				expiresAt: Date;
 			};
 		}

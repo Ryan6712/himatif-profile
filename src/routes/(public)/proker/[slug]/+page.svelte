@@ -1,53 +1,65 @@
 <script lang="ts">
-    let { data } = $props();
+	let { data } = $props();
 
-    const proker = $derived(data.proker);
-    // Sekarang content sudah berupa HTML langsung dari Tiptap
-    const htmlContent = $derived(proker?.content || "");
+	const proker = $derived(data.proker);
+	// Sekarang content sudah berupa HTML langsung dari Tiptap
+	const htmlContent = $derived(proker?.content || '');
 
-    function formatDate(date: string | Date | null) {
-        if (!date) return "Tanggal tidak tersedia";
-        const d = new Date(date);
-        return d.toLocaleDateString('id-ID', {
-            day: 'numeric',
-            month: 'long',
-            year: 'numeric'
-        });
-    }
+	function formatDate(date: string | Date | null) {
+		if (!date) return 'Tanggal tidak tersedia';
+		const d = new Date(date);
+		return d.toLocaleDateString('id-ID', {
+			day: 'numeric',
+			month: 'long',
+			year: 'numeric'
+		});
+	}
 </script>
 
 <svelte:head>
-    <title>{proker?.title || 'Program Kerja'} - HIMATIF</title>
+	<title>{proker?.title || 'Program Kerja'} - HIMATIF</title>
 </svelte:head>
 
 {#if proker}
-<article class="container section stack-lg px-3 mt-7">
-    <header class="stack-sm mb-8">
-        <a href="/proker" class="text-sm opacity-60 inline-flex items-center gap-1 hover:text-secondary transition-colors">
-            <span>&larr;</span> Kembali ke Program Kerja
-        </a>
-        <h1 class="text-4xl font-extrabold tracking-tight text-title-text mt-4">
-            {proker.title}
-        </h1>
-        <time class="text-sm font-semibold text-secondary block mt-2">
-            {formatDate(proker.date)}
-        </time>
-    </header>
+	<article class="section stack-lg container mt-7 px-3">
+		<header class="stack-sm mb-8">
+			<a
+				href="/proker"
+				class="inline-flex items-center gap-1 text-sm opacity-60 transition-colors hover:text-secondary"
+			>
+				<span>&larr;</span> Kembali ke Program Kerja
+			</a>
+			<h1 class="mt-4 text-4xl font-extrabold tracking-tight text-title-text">
+				{proker.title}
+			</h1>
+			<time class="mt-2 block text-sm font-semibold text-secondary">
+				{formatDate(proker.date)}
+			</time>
+		</header>
 
-    {#if proker.thumbnailUrl}
-    <div class="mb-8 w-full max-w-4xl mx-auto rounded-2xl overflow-hidden shadow-md aspect-video relative">
-        <img src={proker.thumbnailUrl} alt={proker.title} width="896" height="504" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover" />
-    </div>
-    {/if}
+		{#if proker.thumbnailUrl}
+			<div
+				class="relative mx-auto mb-8 aspect-video w-full max-w-4xl overflow-hidden rounded-2xl shadow-md"
+			>
+				<img
+					src={proker.thumbnailUrl}
+					alt={proker.title}
+					width="896"
+					height="504"
+					loading="lazy"
+					decoding="async"
+					class="absolute inset-0 h-full w-full object-cover"
+				/>
+			</div>
+		{/if}
 
-    <div class="prose prose-lg max-w-none prose-img:rounded-xl">
-        
-        {@html htmlContent}
-    </div>
-</article>
+		<div class="prose prose-lg max-w-none prose-img:rounded-xl">
+			{@html htmlContent}
+		</div>
+	</article>
 {:else}
-<div class="container section px-3 mt-10 text-center">
-    <h1 class="text-2xl font-bold">Program kerja tidak ditemukan.</h1>
-    <a href="/proker" class="text-secondary mt-4 inline-block">Kembali ke list program kerja</a>
-</div>
+	<div class="section container mt-10 px-3 text-center">
+		<h1 class="text-2xl font-bold">Program kerja tidak ditemukan.</h1>
+		<a href="/proker" class="mt-4 inline-block text-secondary">Kembali ke list program kerja</a>
+	</div>
 {/if}
