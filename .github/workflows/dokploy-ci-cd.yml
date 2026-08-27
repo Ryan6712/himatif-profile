@@ -104,11 +104,15 @@ jobs:
           cache-to: ${{ github.event_name != 'pull_request' && 'type=gha,mode=max' || '' }}
 
       - name: Trigger Dokploy Deployment Webhook
-        if: github.event_name != 'pull_request' && secrets.DOKPLOY_WEBHOOK_URL != ''
+        if: github.event_name != 'pull_request'
         env:
           DOKPLOY_WEBHOOK_URL: ${{ secrets.DOKPLOY_WEBHOOK_URL }}
         run: |
-          echo "Triggering Dokploy deployment webhook..."
-          curl -fsS -X POST "$DOKPLOY_WEBHOOK_URL" \
-            -H "Content-Type: application/json" \
-            -d '{}'
+          if [ -n "$DOKPLOY_WEBHOOK_URL" ]; then
+            echo "Triggering Dokploy deployment webhook..."
+            curl -fsS -X POST "$DOKPLOY_WEBHOOK_URL" \
+              -H "Content-Type: application/json" \
+              -d '{}'
+          else
+            echo "DOKPLOY_WEBHOOK_URL not configured. Skipping webhook trigger."
+          fi
