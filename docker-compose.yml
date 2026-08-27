@@ -25,9 +25,6 @@ services:
   # Web Application Service (SvelteKit)
   app:
     image: ${IMAGE_NAME:-himatif-profile}:${IMAGE_TAG:-latest}
-    build:
-      context: .
-      dockerfile: Dockerfile
     container_name: himatif_app
     restart: unless-stopped
     ports:
