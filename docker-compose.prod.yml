@@ -1,0 +1,60 @@
+services:
+  # Database Service (MariaDB)
+  db:
+    image: mariadb:11
+    container_name: himatif_db
+    restart: unless-stopped
+    environment:
+      MARIADB_ROOT_PASSWORD: ${DATABASE_PASSWORD:-rootpassword}
+      MARIADB_DATABASE: ${DATABASE_NAME:-himatif_profile}
+      MARIADB_USER: ${DATABASE_USER:-himatif}
+      MARIADB_PASSWORD: ${DATABASE_PASSWORD:-rootpassword}
+    ports:
+      - '${DATABASE_PORT:-3306}:3306'
+    volumes:
+      - db_data:/var/lib/mysql
+    healthcheck:
+      test: ['CMD', 'healthcheck.sh', '--connect', '--innodb_initialized']
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+    networks:
+      - himatif_network
+
+  # Web Application Service (SvelteKit) - Tarik langsung Image dari Registry
+  app:
+    image: ${IMAGE_NAME:-himatif-profile}:${IMAGE_TAG:-latest}
+    container_name: himatif_app
+    restart: unless-stopped
+    ports:
+      - '${APP_PORT:-3000}:3000'
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: 'mysql://${DATABASE_USER:-himatif}:${DATABASE_PASSWORD:-rootpassword}@db:3306/${DATABASE_NAME:-himatif_profile}'
+      DATABASE_HOST: db
+      DATABASE_PORT: '3306'
+      DATABASE_USER: ${DATABASE_USER:-himatif}
+      DATABASE_PASSWORD: ${DATABASE_PASSWORD:-rootpassword}
+      DATABASE_NAME: ${DATABASE_NAME:-himatif_profile}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
+      BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:3000}
+      ORIGIN: ${ORIGIN:-http://localhost:3000}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
+      NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    networks:
+      - himatif_network
+
+volumes:
+  db_data:
+    driver: local
+
+networks:
+  himatif_network:
+    driver: bridge
