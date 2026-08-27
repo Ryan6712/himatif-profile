@@ -51,14 +51,14 @@
         <div class="proker px-4 py-6 glass-card rounded-2xl flex flex-col md:flex-row gap-6 justify-center items-start lg:justify-start group hover-lift w-full" style="box-shadow: var(--shadow-card-md);">
             <!-- Thumbnail 400x230 aspect ratio ~16:9 for responsive -->
             <div class="w-full md:w-1/3 max-w-[400px] shrink-0 relative aspect-video rounded-xl overflow-hidden" style="box-shadow: var(--shadow-card);">
-                <img src={item.thumbnailUrl} alt={item.title} class="absolute inset-0 w-full h-full object-cover">
+                <img src={item.thumbnailUrl} alt={item.title} width="400" height="225" loading="lazy" decoding="async" class="absolute inset-0 w-full h-full object-cover">
             </div>
             <div class="desc flex flex-col flex-1 w-full">
                 <span class="title font-extrabold text-2xl text-title-text tracking-tight">{item.title}</span>
                 <span class="date text-secondary font-semibold text-sm mt-2">{formatDate(item.date)}</span>
                 <p class="max-w-2xl mt-5 leading-relaxed opacity-85">{item.description}</p>
                 <!-- Update to dynamic slug -->
-                <a href="/proker/upcoming" class="read-more mt-4 text-secondary font-semibold inline-flex items-center gap-1">baca selengkapnya <span class="group-hover:ms-3 transition-all ease-in-out duration-300">&rarr;</span></a>
+                <a href="/proker/{item.slug}" class="read-more mt-4 text-secondary font-semibold inline-flex items-center gap-1">baca selengkapnya <span class="group-hover:ms-3 transition-all ease-in-out duration-300">&rarr;</span></a>
             </div>
         </div>
     {/each}

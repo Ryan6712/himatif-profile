@@ -118,7 +118,7 @@
     {#if value}
         <div class="flex items-start gap-4 p-4 border border-primary/20 bg-background/50 rounded smooth-transition">
             <div class="{sizeClasses[previewSize]} shrink-0 rounded overflow-hidden shadow-sm bg-white/50 border border-white/20">
-                <img src={value} alt="Preview" class="w-full h-full object-cover" />
+                <img src={value} alt="Preview" loading="lazy" decoding="async" class="w-full h-full object-cover" />
             </div>
             <div class="flex flex-col gap-2">
                 <button 

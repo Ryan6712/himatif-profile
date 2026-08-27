@@ -26,13 +26,13 @@
     <!-- svelte-ignore a11y_click_events_have_key_events -->
     <!-- svelte-ignore a11y_no_static_element_interactions -->
     <div 
-        class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+        class="fixed inset-0  bg-black/20 backdrop-blur-sm z-50 flex items-center justify-center p-4"
         onclick={onCancel}
         transition:fade={{ duration: 200 }}
     >
         <!-- Modal Card -->
         <div 
-            class="glass-card bg-surface rounded p-6 md:p-8 w-full max-w-md relative z-10 flex flex-col gap-5 border border-primary/20 shadow-2xl" 
+            class="bg-primary/70 rounded p-6 md:p-8 w-full max-w-md relative z-10 flex flex-col gap-5 border border-primary/20 shadow-2xl" 
             onclick={(e) => e.stopPropagation()}
             transition:scale={{ start: 0.95, duration: 200 }}
         >

@@ -48,9 +48,8 @@
 <div class="min-h-screen w-full flex items-center justify-center bg-gradient-surface relative overflow-hidden px-4">
     <!-- Subtle dot pattern overlay -->
     <div class="absolute inset-0 bg-dot-pattern pointer-events-none opacity-40"></div>
-    
+
     <div class="glass-card rounded-2xl p-8 md:p-12 w-full max-w-lg relative z-10 flex flex-col items-center gap-6 text-center shadow-xl border border-primary/20">
-        
 
         <!-- Icon Circle -->
         <div class="w-24 h-24 rounded-full {detail.bgClass} {detail.colorClass} border {detail.borderClass} flex items-center justify-center shrink-0 mb-2">
@@ -83,5 +82,6 @@
                 Ke Beranda
             </a>
         </div>
+
     </div>
 </div>
