@@ -12,8 +12,10 @@ RUN npm ci
 FROM deps AS build
 COPY . .
 
-# Generate Prisma client for the linux target
+# Environment variables for build stage
 ENV DATABASE_URL="mysql://dummy:dummy@localhost:3306/dummy"
+ENV BETTER_AUTH_SECRET="build-time-secret-32-chars-long-dummy"
+ENV BETTER_AUTH_URL="http://localhost:3000"
 RUN npx prisma generate
 
 # Build SvelteKit (adapter-node outputs to /app/build)

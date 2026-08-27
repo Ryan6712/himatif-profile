@@ -19,6 +19,7 @@
 		if (path.includes('devisi')) return 'Kelola Divisi';
 		if (path.includes('member')) return 'Kelola Anggota';
 		if (path.includes('proker')) return 'Program Kerja';
+		if (path.includes('pengaturan')) return 'Pengaturan Akun';
 		return 'Dashboard';
 	};
 
