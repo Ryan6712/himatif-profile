@@ -1,6 +1,8 @@
 services:
+  # Database Service (MariaDB)
   db:
     image: mariadb:11
+    container_name: himatif_db
     restart: unless-stopped
     environment:
       MARIADB_ROOT_PASSWORD: ${DATABASE_PASSWORD:-rootpassword}
@@ -17,14 +19,19 @@ services:
       timeout: 5s
       retries: 5
       start_period: 30s
+    networks:
+      - himatif_network
 
+  # Web Application Service (SvelteKit)
   app:
+    image: ${IMAGE_NAME:-himatif-profile}:${IMAGE_TAG:-latest}
     build:
       context: .
       dockerfile: Dockerfile
+    container_name: himatif_app
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "${APP_PORT:-3000}:3000"
     depends_on:
       db:
         condition: service_healthy
@@ -35,12 +42,22 @@ services:
       DATABASE_USER: ${DATABASE_USER:-himatif}
       DATABASE_PASSWORD: ${DATABASE_PASSWORD:-rootpassword}
       DATABASE_NAME: ${DATABASE_NAME:-himatif_profile}
-      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET:-change-me-in-production}
+      BETTER_AUTH_SECRET: ${BETTER_AUTH_SECRET}
       BETTER_AUTH_URL: ${BETTER_AUTH_URL:-http://localhost:3000}
-      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME:-}
-      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY:-}
-      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET:-}
+      ORIGIN: ${ORIGIN:-http://localhost:3000}
+      CLOUDINARY_CLOUD_NAME: ${CLOUDINARY_CLOUD_NAME}
+      CLOUDINARY_API_KEY: ${CLOUDINARY_API_KEY}
+      CLOUDINARY_API_SECRET: ${CLOUDINARY_API_SECRET}
       NODE_ENV: production
+      PORT: 3000
+      HOST: 0.0.0.0
+    networks:
+      - himatif_network
 
 volumes:
   db_data:
+    driver: local
+
+networks:
+  himatif_network:
+    driver: bridge
