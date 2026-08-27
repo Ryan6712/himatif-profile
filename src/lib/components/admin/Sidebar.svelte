@@ -1,6 +1,14 @@
 <script lang="ts">
 	import { page } from '$app/state'; //pastikan pakai app/state karena store sudah kadaluarsa dan hapus $ pada varibale page yang dipanggil kalau pakai $app/state gk butuh $
-	import { LayoutDashboard, Building2, Users, UserRound, Newspaper, LogOut } from '@lucide/svelte';
+	import {
+		LayoutDashboard,
+		Building2,
+		Users,
+		UserRound,
+		Newspaper,
+		Settings,
+		LogOut
+	} from '@lucide/svelte';
 	import { authClient } from '$lib/authClient';
 	import { goto } from '$app/navigation';
 	import { resolve } from '$app/paths';
@@ -15,7 +23,8 @@
 		{ name: 'Organisasi', path: '/admin/dashboard/organisasi', icon: Building2 },
 		{ name: 'Divisi', path: '/admin/dashboard/devisi', icon: Users },
 		{ name: 'Anggota', path: '/admin/dashboard/member', icon: UserRound },
-		{ name: 'Program Kerja', path: '/admin/dashboard/proker', icon: Newspaper }
+		{ name: 'Program Kerja', path: '/admin/dashboard/proker', icon: Newspaper },
+		{ name: 'Pengaturan Akun', path: '/admin/dashboard/pengaturan', icon: Settings }
 	];
 
 	async function handleLogout() {
