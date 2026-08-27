@@ -30,10 +30,14 @@ WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci --omit=dev
 
-# Copy Prisma schema + generated client for runtime
+# Copy Prisma schema + generated client + migrations for runtime auto-migrate
 COPY --from=build /app/prisma ./prisma
 COPY --from=build /app/prisma.config.ts ./prisma.config.ts
 COPY --from=build /app/src/lib/server/generated ./src/lib/server/generated
+
+# Copy entrypoint script
+COPY --from=build /app/docker-entrypoint.sh ./docker-entrypoint.sh
+RUN chmod +x ./docker-entrypoint.sh
 
 # Copy the SvelteKit build output
 COPY --from=build /app/build ./build
@@ -43,5 +47,6 @@ COPY --from=build /app/static ./static
 
 EXPOSE 3000
 
-# adapter-node entry point
+# Auto-migrate on startup then launch SvelteKit
+ENTRYPOINT ["./docker-entrypoint.sh"]
 CMD ["node", "build/index.js"]

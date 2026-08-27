@@ -74,6 +74,10 @@ Kunjungi:
 - `http://localhost:5173/` - Untuk laman **Public Company Profile**.
 - `http://localhost:5173/admin/login` - Untuk akses ke laman **Admin Dashboard**.
 
+## 🚀 CI/CD & Deployment (Dokploy)
+Proyek ini dilengkapi dengan GitHub Actions workflow untuk otomatisasi build dan deploy ke **Dokploy** via **Custom Docker Registry**.
+Panduan lengkap setup Secrets dan konfigurasi Dokploy dapat dilihat di [Dokumentasi Deployment Dokploy](docs/DOKPLOY_DEPLOYMENT.md).
+
 ## 📝 Design Pattern Guideline
 Apabila Anda berkontribusi pada pengembangan aplikasi (UI/UX), proyek ini berjalan dengan prinsip *Glassmorphism* dan hierarki *tailwind stack*. **Wajib membaca panduan di `docs/design-pattern.md`** sebelum Anda mengeksekusi penambahan gaya CSS agar harmonisasi komponen tidak pecah.
 
