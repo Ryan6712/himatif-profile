@@ -7,7 +7,8 @@
 
 	let { children, data }: { data: LayoutData; children: Snippet } = $props();
 
-	let logoUrl = $derived(data.logo?.logoSmallUrl);
+	const defaultLogoSmall = 'https://placehold.co/215x35/png?text=himatif';
+	let logoUrl = $derived(data.logo?.logoSmallUrl || defaultLogoSmall);
 </script>
 
 <Navbar {logoUrl} />
