@@ -270,12 +270,22 @@ async function seedAdminUser() {
 		return;
 	}
 
-	// Buat admin user via better-auth API
-	// Karena better-auth manage User/Account/Session, kita buat via auth API
-	// Import auth setelah prisma ready
-	const { auth } = await import('../src/lib/server/auth.js');
-
+	// Buat admin user via better-auth instance langsung di seed
 	try {
+		const { betterAuth } = await import('better-auth');
+		const { prismaAdapter } = await import('better-auth/adapters/prisma');
+		const { username } = await import('better-auth/plugins');
+
+		const auth = betterAuth({
+			database: prismaAdapter(prisma, {
+				provider: 'mysql'
+			}),
+			emailAndPassword: {
+				enabled: true
+			},
+			plugins: [username()]
+		});
+
 		await auth.api.signUpEmail({
 			body: {
 				name: 'Admin HIMATIF',
@@ -290,8 +300,7 @@ async function seedAdminUser() {
 		console.log('     Password: admin123');
 		console.log('     (GANTI PASSWORD INI DI PRODUCTION!)');
 	} catch (error) {
-		// Jika gagal (misal email sudah ada), log tapi jangan crash
-		console.log('  -> Admin user creation failed (mungkin sudah ada):', error);
+		console.log('  -> Admin user creation status:', error);
 	}
 }
 
