@@ -6,7 +6,10 @@
 
 <svelte:head>
 	<title>Divisi - HIMATIF ITB Yadika</title>
-	<meta name="description" content="Jelajahi berbagai divisi di dalam HIMATIF ITB Yadika dan lihat bagaimana setiap divisi berkontribusi terhadap misi dan visi organisasi." />
+	<meta
+		name="description"
+		content="Jelajahi berbagai divisi di dalam HIMATIF ITB Yadika dan lihat bagaimana setiap divisi berkontribusi terhadap misi dan visi organisasi."
+	/>
 </svelte:head>
 
 <section class="bg-gradient-surface stack section relative mt-3 min-w-full overflow-hidden px-3">

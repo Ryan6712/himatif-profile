@@ -47,14 +47,14 @@
 </script>
 
 <svelte:head>
-    <title>Kelola Divisi - Admin HIMATIF</title>
+	<title>Kelola Divisi - Admin HIMATIF</title>
 </svelte:head>
 
-<Toast 
-    visible={showToast} 
-    message={toastMessage} 
-    type={toastType} 
-    onClose={() => showToast = false} 
+<Toast
+	visible={showToast}
+	message={toastMessage}
+	type={toastType}
+	onClose={() => (showToast = false)}
 />
 
 <ConfirmDialog

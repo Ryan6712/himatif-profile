@@ -6,27 +6,31 @@
 	let { data, form } = $props();
 
 	// Default values if empty
-	const org = data.organization || {
-		nama: '',
-		namaLengkap: '',
-		visi: '',
-		misi: '[]',
-		tujuan: '',
-		logoSmallUrl: '',
-		logoBigUrl: ''
-	};
+	const org = $derived(
+		data.organization || {
+			nama: '',
+			namaLengkap: '',
+			visi: '',
+			misi: '[]',
+			tujuan: '',
+			logoSmallUrl: '',
+			logoBigUrl: ''
+		}
+	);
 
 	// Use form action return values if available (for validation errors fallback),
 	// otherwise use loaded data
-	const initialValues = form?.values || {
-		nama: org.nama,
-		namaLengkap: org.namaLengkap,
-		visi: org.visi,
-		misi: parseMisiForTextarea(org.misi),
-		tujuan: org.tujuan,
-		logoSmallUrl: org.logoSmallUrl,
-		logoBigUrl: org.logoBigUrl
-	};
+	const initialValues = $derived(
+		form?.values || {
+			nama: org.nama,
+			namaLengkap: org.namaLengkap,
+			visi: org.visi,
+			misi: parseMisiForTextarea(org.misi),
+			tujuan: org.tujuan,
+			logoSmallUrl: org.logoSmallUrl,
+			logoBigUrl: org.logoBigUrl
+		}
+	);
 
 	let isSubmitting = $state(false);
 

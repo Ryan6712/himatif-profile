@@ -33,7 +33,10 @@
 
 <svelte:head>
 	<title>HIMATIF - Himpunan Mahasiswa Teknologi Informasi ITB Yadika</title>
-	<meta name="description" content="HIMATIF ITB Yadika adalah wadah bagi mahasiswa Teknologi Informasi untuk berkolaborasi, mengeksplorasi, dan mengembangkan diri dalam bidang teknologi informasi." />
+	<meta
+		name="description"
+		content="HIMATIF ITB Yadika adalah wadah bagi mahasiswa Teknologi Informasi untuk berkolaborasi, mengeksplorasi, dan mengembangkan diri dalam bidang teknologi informasi."
+	/>
 </svelte:head>
 
 <section class="bg-gradient-surface stack section relative mt-3 min-w-full overflow-hidden px-3">

@@ -5,15 +5,17 @@
 
 	let { data, form } = $props();
 
-	const devisiList = data.devisiList;
-	const currentMember = data.member;
+	const devisiList = $derived(data.devisiList);
+	const currentMember = $derived(data.member);
 
-	const initialValues = form?.values || {
-		name: currentMember.name,
-		imageUrl: currentMember.imageUrl,
-		memberType: currentMember.memberType,
-		devisiId: currentMember.devisiId?.toString() || ''
-	};
+	const initialValues = $derived(
+		form?.values || {
+			name: currentMember.name,
+			imageUrl: currentMember.imageUrl,
+			memberType: currentMember.memberType,
+			devisiId: currentMember.devisiId?.toString() || ''
+		}
+	);
 
 	let isSubmitting = $state(false);
 	let selectedType = $state(initialValues.memberType);

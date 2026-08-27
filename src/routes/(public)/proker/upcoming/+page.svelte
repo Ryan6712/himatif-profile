@@ -4,7 +4,10 @@
 
 <svelte:head>
 	<title>Segera Hadir - HIMATIF ITB Yadika</title>
-	<meta name="description" content="Halaman ini sedang dalam tahap pengembangan. Silakan kembali lagi nanti." />
+	<meta
+		name="description"
+		content="Halaman ini sedang dalam tahap pengembangan. Silakan kembali lagi nanti."
+	/>
 </svelte:head>
 
 <section

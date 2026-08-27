@@ -25,8 +25,13 @@
 	const pagination = $derived(data.pagination);
 	const filters = $derived(data.filters);
 
-	let searchInput = $state(filters.search);
-	let selectedStatus = $state(filters.status);
+	let searchInput = $state('');
+	let selectedStatus = $state('');
+
+	$effect(() => {
+		searchInput = filters.search;
+		selectedStatus = filters.status;
+	});
 
 	let showToast = $state(false);
 	let toastMessage = $state('');

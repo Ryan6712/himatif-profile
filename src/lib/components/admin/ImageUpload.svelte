@@ -96,6 +96,7 @@
 </script>
 
 <div class="form-control flex flex-col gap-2">
+	<!-- svelte-ignore a11y_label_has_associated_control -->
 	<label class="text-sm font-bold text-primary-text opacity-90">
 		{label}
 		{#if required}

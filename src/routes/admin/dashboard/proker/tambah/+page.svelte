@@ -6,14 +6,16 @@
 
 	let { form } = $props();
 
-	const initialValues = form?.values || {
-		title: '',
-		slug: '',
-		date: '',
-		thumbnailUrl: '',
-		description: '',
-		content: ''
-	};
+	const initialValues = $derived(
+		form?.values || {
+			title: '',
+			slug: '',
+			date: '',
+			thumbnailUrl: '',
+			description: '',
+			content: ''
+		}
+	);
 
 	let isSubmitting = $state(false);
 	let isPublishing = $state(false); // flag yg menandakan action yg dipilih user

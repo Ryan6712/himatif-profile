@@ -5,14 +5,16 @@
 
 	let { data, form } = $props();
 
-	const devisiList = data.devisiList;
+	const devisiList = $derived(data.devisiList);
 
-	const initialValues = form?.values || {
-		name: '',
-		imageUrl: '',
-		memberType: 'REGULAR',
-		devisiId: ''
-	};
+	const initialValues = $derived(
+		form?.values || {
+			name: '',
+			imageUrl: '',
+			memberType: 'REGULAR',
+			devisiId: ''
+		}
+	);
 
 	let isSubmitting = $state(false);
 	let selectedType = $state(initialValues.memberType);

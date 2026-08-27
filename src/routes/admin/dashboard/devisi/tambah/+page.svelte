@@ -6,13 +6,15 @@
 	let { form } = $props();
 
 	// Initialize values from form state (fallback for failed submissions)
-	const initialValues = form?.values || {
-		nama: '',
-		namaLengkap: '',
-		logoUrl: '',
-		thumbnailUrl: '',
-		deskripsi: ''
-	};
+	const initialValues = $derived(
+		form?.values || {
+			nama: '',
+			namaLengkap: '',
+			logoUrl: '',
+			thumbnailUrl: '',
+			deskripsi: ''
+		}
+	);
 
 	let isSubmitting = $state(false);
 

@@ -21,7 +21,10 @@
 
 <svelte:head>
 	<title>Anggota - HIMATIF ITB Yadika</title>
-	<meta name="description" content="Kenali struktur kepengurusan dan anggota HIMATIF ITB Yadika, dari BPH, Ketua Divisi, hingga anggota aktif dan alumni." />
+	<meta
+		name="description"
+		content="Kenali struktur kepengurusan dan anggota HIMATIF ITB Yadika, dari BPH, Ketua Divisi, hingga anggota aktif dan alumni."
+	/>
 </svelte:head>
 
 <section

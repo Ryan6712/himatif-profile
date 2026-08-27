@@ -6,17 +6,19 @@
 
 	let { data, form } = $props();
 
-	const currentProker = data.proker;
+	const currentProker = $derived(data.proker);
 
 	// Untuk initial value form kita prioritaskan fallback dari form (bila submit gagal), bila tidak ada baru load dari DB
-	const initialValues = form?.values || {
-		title: currentProker.title,
-		slug: currentProker.slug,
-		date: new Date(currentProker.date).toISOString().split('T')[0], // format yyyy-mm-dd untuk input date HTML
-		thumbnailUrl: currentProker.thumbnailUrl || '',
-		description: currentProker.description,
-		content: currentProker.content
-	};
+	const initialValues = $derived(
+		form?.values || {
+			title: currentProker.title,
+			slug: currentProker.slug,
+			date: new Date(currentProker.date).toISOString().split('T')[0], // format yyyy-mm-dd untuk input date HTML
+			thumbnailUrl: currentProker.thumbnailUrl || '',
+			description: currentProker.description,
+			content: currentProker.content
+		}
+	);
 
 	let isSubmitting = $state(false);
 	// Menyimpan aksi apa yang dituju user pada tombol untuk memandu controller Server kita

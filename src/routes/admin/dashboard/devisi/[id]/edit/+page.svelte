@@ -6,17 +6,19 @@
 	let { data, form } = $props();
 
 	// The data is loaded from the server
-	const currentDivisi = data.divisi;
+	const currentDivisi = $derived(data.divisi);
 
 	// Initialize values from form state (fallback for failed submissions)
 	// or use loaded data
-	const initialValues = form?.values || {
-		nama: currentDivisi.nama,
-		namaLengkap: currentDivisi.namaLengkap,
-		logoUrl: currentDivisi.logoUrl,
-		thumbnailUrl: currentDivisi.thumbnailUrl || '',
-		deskripsi: currentDivisi.deskripsi
-	};
+	const initialValues = $derived(
+		form?.values || {
+			nama: currentDivisi.nama,
+			namaLengkap: currentDivisi.namaLengkap,
+			logoUrl: currentDivisi.logoUrl,
+			thumbnailUrl: currentDivisi.thumbnailUrl || '',
+			deskripsi: currentDivisi.deskripsi
+		}
+	);
 
 	let isSubmitting = $state(false);
 
