@@ -6,9 +6,23 @@ on:
       - main
     tags:
       - 'v*'
+    paths-ignore:
+      - '**.md'
+      - '.vscode/**'
+      - '.windsurf/**'
+      - '.agents/**'
+      - '.claude/**'
+      - 'docs/**'
   pull_request:
     branches:
       - main
+    paths-ignore:
+      - '**.md'
+      - '.vscode/**'
+      - '.windsurf/**'
+      - '.agents/**'
+      - '.claude/**'
+      - 'docs/**'
   workflow_dispatch:
 
 concurrency:
@@ -41,16 +55,20 @@ jobs:
           cache: 'npm'
 
       - name: Install Dependencies
-        run: npm ci
+        run: npm ci --prefer-offline
 
       - name: Generate Prisma Client
         run: npx prisma generate
 
-      - name: Check SvelteKit Types & Sync
-        run: npm run check
+      - name: Check SvelteKit Types & Linter in Parallel
+        run: |
+          npm run check &
+          CHECK_PID=$!
+          npm run lint &
+          LINT_PID=$!
 
-      - name: Run Linter & Formatter Check
-        run: npm run lint
+          wait $CHECK_PID
+          wait $LINT_PID
 
   build-and-push:
     name: Build & Push Docker Image
