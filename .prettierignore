@@ -13,4 +13,5 @@ src/lib/server/generated/
 .agents/
 .claude/
 .windsurf/
+.playwright-mcp/
 docs/
