@@ -72,7 +72,7 @@
 </script>
 
 <svelte:head>
-	<title>Login Admin - HIMATIF ITB Yadika</title>
+	<title>Login Dashboard Admin - HIMATIF ITB Yadika</title>
 </svelte:head>
 
 <div
