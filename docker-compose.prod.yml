@@ -23,6 +23,7 @@ services:
   # Web Application Service (SvelteKit) - Tarik langsung Image dari Registry
   app:
     image: ${IMAGE_NAME:-himatif-profile}:${IMAGE_TAG:-latest}
+    pull_policy: always
     container_name: himatif_app
     restart: unless-stopped
     expose:
