@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { fade, fly } from 'svelte/transition';
-	import { Menu, X, ArrowRight } from '@lucide/svelte';
+	import { Menu, X } from '@lucide/svelte';
 
 	let isOpen = $state(false);
 
@@ -39,60 +39,48 @@
 </script>
 
 <nav
-	class="fixed inset-x-0 top-6 z-50 mx-auto max-w-7xl rounded-full border border-primary/20 bg-surface/80 px-2 py-1.5 backdrop-blur-xl transition-all duration-300 hover:border-primary/40 hover:bg-surface/95"
-	style="box-shadow: 0 10px 40px -10px rgba(123, 237, 79, 0.15);"
+	class="fixed inset-x-0 top-4 z-50 mx-auto max-w-7xl rounded-full border border-tertiary/40 bg-surface/70 py-1 backdrop-blur-xl"
+	style="box-shadow: var(--shadow-card-md);"
 >
-	<div class="container px-4">
+	<div class="container">
 		<div class="flex items-center justify-between align-middle">
 			<div class="logo flex shrink-0 items-center">
-				<a href="/" class="group flex items-center gap-2">
+				<a href="/">
 					<!-- Logo 215x35 aspect ratio ~6:1 -->
 					<img
 						src={logoUrl}
 						alt="HIMATIF Logo"
 						width="215"
 						height="35"
-						class="h-[35px] w-auto max-w-[180px] object-contain drop-shadow-sm transition-transform duration-300 group-hover:scale-105 md:max-w-[215px]"
+						class="h-[35px] w-[215px] object-fill drop-shadow-sm drop-shadow-primary/60"
 					/>
 				</a>
 			</div>
-
-			<ul class="hidden items-center gap-1 md:flex">
+			<ul class="hidden items-center gap-8 md:flex">
 				{#each navItems as item (item.name)}
 					<li>
 						<a
 							href={item.path}
-							class="nav-link relative rounded-full px-5 py-2.5 text-sm font-semibold text-primary-text capitalize transition-all duration-300 hover:bg-primary/5 hover:text-secondary"
-							class:active={page.url.pathname == item.path}
+							class="nav-link capitalize hover:text-secondary"
+							class:active={page.url.pathname == item.path}>{item.name}</a
 						>
-							{item.name}
-							{#if page.url.pathname == item.path}
-								<span
-									class="absolute -bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-secondary"
-								></span>
-							{/if}
-						</a>
 					</li>
 				{/each}
 			</ul>
-
-			<a
-				href="mailto:himatif@stmik-yadika.ac.id"
-				class="btn-cta pointer-events-auto hidden cursor-pointer items-center gap-2 px-6 py-2.5 text-sm font-bold md:flex"
-				data-sveltekit-reload
-				rel="external"
-			>
-				Hubungi Kami
-			</a>
+			<button class="btn-cta pointer-events-auto hidden cursor-pointer px-5 py-2 md:block">
+				<a href="mailto:himatif@stmik-yadika.ac.id" data-sveltekit-reload rel="external">
+					Hubungi kami
+				</a>
+			</button>
 
 			<button
 				onclick={toggle}
 				aria-label="Toggle navigation menu"
 				aria-expanded={isOpen}
 				aria-controls="mobile-menu"
-				class="pointer-events-auto relative flex h-10 w-10 flex-col items-center justify-center rounded-full bg-primary/10 text-secondary transition-colors hover:bg-primary/20 md:hidden"
+				class="btn btn-primary pointer-events-auto relative flex h-8 w-8 flex-col items-center justify-center rounded-full md:hidden"
 			>
-				<Menu size={20} />
+				<Menu />
 			</button>
 		</div>
 	</div>
@@ -100,81 +88,91 @@
 
 {#if isOpen}
 	<div
-		class="fixed inset-0 z-30 bg-title-text/40 backdrop-blur-md md:hidden"
+		class="fixed inset-0 z-30 bg-title-text/20 blur backdrop-blur-sm md:hidden"
 		in:fade={{ duration: 300 }}
 		out:fade={{ duration: 150 }}
 	></div>
 	<div
 		id="mobile-menu"
-		class="fixed top-0 right-0 z-100 flex h-full min-h-screen w-[85vw] max-w-sm flex-col bg-surface/95 pb-6 backdrop-blur-xl md:hidden"
-		style="box-shadow: -20px 0 40px rgba(26, 36, 18, 0.1);"
-		in:fly={{ x: 300, duration: 400, opacity: 1 }}
-		out:fly={{ x: 300, duration: 300, opacity: 1 }}
+		class="fixed top-0 right-0 z-100 flex h-full min-h-screen w-80 flex-col bg-surface/90 pb-4 backdrop-blur-xl md:hidden"
+		style="box-shadow: var(--shadow-card-xl);"
+		in:fly={{ x: 300, duration: 400 }}
+		out:fly={{ x: 300, duration: 300 }}
 	>
-		<div class="flex h-20 w-full shrink-0 items-center justify-between px-6">
+		<div class="flex h-16 w-full shrink-0 items-center justify-between p-3">
 			<img
 				src={logoUrl}
 				alt="HIMATIF Logo"
 				width="215"
 				height="35"
-				class="h-[35px] w-auto max-w-[150px] object-contain"
+				class="h-[35px] w-[215px] object-fill"
 			/>
 			<button
 				onclick={toggle}
-				aria-label="Close navigation menu"
-				class="flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-secondary transition-colors hover:bg-primary/20"
+				aria-label="Toggle navigation menu"
+				aria-controls="mobile-menu"
+				class="btn btn-primary h-8 w-8 rounded-full p-2 transition-colors hover:bg-primary/20"
 			>
-				<X size={20} />
+				<X />
 			</button>
 		</div>
-
-		<div class="mb-6 px-6">
-			<div class="h-px w-full bg-linear-to-r from-primary/30 to-transparent"></div>
-		</div>
-
-		<ul class="flex flex-col gap-2 px-4 text-primary-text">
+		<div
+			class="mx-4 mb-4 h-px bg-linear-to-r from-primary/40 via-secondary/30 to-transparent"
+		></div>
+		<ul class="container mt-2 flex flex-col text-primary-text">
 			{#each navItems as item (item.name)}
-				<li>
-					<a
-						href={item.path}
-						class="mobile-link group flex items-center justify-between rounded-2xl px-6 py-4 text-lg font-semibold capitalize transition-all duration-300 {page
-							.url.pathname == item.path
-							? 'bg-primary/15 text-secondary'
-							: 'hover:bg-primary/5'}"
-					>
-						{item.name}
-						<ArrowRight
-							size={18}
-							class="-translate-x-4 opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100 {page
-								.url.pathname == item.path
-								? 'translate-x-0 text-secondary opacity-100'
-								: ''}"
-						/>
-					</a>
-				</li>
+				<li><a href={item.path} class="mobile-link text-lg capitalize">{item.name}</a></li>
 			{/each}
 		</ul>
-
-		<div class="mt-auto px-6">
-			<div class="glass-card mb-6 rounded-2xl p-6 text-center">
-				<p class="mb-4 text-sm font-medium text-title-text/80">
-					Punya pertanyaan atau ingin berkolaborasi?
-				</p>
-				<a
-					href="mailto:himatif@stmik-yadika.ac.id"
-					class="btn-cta flex w-full items-center justify-center gap-2 py-3.5 shadow-lg"
-					data-sveltekit-reload
-				>
-					Hubungi Kami
-				</a>
-			</div>
+		<div class="mx-4 mt-auto">
+			<button class="btn-cta w-full px-6 py-3">
+				<a href="mailto:himatif@stmik-yadika.ac.id" data-sveltekit-reload> Hubungi kami </a>
+			</button>
 		</div>
 	</div>
 {/if}
 
 <style>
+	.nav-link {
+		position: relative;
+		transition: color var(--duration-normal) var(--ease-out-expo);
+	}
+	.nav-link::after {
+		content: '';
+		position: absolute;
+		bottom: -4px;
+		left: 50%;
+		width: 0;
+		height: 2px;
+		background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+		border-radius: 2px;
+		transition:
+			width var(--duration-normal) var(--ease-out-expo),
+			left var(--duration-normal) var(--ease-out-expo);
+	}
+	.nav-link:hover::after {
+		width: 100%;
+		left: 0;
+	}
 	.active {
 		color: var(--color-secondary);
-		background: rgba(123, 237, 79, 0.1);
+		background: rgba(123, 237, 79, 0.15);
+		padding: 4px 12px;
+		border-radius: 9999px;
+		font-weight: 600;
+	}
+	.active::after {
+		display: none;
+	}
+
+	.mobile-link {
+		display: block;
+		padding: 10px 16px;
+		border-radius: 12px;
+		transition: all var(--duration-fast) var(--ease-out-expo);
+	}
+	.mobile-link:hover {
+		background: rgba(123, 237, 79, 0.12);
+		padding-left: 24px;
 	}
 </style>
