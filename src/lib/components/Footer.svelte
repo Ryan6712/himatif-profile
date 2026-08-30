@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Github, Instagram, Mail, MapPin, Phone } from '@lucide/svelte';
+	import { Mail, MapPin, Phone } from '@lucide/svelte';
 
 	interface NavLink {
 		name: string;
@@ -62,20 +62,6 @@
 
 				<!-- Social Links -->
 				<div class="flex items-center gap-4">
-					<a
-						href="#"
-						aria-label="Instagram"
-						class="group flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-secondary transition-all hover:scale-110 hover:bg-secondary hover:text-white"
-					>
-						<Instagram size={18} />
-					</a>
-					<a
-						href="#"
-						aria-label="Github"
-						class="group flex h-10 w-10 items-center justify-center rounded-full bg-primary/10 text-secondary transition-all hover:scale-110 hover:bg-secondary hover:text-white"
-					>
-						<Github size={18} />
-					</a>
 					<a
 						href="mailto:himatif@stmik-yadika.ac.id"
 						aria-label="Email"
