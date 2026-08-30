@@ -5,9 +5,9 @@ echo "==> [Dokploy Startup] Memastikan koneksi database siap..."
 
 # Jalankan sinkronisasi skema prisma dengan mode aman
 echo "==> [Dokploy Startup] Menjalankan Prisma Database Schema Sync (db push)..."
-npx prisma db push --skip-generate || {
+npx prisma db push || {
   echo "==> [Dokploy Startup] Warning: Prisma db push mengalami issue, mencoba ulang..."
-  npx prisma db push --accept-data-loss --skip-generate || true
+  npx prisma db push --accept-data-loss || true
 }
 
 # Auto seed data awal jika database masih kosong (organisasi belum ada)
