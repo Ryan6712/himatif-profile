@@ -19,7 +19,8 @@ export const load: PageServerLoad = async () => {
 					date: true,
 					thumbnailUrl: true,
 					description: true,
-					slug: true
+					slug: true,
+					publishedAt: true
 				}
 			}),
 			prisma.devisi.findMany({

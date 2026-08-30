@@ -44,7 +44,7 @@
 					height="35"
 					loading="lazy"
 					decoding="async"
-					class="mb-3 h-[35px] w-[215px] object-fill"
+					class="object-fit mb-3 h-[35px] w-[215px] object-contain"
 				/>
 				<p class="text-sm leading-relaxed opacity-75">
 					Himpunan Mahasiswa Teknologi Informasi ITB Yadika adalah wadah bagi mahasiswa Teknologi

@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/state';
 	import { AlertTriangle, ShieldAlert, FileQuestion } from '@lucide/svelte';
+	import './layout.css';
 
 	// $page.error dari state akan menangkap pesan error dan status code
 	let errorStatus = $derived(page.status);
