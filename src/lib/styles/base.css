@@ -117,7 +117,7 @@
 
 	/* === CTA Button === */
 	.btn-cta {
-		@apply rounded-lg font-semibold text-white;
+		@apply rounded-full font-semibold text-white;
 		background: linear-gradient(
 			135deg,
 			var(--color-secondary) 0%,
@@ -129,7 +129,7 @@
 	.btn-cta:hover {
 		box-shadow:
 			var(--shadow-card-lg),
-			0 0 20px rgba(45, 155, 90, 0.3);
+			0 0 20px rgba(45, 155, 90, 0.4);
 		transform: translateY(-2px);
 	}
 	.btn-cta:active {
@@ -148,5 +148,9 @@
 	.group:hover .icon-container {
 		box-shadow: var(--shadow-glow);
 		border-color: rgba(123, 237, 79, 0.4);
+	}
+
+	.animate-bounce-slow {
+		animation: bounce 3s infinite;
 	}
 }
