@@ -1,5 +1,15 @@
 <script lang="ts">
-	import { Rocket, Eye, Gem, Users, Layers, Calendar, ArrowRight, Sparkles, ChevronRight } from '@lucide/svelte';
+	import {
+		Rocket,
+		Eye,
+		Gem,
+		Users,
+		Layers,
+		Calendar,
+		ArrowRight,
+		Sparkles,
+		ChevronRight
+	} from '@lucide/svelte';
 
 	let { data } = $props();
 
@@ -52,23 +62,32 @@
 </svelte:head>
 
 <!-- Hero Section -->
-<section class="bg-gradient-surface stack section relative mt-3 min-w-full overflow-hidden px-3 pt-12 md:pt-16">
+<section
+	class="bg-gradient-surface stack section relative mt-3 min-w-full overflow-hidden px-3 pt-12 md:pt-16"
+>
 	<!-- Subtle dot pattern overlay -->
 	<div class="bg-dot-pattern pointer-events-none absolute inset-0"></div>
-	
+
 	<div class="stack-lg relative z-10 container flex flex-col gap-8 md:flex-row md:items-center">
 		<div class="stack-lg flex max-w-3xl flex-col p-3 md:gap-6">
-			<div class="inline-flex items-center gap-2 self-start rounded-full border border-tertiary/40 bg-surface/80 px-4 py-1.5 backdrop-blur-md">
+			<div
+				class="inline-flex items-center gap-2 self-start rounded-full border border-tertiary/40 bg-surface/80 px-4 py-1.5 backdrop-blur-md"
+			>
 				<Sparkles class="h-4 w-4 text-secondary" />
-				<span class="text-xs font-semibold tracking-wide text-primary-text uppercase">Official Website</span>
+				<span class="text-xs font-semibold tracking-wide text-primary-text uppercase"
+					>Official Website</span
+				>
 			</div>
 
-			<h1 class="text-3xl leading-tight font-extrabold tracking-tight capitalize md:text-5xl lg:leading-tight">
+			<h1
+				class="text-3xl leading-tight font-extrabold tracking-tight capitalize md:text-5xl lg:leading-tight"
+			>
 				{org.namaLengkap}
 			</h1>
 
 			<p class="text-base leading-relaxed opacity-85 md:text-lg">
-				{org.nama} ITB Yadika. Wadah kolaborasi, eksplorasi, dan pengembangan potensi mahasiswa Teknologi Informasi untuk siap bersaing di era transformasi digital.
+				{org.nama} ITB Yadika. Wadah kolaborasi, eksplorasi, dan pengembangan potensi mahasiswa Teknologi
+				Informasi untuk siap bersaing di era transformasi digital.
 			</p>
 
 			<div class="flex flex-wrap items-center gap-4 pt-2">
@@ -89,7 +108,9 @@
 		</div>
 
 		<div class="relative w-full max-w-125 shrink-0 self-center">
-			<div class="absolute -inset-1 rounded-3xl bg-linear-to-r from-primary/30 to-secondary/30 blur-xl opacity-70"></div>
+			<div
+				class="absolute -inset-1 rounded-3xl bg-linear-to-r from-primary/30 to-secondary/30 opacity-70 blur-xl"
+			></div>
 			<!-- 500x400 aspect ratio 5:4 -->
 			<img
 				src={org.logoBigUrl}
@@ -106,7 +127,7 @@
 </section>
 
 <!-- Stats Bar Section -->
-<section class="section min-w-full bg-surface/40 py-8 px-3">
+<section class="section min-w-full bg-surface/40 px-3 py-8">
 	<div class="container">
 		<div class="grid grid-cols-1 gap-4 sm:grid-cols-3">
 			<div class="glass-card hover-lift flex items-center gap-4 rounded-2xl p-5">
@@ -189,7 +210,9 @@
 				<div class="space-y-3">
 					{#each misiList as misiItem, index (misiItem)}
 						<div class="flex items-start gap-3">
-							<span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/30 text-xs font-bold text-title-text">
+							<span
+								class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/30 text-xs font-bold text-title-text"
+							>
 								{index + 1}
 							</span>
 							<p class="text-sm leading-relaxed opacity-90 md:text-base">{misiItem}</p>
@@ -221,12 +244,15 @@
 		<div class="stack-lg container flex flex-col gap-6">
 			<div class="flex items-center justify-between">
 				<span class="badge-pill bg-primary text-title-text">Devisi Organisasi</span>
-				<a href="/devisi" class="smooth-transition inline-flex items-center gap-1 text-sm font-semibold text-secondary hover:underline">
+				<a
+					href="/devisi"
+					class="smooth-transition inline-flex items-center gap-1 text-sm font-semibold text-secondary hover:underline"
+				>
 					Lihat Semua
 					<ChevronRight class="h-4 w-4" />
 				</a>
 			</div>
-			
+
 			<div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
 				{#each devisiList as dev (dev.id)}
 					<a
@@ -236,7 +262,7 @@
 						<img
 							src={dev.logoUrl}
 							alt={dev.nama}
-							class="h-12 w-12 rounded-xl object-cover bg-tertiary/20 p-1"
+							class="h-12 w-12 rounded-xl bg-tertiary/20 object-cover p-1"
 						/>
 						<div>
 							<h3 class="font-bold text-title-text capitalize">{dev.nama}</h3>
@@ -255,7 +281,10 @@
 		<div class="stack-lg container flex flex-col gap-6">
 			<div class="flex items-center justify-between">
 				<span class="badge-pill bg-primary text-title-text">Program Kerja Terbaru</span>
-				<a href="/proker" class="smooth-transition inline-flex items-center gap-1 text-sm font-semibold text-secondary hover:underline">
+				<a
+					href="/proker"
+					class="smooth-transition inline-flex items-center gap-1 text-sm font-semibold text-secondary hover:underline"
+				>
 					Semua Proker
 					<ChevronRight class="h-4 w-4" />
 				</a>
@@ -265,13 +294,11 @@
 				{#each latestProkers as proker (proker.id)}
 					<div class="glass-card hover-lift flex flex-col overflow-hidden rounded-2xl">
 						{#if proker.thumbnailUrl}
-							<img
-								src={proker.thumbnailUrl}
-								alt={proker.title}
-								class="h-48 w-full object-cover"
-							/>
+							<img src={proker.thumbnailUrl} alt={proker.title} class="h-48 w-full object-cover" />
 						{:else}
-							<div class="flex h-48 w-full items-center justify-center bg-tertiary/20 text-secondary">
+							<div
+								class="flex h-48 w-full items-center justify-center bg-tertiary/20 text-secondary"
+							>
 								<Calendar class="h-10 w-10 opacity-50" />
 							</div>
 						{/if}
@@ -279,8 +306,8 @@
 							<span class="text-xs font-semibold text-secondary">
 								{formatDate(proker.date)}
 							</span>
-							<h3 class="mt-2 text-lg font-bold text-title-text line-clamp-1">{proker.title}</h3>
-							<p class="mt-2 text-xs leading-relaxed text-primary-text opacity-80 line-clamp-3">
+							<h3 class="mt-2 line-clamp-1 text-lg font-bold text-title-text">{proker.title}</h3>
+							<p class="mt-2 line-clamp-3 text-xs leading-relaxed text-primary-text opacity-80">
 								{proker.description}
 							</p>
 							<div class="mt-auto pt-4">
@@ -301,13 +328,18 @@
 {/if}
 
 <!-- CTA Section -->
-<section class="stack section min-w-full bg-gradient-surface px-3">
+<section class="stack section bg-gradient-surface min-w-full px-3">
 	<div class="container">
-		<div class="glass-card hover-lift flex flex-col items-center justify-between gap-6 rounded-3xl p-8 text-center md:flex-row md:text-left">
+		<div
+			class="glass-card hover-lift flex flex-col items-center justify-between gap-6 rounded-3xl p-8 text-center md:flex-row md:text-left"
+		>
 			<div class="max-w-2xl">
-				<h2 class="text-2xl font-extrabold text-title-text md:text-3xl">Ingin Berkolaborasi Bersama HIMATIF?</h2>
+				<h2 class="text-2xl font-extrabold text-title-text md:text-3xl">
+					Ingin Berkolaborasi Bersama HIMATIF?
+				</h2>
 				<p class="mt-2 text-sm text-primary-text opacity-85 md:text-base">
-					Kami selalu terbuka untuk ide, kemitraan, dan kegiatan bersama untuk memajukan potensi mahasiswa ITB Yadika.
+					Kami selalu terbuka untuk ide, kemitraan, dan kegiatan bersama untuk memajukan potensi
+					mahasiswa ITB Yadika.
 				</p>
 			</div>
 			<button class="btn-cta shrink-0 px-8 py-3.5 text-base">
