@@ -26,6 +26,14 @@
 	let thumbnailUrl = $state(initialValues.thumbnailUrl);
 	let slugManuallyEdited = $state(false);
 
+	$effect(() => {
+		if (initialValues) {
+			title = initialValues.title;
+			slug = initialValues.slug;
+			thumbnailUrl = initialValues.thumbnailUrl;
+		}
+	});
+
 	let showToast = $state(false);
 	let toastMessage = $state('');
 

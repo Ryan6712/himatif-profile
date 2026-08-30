@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { Rocket, Eye, Gem, ArrowRight, Sparkles } from '@lucide/svelte';
 	import { fade, fly } from 'svelte/transition';
+	import { onMount } from 'svelte';
 
 	let { data } = $props();
 
@@ -32,7 +33,7 @@
 	});
 
 	let ready = $state(false);
-	$effect(() => {
+	onMount(() => {
 		ready = true;
 	});
 </script>

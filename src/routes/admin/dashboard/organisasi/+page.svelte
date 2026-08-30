@@ -65,6 +65,13 @@
 	// state reactive properties for image upload values
 	let logoSmallUrl = $state(initialValues.logoSmallUrl);
 	let logoBigUrl = $state(initialValues.logoBigUrl);
+
+	$effect(() => {
+		if (initialValues) {
+			logoSmallUrl = initialValues.logoSmallUrl;
+			logoBigUrl = initialValues.logoBigUrl;
+		}
+	});
 </script>
 
 <svelte:head>

@@ -30,6 +30,14 @@
 	let slug = $state(initialValues.slug);
 	let thumbnailUrl = $state(initialValues.thumbnailUrl);
 
+	$effect(() => {
+		if (initialValues) {
+			title = initialValues.title;
+			slug = initialValues.slug;
+			thumbnailUrl = initialValues.thumbnailUrl;
+		}
+	});
+
 	// Karena ini halaman edit, slug tidak otomatis direplace kecuali dikosongkan secara manual, jadi manualEdited kita set True sejak awal
 	let slugManuallyEdited = $state(true);
 

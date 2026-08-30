@@ -35,6 +35,13 @@
 
 	let logoUrl = $state(initialValues.logoUrl);
 	let thumbnailUrl = $state(initialValues.thumbnailUrl);
+
+	$effect(() => {
+		if (initialValues) {
+			logoUrl = initialValues.logoUrl;
+			thumbnailUrl = initialValues.thumbnailUrl;
+		}
+	});
 </script>
 
 <svelte:head>

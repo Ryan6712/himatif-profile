@@ -20,6 +20,13 @@
 	let selectedType = $state(initialValues.memberType);
 	let imageUrl = $state(initialValues.imageUrl);
 
+	$effect(() => {
+		if (initialValues) {
+			selectedType = initialValues.memberType;
+			imageUrl = initialValues.imageUrl;
+		}
+	});
+
 	// Auto disable devisi for BPH & ALUMNI
 	let isDevisiDisabled = $derived(selectedType === 'BPH' || selectedType === 'ALUMNI');
 
