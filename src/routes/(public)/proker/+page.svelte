@@ -1,4 +1,7 @@
 <script lang="ts">
+	import { goto } from '$app/navigation';
+	import { resolve } from '$app/paths';
+
 	let { data } = $props();
 
 	const prokerList = $derived(data.prokerList || []);
@@ -38,9 +41,15 @@
 	</div>
 	<div class="proker-wrapper relative z-10 container mt-10 grid grid-cols-1 gap-6">
 		{#each prokerList as item (item.id)}
-			<div
+			<button
 				class="proker glass-card group hover-lift flex w-full flex-col items-start justify-center gap-6 rounded-2xl px-4 py-6 md:flex-row lg:justify-start"
-				style="box-shadow: var(--shadow-card-md);"
+				style="
+					box-shadow: var(--shadow-card-md);
+					cursor: pointer;
+				"
+				onclick={() => {
+					goto(resolve(`/proker/${item.slug}`));
+				}}
 			>
 				<!-- Thumbnail 400x230 aspect ratio ~16:9 for responsive -->
 				<div
@@ -57,11 +66,12 @@
 						class="absolute inset-0 h-full w-full object-cover"
 					/>
 				</div>
-				<div class="desc flex w-full flex-1 flex-col">
+				<div class="desc flex w-full flex-1 flex-col text-start">
 					<span class="title text-2xl font-extrabold tracking-tight text-title-text"
 						>{item.title}</span
 					>
-					<span class="date mt-2 text-sm font-semibold text-secondary">{formatDate(item.date)}</span
+					<span class="date mt-2 text-sm font-semibold text-secondary"
+						>{item.publishedAt ? formatDate(item.date) : 'Upcoming'}</span
 					>
 					<p class="mt-5 max-w-2xl leading-relaxed opacity-85">{item.description}</p>
 					<!-- Update to dynamic slug -->
@@ -83,7 +93,7 @@
 						>
 					{/if}
 				</div>
-			</div>
+			</button>
 		{/each}
 	</div>
 </section>

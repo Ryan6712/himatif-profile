@@ -304,7 +304,7 @@
 						{/if}
 						<div class="flex flex-1 flex-col p-5">
 							<span class="text-xs font-semibold text-secondary">
-								{formatDate(proker.date)}
+								{proker.publishAt ? formatDate(proker.date) : 'Upcoming'}
 							</span>
 							<h3 class="mt-2 line-clamp-1 text-lg font-bold text-title-text">{proker.title}</h3>
 							<p class="mt-2 line-clamp-3 text-xs leading-relaxed text-primary-text opacity-80">

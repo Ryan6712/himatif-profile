@@ -52,7 +52,7 @@
 						alt="HIMATIF Logo"
 						width="215"
 						height="35"
-						class="h-[35px] w-[215px] object-fill drop-shadow-sm drop-shadow-primary/60"
+						class="h-[35px] w-[215px] object-contain drop-shadow-sm drop-shadow-primary/60"
 					/>
 				</a>
 			</div>
