@@ -150,7 +150,7 @@
 			</div>
 
 			<!-- Kolom Kanan transparan untuk melihat video background -->
-			<div class="hidden min-h-[350px] lg:col-span-5 lg:block xl:col-span-6"></div>
+			<div class="hidden min-h-87.5 lg:col-span-5 lg:block xl:col-span-6"></div>
 		</div>
 	</div>
 </section>
