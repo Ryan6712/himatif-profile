@@ -13,10 +13,7 @@ export default defineConfig({
 				runes: ({ filename }) =>
 					filename.split(/[/\\]/).includes('node_modules') ? undefined : true
 			},
-			adapter: adapter(),
-			onwarn: (warning, handler) => {
-				handler(warning);
-			}
+			adapter: adapter()
 		})
 	],
 	test: {
