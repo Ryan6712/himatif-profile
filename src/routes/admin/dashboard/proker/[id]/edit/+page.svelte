@@ -26,9 +26,15 @@
 		'save-draft'
 	);
 
-	let title = $state(initialValues.title);
-	let slug = $state(initialValues.slug);
-	let thumbnailUrl = $state(initialValues.thumbnailUrl);
+	let title = $state('');
+	let slug = $state('');
+	let thumbnailUrl = $state('');
+
+	$effect(() => {
+		title = initialValues.title;
+		slug = initialValues.slug;
+		thumbnailUrl = initialValues.thumbnailUrl || 'https://placehold.co/400x230/png?text=himatif';
+	});
 
 	// Karena ini halaman edit, slug tidak otomatis direplace kecuali dikosongkan secara manual, jadi manualEdited kita set True sejak awal
 	let slugManuallyEdited = $state(true);
@@ -50,12 +56,9 @@
 	});
 
 	function handleSlugInput(e: Event) {
-		slugManuallyEdited = true;
 		const target = e.target as HTMLInputElement;
-		// Jika user mengosongkan lagi slug nya, maka mode autogenerate jalan kembali
-		if (target.value.trim() === '') {
-			slugManuallyEdited = false;
-		}
+
+		slugManuallyEdited = target.value.trim() !== '';
 	}
 </script>
 

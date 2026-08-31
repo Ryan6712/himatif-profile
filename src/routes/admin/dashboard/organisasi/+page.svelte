@@ -61,7 +61,11 @@
 	}
 
 	// state reactive properties for image upload values
-	let logoSmallUrl = $state(initialValues.logoSmallUrl);
+	let logoSmallUrl = $derived('');
+
+	$effect(() => {
+		logoSmallUrl = initialValues.logoSmallUrl;
+	});
 </script>
 
 <svelte:head>
@@ -124,9 +128,7 @@
 				/>
 			</div>
 
-			<div
-				class="rounded border border-primary/10 bg-primary/5 p-4"
-			>
+			<div class="rounded border border-primary/10 bg-primary/5 p-4">
 				<ImageUpload
 					name="logoSmallUrl"
 					label="Logo Kecil (Navbar)"
