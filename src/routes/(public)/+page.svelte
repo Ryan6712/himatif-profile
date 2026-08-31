@@ -7,8 +7,10 @@
 		Layers,
 		Calendar,
 		ArrowRight,
-		Sparkles,
-		ChevronRight
+		ChevronRight,
+		GitBranch,
+		Cpu,
+		UserCheck
 	} from '@lucide/svelte';
 
 	let { data } = $props();
@@ -17,7 +19,6 @@
 	const defaultOrg = {
 		nama: 'HIMATIF',
 		namaLengkap: 'Himpunan Mahasiswa Teknologi Informasi ITB Yadika',
-		logoBigUrl: 'https://placehold.co/500x400/png?text=himatif',
 		visi: 'Menjadi wadah yang mendorong kolaborasi, eksplorasi, dan pengembangan diri bagi mahasiswa Teknologi Informasi untuk menjadi pemimpin masa depan di era digital.',
 		misi: '["Menyelenggarakan kegiatan yang mendorong kolaborasi dan komunikasi antar mahasiswa Teknologi Informasi.", "Mengadakan kegiatan pembelajaran dan pelatihan untuk meningkatkan kemampuan dan keterampilan mahasiswa.", "Memberikan wadah bagi mahasiswa untuk mengeksplorasi minat dan bakat mereka dalam bidang teknologi informasi."]',
 		tujuan:
@@ -63,65 +64,93 @@
 
 <!-- Hero Section -->
 <section
-	class="bg-gradient-surface stack section relative mt-3 min-w-full overflow-hidden px-3 pt-12 md:pt-16"
+	class="relative my-auto flex min-w-full items-center overflow-hidden px-4 py-12 md:py-20 lg:py-24"
 >
-	<!-- Subtle dot pattern overlay -->
-	<div class="bg-dot-pattern pointer-events-none absolute inset-0"></div>
+	<!-- Background Video -->
+	<div class="pointer-events-none absolute inset-0 -z-10 w-full overflow-hidden">
+		<video
+			autoplay
+			loop
+			muted
+			playsinline
+			preload="metadata"
+			poster="/himatif-frame01.jpg"
+			class="h-full w-full object-cover object-[90%_0%] transition-opacity duration-1000 md:object-right"
+		>
+			<source src="/himatif.webm" type="video/webm" />
+			<source src="/himatif.mp4" type="video/mp4" />
+			Browser Anda tidak mendukung tag video HTML5.
+		</video>
 
-	<div class="stack-lg relative z-10 container flex flex-col gap-8 md:flex-row md:items-center">
-		<div class="stack-lg flex max-w-3xl flex-col p-3 md:gap-6">
-			<div
-				class="inline-flex items-center gap-2 self-start rounded-full border border-tertiary/40 bg-surface/80 px-4 py-1.5 backdrop-blur-md"
-			>
-				<Sparkles class="h-4 w-4 text-secondary" />
-				<span class="text-xs font-semibold tracking-wide text-primary-text uppercase"
-					>Official Website</span
+		<!-- Overlay Gradient -->
+		<div
+			class="md:bg-linear -to-r absolute inset-0 bg-linear-to-b from-[#f2f6f1]/90 via-[#f2f6f1]/75 to-[#f2f6f1]/40 md:from-[#f2f6f1]/95 md:via-[#f2f6f1]/60 md:to-transparent"
+		></div>
+	</div>
+
+	<div class="mx-auto w-full max-w-7xl sm:px-4 lg:px-8">
+		<div class="grid w-full grid-cols-1 items-center gap-12 lg:grid-cols-12">
+			<!-- Kolom Teks / Konten Kiri -->
+			<div class="space-y-6 lg:col-span-7 xl:col-span-6">
+				<!-- Badge Official Website -->
+				<div
+					class="inline-flex items-center gap-2 rounded-full border border-white/90 bg-white/70 px-3.5 py-1.5 text-xs font-bold tracking-wider text-[#1b3b2b] uppercase shadow-xs backdrop-blur-md"
 				>
-			</div>
+					<GitBranch class="h-3.5 w-3.5 text-emerald-600" />
+					<span>OFFICIAL WEBSITE</span>
+				</div>
 
-			<h1
-				class="text-3xl leading-tight font-extrabold tracking-tight capitalize md:text-5xl lg:leading-tight"
-			>
-				{org.namaLengkap}
-			</h1>
+				<!-- Judul Utama (Hero Heading) -->
+				<h1
+					class="text-4xl leading-[1.12] font-extrabold tracking-tight text-[#1b3b2b] sm:text-5xl lg:text-[3.4rem]"
+				>
+					Himpunan Mahasiswa <br class="hidden sm:inline" />
+					Teknologi Informasi <br class="hidden sm:inline" />
+					<span class="text-[#1b3b2b]">ITB Yadika Pasuruan</span>
+				</h1>
 
-			<p class="text-base leading-relaxed opacity-85 md:text-lg">
-				{org.nama} ITB Yadika. Wadah kolaborasi, eksplorasi, dan pengembangan potensi mahasiswa Teknologi
-				Informasi untuk siap bersaing di era transformasi digital.
-			</p>
+				<!-- Deskripsi / Tagline -->
+				<p class="max-w-xl text-base leading-relaxed font-medium text-slate-600 sm:text-lg">
+					<strong class="font-semibold text-[#1b3b2b]">{org.nama} ITB Yadika.</strong> Wadah kolaborasi,
+					eksplorasi, dan potensi mahasiswa Teknologi Informasi untuk siap bersaing di era transformasi
+					digital.
+				</p>
 
-			<div class="flex flex-wrap items-center gap-4 pt-2">
-				<button class="btn-cta self-start px-7 py-3 text-base">
-					<a href="mailto:himatif@stmik-yadika.ac.id" class="flex items-center gap-2">
-						Hubungi Kami
+				<!-- Grup Tombol CTA -->
+				<div class="flex flex-wrap items-center gap-4 pt-3">
+					<a
+						href="mailto:himatif@stmik-yadika.ac.id"
+						class="inline-flex items-center gap-2 rounded-full bg-[#1b3b2b] px-7 py-3.5 text-sm font-semibold text-white shadow-lg shadow-[#1b3b2b]/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-[#166534] hover:shadow-xl hover:shadow-[#1b3b2b]/30 sm:text-base"
+					>
+						<span>Hubungi Kami</span>
 						<ArrowRight class="h-4 w-4" />
 					</a>
-				</button>
 
-				<a
-					href="/proker"
-					class="smooth-transition flex items-center gap-2 rounded-lg border border-secondary/30 bg-surface/60 px-6 py-3 font-semibold text-primary-text hover:border-secondary hover:bg-surface/90"
+					<a
+						href="/proker"
+						class="inline-flex items-center justify-center rounded-full border border-white/90 bg-white/70 px-7 py-3.5 text-sm font-semibold text-[#1b3b2b] shadow-xs backdrop-blur-md transition-all duration-200 hover:-translate-y-0.5 hover:bg-white/95 sm:text-base"
+					>
+						<span>Program Kerja</span>
+					</a>
+				</div>
+
+				<!-- Indikator Fitur Tambahan -->
+				<div
+					class="flex items-center gap-8 pt-6 text-xs font-semibold tracking-wider text-slate-500 uppercase"
 				>
-					Program Kerja
-				</a>
+					<div class="flex items-center gap-2">
+						<Cpu class="h-4 w-4 text-emerald-700" />
+						<span>Inovatif & Kritis</span>
+					</div>
+					<div class="flex items-center gap-2">
+						<UserCheck class="h-4 w-4 text-emerald-700" />
+						<span>Kolaboratif</span>
+					</div>
+				</div>
 			</div>
-		</div>
 
-		<div class="relative w-full max-w-125 shrink-0 self-center">
-			<div
-				class="absolute -inset-1 rounded-3xl bg-linear-to-r from-primary/30 to-secondary/30 opacity-70 blur-xl"
-			></div>
-			<!-- 500x400 aspect ratio 5:4 -->
-			<img
-				src={org.logoBigUrl}
-				alt={org.nama}
-				width="500"
-				height="400"
-				fetchpriority="high"
-				decoding="async"
-				class="smooth-transition relative aspect-5/4 w-full rounded-2xl object-cover hover:scale-[1.01]"
-				style="box-shadow: var(--shadow-card-xl);"
-			/>
+			<!-- Kolom Kanan transparan untuk melihat video background -->
+			<div class="hidden min-h-87.5 lg:col-span-5 lg:block xl:col-span-6"></div>
 		</div>
 	</div>
 </section>

@@ -13,8 +13,7 @@
 			visi: '',
 			misi: '[]',
 			tujuan: '',
-			logoSmallUrl: '',
-			logoBigUrl: ''
+			logoSmallUrl: ''
 		}
 	);
 
@@ -27,8 +26,7 @@
 			visi: org.visi,
 			misi: parseMisiForTextarea(org.misi),
 			tujuan: org.tujuan,
-			logoSmallUrl: org.logoSmallUrl,
-			logoBigUrl: org.logoBigUrl
+			logoSmallUrl: org.logoSmallUrl
 		}
 	);
 
@@ -64,7 +62,6 @@
 
 	// state reactive properties for image upload values
 	let logoSmallUrl = $state(initialValues.logoSmallUrl);
-	let logoBigUrl = $state(initialValues.logoBigUrl);
 </script>
 
 <svelte:head>
@@ -128,7 +125,7 @@
 			</div>
 
 			<div
-				class="grid grid-cols-1 gap-6 rounded border border-primary/10 bg-primary/5 p-4 md:grid-cols-2"
+				class="rounded border border-primary/10 bg-primary/5 p-4"
 			>
 				<ImageUpload
 					name="logoSmallUrl"
@@ -138,16 +135,6 @@
 					previewSize="long"
 					required
 					error={form?.errors?.logoSmallUrl}
-				/>
-
-				<ImageUpload
-					name="logoBigUrl"
-					label="Logo Besar (Hero Beranda)"
-					bind:value={logoBigUrl}
-					folder="himatif/org"
-					previewSize="lg"
-					required
-					error={form?.errors?.logoBigUrl}
 				/>
 			</div>
 
