@@ -19,7 +19,6 @@ export const actions: Actions = {
 		const misiStr = (formData.get('misi') as string)?.trim();
 		const tujuan = (formData.get('tujuan') as string)?.trim();
 		const logoSmallUrl = (formData.get('logoSmallUrl') as string)?.trim();
-		const logoBigUrl = (formData.get('logoBigUrl') as string)?.trim();
 
 		// Validasi
 		const errors: Record<string, string> = {};
@@ -29,12 +28,11 @@ export const actions: Actions = {
 		if (!misiStr) errors.misi = 'Misi wajib diisi';
 		if (!tujuan) errors.tujuan = 'Tujuan wajib diisi';
 		if (!logoSmallUrl) errors.logoSmallUrl = 'URL Logo Kecil wajib diisi';
-		if (!logoBigUrl) errors.logoBigUrl = 'URL Logo Besar wajib diisi';
 
 		if (Object.keys(errors).length > 0) {
 			return fail(400, {
 				errors,
-				values: { nama, namaLengkap, visi, misi: misiStr, tujuan, logoSmallUrl, logoBigUrl }
+				values: { nama, namaLengkap, visi, misi: misiStr, tujuan, logoSmallUrl }
 			});
 		}
 
@@ -55,8 +53,7 @@ export const actions: Actions = {
 					visi,
 					misi: misiJsonString,
 					tujuan,
-					logoSmallUrl,
-					logoBigUrl
+					logoSmallUrl
 				},
 				create: {
 					id: 1,
@@ -66,7 +63,7 @@ export const actions: Actions = {
 					misi: misiJsonString,
 					tujuan,
 					logoSmallUrl,
-					logoBigUrl
+					logoBigUrl: logoSmallUrl
 				}
 			});
 
