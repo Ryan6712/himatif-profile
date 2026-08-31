@@ -33,8 +33,19 @@
 		}
 	});
 
-	let logoUrl = $state(initialValues.logoUrl);
-	let thumbnailUrl = $state(initialValues.thumbnailUrl);
+	let logoUrl = $state('');
+	let thumbnailUrl = $state('');
+
+	$effect(() => {
+		if (form?.values) {
+			logoUrl = form.values.logoUrl;
+			thumbnailUrl = form.values.thumbnailUrl || 'https://placehold.co/320x120/png?text=himatif';
+			return;
+		}
+
+		logoUrl = currentDivisi.logoUrl;
+		thumbnailUrl = currentDivisi.thumbnailUrl || '';
+	});
 </script>
 
 <svelte:head>

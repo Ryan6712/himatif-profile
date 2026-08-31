@@ -1,7 +1,7 @@
 <script lang="ts">
 	import { enhance } from '$app/forms';
 	import { FormField, Toast, ImageUpload } from '$lib/components/admin';
-	import { Save, ArrowLeft, Image as ImageIcon } from '@lucide/svelte';
+	import { Save, ArrowLeft } from '@lucide/svelte';
 
 	let { data, form } = $props();
 
@@ -17,8 +17,13 @@
 	);
 
 	let isSubmitting = $state(false);
-	let selectedType = $state(initialValues.memberType);
-	let imageUrl = $state(initialValues.imageUrl);
+	let selectedType = $state('REGULAR');
+	let imageUrl = $state('');
+
+	$effect(() => {
+		selectedType = initialValues.memberType;
+		imageUrl = initialValues.imageUrl || 'https://placehold.co/96x96/png?text=himatif';
+	});
 
 	// Auto disable devisi for BPH & ALUMNI
 	let isDevisiDisabled = $derived(selectedType === 'BPH' || selectedType === 'ALUMNI');

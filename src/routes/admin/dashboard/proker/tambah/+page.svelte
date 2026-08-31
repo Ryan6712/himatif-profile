@@ -21,13 +21,19 @@
 	let isPublishing = $state(false); // flag yg menandakan action yg dipilih user
 
 	// UI states
-	let title = $state(initialValues.title);
-	let slug = $state(initialValues.slug);
-	let thumbnailUrl = $state(initialValues.thumbnailUrl);
+	let title = $state('');
+	let slug = $state('');
+	let thumbnailUrl = $state('');
 	let slugManuallyEdited = $state(false);
 
 	let showToast = $state(false);
 	let toastMessage = $state('');
+
+	$effect(() => {
+		title = initialValues.title;
+		slug = initialValues.slug;
+		thumbnailUrl = initialValues.thumbnailUrl || 'https://placehold.co/400x230/png?text=himatif';
+	});
 
 	$effect(() => {
 		if (form?.error) {
